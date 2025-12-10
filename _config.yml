@@ -1,29 +1,64 @@
-# _config.yml
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# --- Configuración del Sitio ---
-title: "Tu Nombre" # Tu nombre completo
-name: "Tu Nombre"
-description: "Data Scientist | Artificial Inteligence | Python | Advisory | Banking"
-url: "https://surzua.github.io" # Tu URL real
-baseurl: "" # Déjalo vacío si es un repositorio de usuario
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Sebastian Felipe Urzua Borquez
+name: Sebastian Urzua B.
+email:
+description: >- # this means to ignore newlines until "baseurl:"
+  Científico de Datos apasionado por resolver problemas de negocio mediante Machine Learning e Inteligencia Artificial
+github_username: surzua
+minimal_mistakes_skin: default
+search: true
 
-# --- Configuración del Tema (Método Remote Theme) ---
+# Build settings
+markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
-minimal_mistakes_skin: "air" # Opciones: "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-# --- Plugins Necesarios ---
+include:
+  - _pages
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Plugins (previously gems:)
 plugins:
-  - jekyll-feed
+  - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-seo-tag
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
   - jekyll-include-cache
 
-# --- Configuración de Autor (Barra Lateral) ---
 author:
-  name: "Sebastian Urzúa"
-  avatar: "/_assets/img/surzua.jpg" # Sube una foto tuya a esta ruta
-  bio: "Científico de Datos apasionado por resolver problemas de negocio mediante Machine Learning e Inteligencia Artificial"
-  location: "Santiago, Chile" # O tu ciudad
+  name   : "Sebastian Urzua B."
+  avatar : "/assets/images/bio-photo.jpg"
+  bio    : "My awesome biography constrained to a sentence or two goes here."
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
@@ -35,13 +70,22 @@ author:
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:seb.urzua91@gmail.com"
 
-# --- Ajustes de Lectura ---
-locale: "es-ES" # Idioma español
-analytics:
-  provider: false # Cambia a "google-gtag" si tienes Google Analytics
 
-# --- Valores por defecto para posts ---
+footer:
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/surzuab/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/surzua"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:seb.urzua91@gmail.com"
+
+
 defaults:
+  # _posts
   - scope:
       path: ""
       type: posts
@@ -49,6 +93,20 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: false
+      comments: true
       share: true
       related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
