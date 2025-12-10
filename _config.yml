@@ -1,42 +1,54 @@
-title: "SUB's Blog"
-author: "Sebastian Urzua Borquez"
-description: "Data Science topics and personal developments will be covered in this space." # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+# _config.yml
 
-# Email / Social media user names used by the minima theme:
-# All of these are optional and can be removed or commented out
-email: "sebastian.urzua@ing.uchile.cl"
-twitter_username: "twitteruser"
-github_username: "surzua"
-linkedin_username: "surzuab"
-#facebook_username: username
-#flickr_username: username
-#instagram_username: username
-#pinterest_username: username
-#youtube_username: username
-#googleplus_username: +username
+# --- Configuración del Sitio ---
+title: "Tu Nombre" # Tu nombre completo
+name: "Tu Nombre"
+description: "Data Scientist | Artificial Inteligence | Python | Advisory | Banking"
+url: "https://surzua.github.io" # Tu URL real
+baseurl: "" # Déjalo vacío si es un repositorio de usuario
 
-#########################################################################################
-######### Nothing below needs to be changed (unless you know what you're doing) #########
-#########################################################################################
-theme: "minima"
+# --- Configuración del Tema (Método Remote Theme) ---
+remote_theme: mmistakes/minimal-mistakes
+minimal_mistakes_skin: "air" # Opciones: "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
-rss: rss
-
-kramdown:
-  syntax_highlighter_opts:
-    disable: true
-    
+# --- Plugins Necesarios ---
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-include-cache
 
-titles_from_headings:
-  strip_title: true
-  collections: true
+# --- Configuración de Autor (Barra Lateral) ---
+author:
+  name: "Sebastian Urzúa"
+  avatar: "/_assets/img/surzua.jpg" # Sube una foto tuya a esta ruta
+  bio: "Científico de Datos apasionado por resolver problemas de negocio mediante Machine Learning e Inteligencia Artificial"
+  location: "Santiago, Chile" # O tu ciudad
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/surzuab/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/surzua"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:seb.urzua91@gmail.com"
 
+# --- Ajustes de Lectura ---
+locale: "es-ES" # Idioma español
+analytics:
+  provider: false # Cambia a "google-gtag" si tienes Google Analytics
+
+# --- Valores por defecto para posts ---
 defaults:
   - scope:
       path: ""
-      type: post
+      type: posts
     values:
-      tags: Other
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
