@@ -58,7 +58,7 @@ plugins:
 author:
   name   : "Sebastian Urzua B."
   avatar : "/assets/images/surzua.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "Científico de Datos apasionado por resolver problemas de negocio mediante Machine Learning e Inteligencia Artificial."
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
