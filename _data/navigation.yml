@@ -1,0 +1,8 @@
+# _data/navigation.yml
+main:
+  - title: "Blog"
+    url: /
+  - title: "Portafolio"
+    url: /portfolio/ # Crearemos esta página luego si quieres
+  - title: "Sobre Mí"
+    url: /about/
