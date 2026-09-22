@@ -13,11 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Sebastian Felipe Urzua Borquez
-name: Sebastian Urzua B.
+title: Sebastian Urzúa Bórquez | Senior Data Scientist & Ingeniero Civil Matemático (MBA)
+name: Sebastian Urzúa Bórquez
 email: seb.urzua91@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Científico de Datos apasionado por resolver problemas de negocio mediante Machine Learning e Inteligencia Artificial
+description: >-
+  Ingeniero Civil Matemático (U. de Chile, Nota 7.0), MBA y Senior Data Scientist. Especialista en Optimización Matemática, Machine Learning y Estrategia de Negocio en Supply Chain, Banca y Retail.
 github_username: surzua
 minimal_mistakes_skin: default
 search: true
