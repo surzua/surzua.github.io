@@ -1,7 +1,871 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
-author_profile: true
+layout: null
 ---
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sebastian Urzúa Bórquez | Senior Data Scientist & Ingeniero Civil Matemático (MBA)</title>
+  <meta name="description" content="Portafolio profesional de Sebastian Urzúa Bórquez. Ingeniero Civil Matemático (U. de Chile, Nota 7.0), MBA y Data Scientist Senior. Especialista en Optimización Matemática, Machine Learning y Estrategia de Negocio.">
+  <meta name="keywords" content="Sebastian Urzua, Data Scientist Senior, Ingeniero Civil Matematico, MBA, Falabella, Itau, Optimizacion Matematica, Supply Chain, Machine Learning, Python, Pyomo">
+  <meta name="author" content="Sebastian Urzúa Bórquez">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://surzua.github.io/">
+  <meta property="og:title" content="Sebastian Urzúa Bórquez | Senior Data Scientist & Ingeniero Civil Matemático (MBA)">
+  <meta property="og:description" content="Uniendo optimización matemática rigurosa, Machine Learning en producción y visión de negocio (MBA) para generar impacto de negocio medible.">
+  <meta property="og:image" content="/assets/images/surzua.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/assets/css/modern.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       Header / Navbar
+       ======================================================================== -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#inicio" class="logo" aria-label="Ir al inicio">
+        <div class="logo-badge">SU</div>
+        <div class="logo-text">Sebastian <span>Urzúa</span></div>
+      </a>
+
+      <nav class="nav-desktop">
+        <a href="#inicio" class="nav-link active">Inicio</a>
+        <a href="#impacto" class="nav-link">Métricas</a>
+        <a href="#pilares" class="nav-link">Pilares</a>
+        <a href="#proyectos" class="nav-link">Casos de Impacto</a>
+        <a href="#skills" class="nav-link">Expertise</a>
+        <a href="#trayectoria" class="nav-link">Trayectoria</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle-btn" class="icon-btn" aria-label="Cambiar tema">
+          <!-- Icon injected by JS -->
+        </button>
+
+        <a href="https://github.com/surzua" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub @surzua">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+        </a>
+
+        <a href="https://www.linkedin.com/in/surzuab/" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+          </svg>
+        </a>
+
+        <a href="#contacto" class="btn btn-primary btn-sm">Contactar</a>
+
+        <button id="mobile-toggle-btn" class="icon-btn mobile-toggle" aria-label="Abrir menú">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-nav" class="mobile-nav">
+      <a href="#inicio" class="nav-link">Inicio</a>
+      <a href="#impacto" class="nav-link">Métricas de Impacto</a>
+      <a href="#pilares" class="nav-link">Pilares Estratégicos</a>
+      <a href="#proyectos" class="nav-link">Casos de Estudio & Código</a>
+      <a href="#skills" class="nav-link">Stack & Expertise</a>
+      <a href="#trayectoria" class="nav-link">Trayectoria & Educación</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       Hero Section
+       ======================================================================== -->
+  <section id="inicio" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          Data Scientist Senior · Falabella Grupo (Supply Chain Analytics)
+        </div>
+
+        <h1 class="hero-title">
+          Sebastian <span class="gradient-text">Urzúa Bórquez</span>
+        </h1>
+
+        <div class="hero-subtitle">
+          Senior Data Scientist & <span class="tag-highlight">Ingeniero Civil Matemático</span> (MBA)
+        </div>
+
+        <p class="hero-description">
+          Convierto problemas operativos y comerciales de alta complejidad en soluciones analíticas de alto impacto. Especialista en la convergencia entre <strong>optimización matemática rigurosa</strong>, <strong>Machine Learning en producción</strong> y <strong>estrategia ejecutiva de negocio (MBA)</strong> para Supply Chain, Banca y Retail.
+        </p>
+
+        <div class="hero-credentials">
+          <div class="cred-badge gold">
+            <span>🎓</span> <b>Distinción Máxima (7.0 / 7.0)</b> Ing. Civil Matemática · U. de Chile
+          </div>
+          <div class="cred-badge">
+            <span>📊</span> <b>Magíster en Cs. de la Ingeniería (6.6 / 7.0)</b> U. de Chile
+          </div>
+          <div class="cred-badge">
+            <span>💼</span> <b>MBA (6.3 / 7.0)</b> U. de Chile
+          </div>
+          <div class="cred-badge gold">
+            <span>🏆</span> <b>Premio Transforma 2024</b> Innovación Data-Driven
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#proyectos" class="btn btn-primary">
+            Explorar Casos de Impacto
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+
+          <a href="https://github.com/surzua" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            GitHub @surzua
+          </a>
+
+          <button class="email-copy-box copy-email-btn" title="Copiar correo">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>seb.urzua91@gmail.com</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="avatar-wrapper">
+          <div class="avatar-glow"></div>
+          <div class="avatar-border">
+            <img src="/assets/images/surzua.jpg" alt="Sebastian Urzúa Bórquez" class="avatar-img" loading="eager">
+          </div>
+          <div class="floating-badge fb-1">
+            <span>⚡</span>
+            <span>Pyomo & MIP Optimization</span>
+          </div>
+          <div class="floating-badge fb-2">
+            <span>📈</span>
+            <span>ML & RecSys en Producción</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Metrics Bar (KPI Counters)
+       ======================================================================== -->
+  <section id="impacto" class="metrics-section">
+    <div class="container">
+      <div class="metrics-grid">
+        <div class="metric-card gold">
+          <div class="metric-number">+100M</div>
+          <div class="metric-title">Ventas Protegidas (Supply Chain)</div>
+          <div class="metric-desc">Consolidación y eliminación del 40% de rutas redundantes en red de distribución.</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-number">+50%</div>
+          <div class="metric-title">Efectividad Comercial</div>
+          <div class="metric-desc">Arquitectura del motor de recomendación hiperpersonalizado ItaúX en banca.</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-number">-2 p.p.</div>
+          <div class="metric-title">Atrasos Operativos en Nodos</div>
+          <div class="metric-desc">Modelo cuantitativo de forecasting de capacidad para eventos de alta demanda.</div>
+        </div>
+
+        <div class="metric-card gold">
+          <div class="metric-number">7.0 / 7.0</div>
+          <div class="metric-title">Distinción Máxima</div>
+          <div class="metric-desc">Ingeniería Civil Matemática, Universidad de Chile (Beauchef).</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-number">2° Lugar</div>
+          <div class="metric-title">Batalla de Datos Regional</div>
+          <div class="metric-desc">Itaú Brasil vs. equipos analíticos avanzados de toda Latinoamérica.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Core Pillars (The 3 Strategic Superpowers)
+       ======================================================================== -->
+  <section id="pilares" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Capacidades Estratégicas</span>
+        <h2 class="section-title">El Triángulo de Valor</h2>
+        <p class="section-subtitle">
+          La combinación sinérgica entre matemática rigurosa, despliegue computacional moderno y retorno económico medible.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="6" cy="6" r="3"></circle>
+              <circle cx="18" cy="18" r="3"></circle>
+              <line x1="8.5" y1="8.5" x2="15.5" y2="15.5"></line>
+              <circle cx="18" cy="6" r="3"></circle>
+              <circle cx="6" cy="18" r="3"></circle>
+              <line x1="8.5" y1="15.5" x2="15.5" y2="8.5"></line>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Optimización Matemática & Operaciones</h3>
+          <p class="pillar-text">
+            Investigación operativa aplicada a la toma de decisiones complejas: programación lineal, entera y mixta (MIP), ruteo de vehículos (VRP), simulación numérica y gestión cuantitativa de inventarios.
+          </p>
+          <div class="pillar-tags">
+            <span class="pill-badge">Pyomo</span>
+            <span class="pill-badge">AMPL</span>
+            <span class="pill-badge">MIP / Branch & Bound</span>
+            <span class="pill-badge">MiniZinc</span>
+            <span class="pill-badge">Simulación Estocástica</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Machine Learning & Analytics en Producción</h3>
+          <p class="pillar-text">
+            Diseño, calibración y puesta en marcha de sistemas analíticos: motores de recomendación hiperpersonalizados, scoring de riesgo crediticio alternativo, propensión de compra y detección de anomalías en tiempo real.
+          </p>
+          <div class="pillar-tags">
+            <span class="pill-badge">Python (Polars/Pandas)</span>
+            <span class="pill-badge">Scikit-Learn</span>
+            <span class="pill-badge">LightGBM</span>
+            <span class="pill-badge">PyTorch</span>
+            <span class="pill-badge">RAG & LLMs</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Estrategia Ejecutiva & Retorno de Negocio (MBA)</h3>
+          <p class="pillar-text">
+            Traducción fluida entre algoritmos complejos y el P&L de la compañía. Formulación de Business Cases, evaluación de riesgo financiero, gobernanza de datos bajo metodología DAMA e interlocución con C-Level.
+          </p>
+          <div class="pillar-tags">
+            <span class="pill-badge">MBA U. de Chile</span>
+            <span class="pill-badge">Business Case Design</span>
+            <span class="pill-badge">Data Governance (DAMA)</span>
+            <span class="pill-badge">Scrum</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Featured Projects & Impact Cases (NO DATES!)
+       ======================================================================== -->
+  <section id="proyectos" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Portafolio Seleccionado</span>
+        <h2 class="section-title">Casos de Impacto & Proyectos</h2>
+        <p class="section-subtitle">
+          Iniciativas donde la formulación matemática y el modelamiento predictivo generaron ventajas competitivas comprobables.
+        </p>
+      </div>
+
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">Todos los Casos</button>
+        <button class="filter-btn" data-filter="supply-chain">Supply Chain & Optimización</button>
+        <button class="filter-btn" data-filter="finance">Banca & Finanzas</button>
+        <button class="filter-btn" data-filter="opensource">Open Source & Herramientas</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: Falabella Logistics -->
+        <div class="project-card" data-category="supply-chain">
+          <div class="project-top">
+            <span class="project-domain supply-chain">Supply Chain</span>
+            <a href="https://github.com/surzua/LogisticNetwork" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver repositorio LogisticNetwork">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+          </div>
+          <h3 class="project-title">Optimización de Red Logística & Forecasting de Capacidad</h3>
+          <div class="project-org">SmartJob – Grupo Falabella</div>
+          <div class="project-body">
+            <div class="project-metric-highlight">
+              <span>Impacto:</span> <strong>-2 p.p. en atrasos · +100M ventas protegidas</strong>
+            </div>
+            <ul class="project-points">
+              <li><strong>Desafío:</strong> Cuellos de botella y sobrecostos por saturación operativa en nodos clave de despacho en eventos de alta demanda.</li>
+              <li><strong>Solución:</strong> Modelo cuantitativo de forecasting de capacidad y simplificación analítica para eliminar el 40% de rutas redundantes.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">Pyomo (MIP)</span>
+              <span class="tech-tag">Polars</span>
+              <span class="tech-tag">Forecasting</span>
+            </div>
+            <button class="btn-card-link view-project-btn" data-project="falabella-logistics">
+              Ver detalles ➔
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2: ItaúX Recommender -->
+        <div class="project-card" data-category="finance">
+          <div class="project-top">
+            <span class="project-domain finance">Banca & Finanzas</span>
+            <span class="cred-badge gold" style="padding: 2px 8px; font-size: 0.72rem;">Ganador Transforma 2024</span>
+          </div>
+          <h3 class="project-title">ItaúX: Motor de Recomendación Hiperpersonalizado</h3>
+          <div class="project-org">Banco Itaú · Analytics Banca Minorista</div>
+          <div class="project-body">
+            <div class="project-metric-highlight">
+              <span>Impacto:</span> <strong>+50% efectividad comercial vs. promedio</strong>
+            </div>
+            <ul class="project-points">
+              <li><strong>Desafío:</strong> Campañas masivas estáticas y baja tasa de conversión de productos financieros por ejecutivos de cuenta.</li>
+              <li><strong>Solución:</strong> Arquitectura de motor de recomendación integrando modelos RFM, propensión de compra y clustering de comercios.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">LightGBM</span>
+              <span class="tech-tag">RecSys</span>
+              <span class="tech-tag">SQL</span>
+            </div>
+            <button class="btn-card-link view-project-btn" data-project="itau-recommender">
+              Ver detalles ➔
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3: HipoRefi-CL -->
+        <div class="project-card" data-category="opensource">
+          <div class="project-top">
+            <span class="project-domain opensource">Open Source</span>
+            <a href="https://github.com/surzua/HipoRefi-CL" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver repositorio HipoRefi-CL">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+          </div>
+          <h3 class="project-title">HipoRefi-CL: Simulador & Optimizador Hipotecario</h3>
+          <div class="project-org">GitHub: surzua/HipoRefi-CL</div>
+          <div class="project-body">
+            <div class="project-metric-highlight">
+              <span>Impacto:</span> <strong>Optimización de VPN, TIR y Break-Even en UF</strong>
+            </div>
+            <ul class="project-points">
+              <li><strong>Desafío:</strong> Dificultad para determinar el momento óptimo de refinanciar créditos hipotecarios considerando costos operacionales chilenos.</li>
+              <li><strong>Solución:</strong> Algoritmo en Python que proyecta tablas de amortización, descuenta flujos a valor presente y evalúa sensibilidad de tasas.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Finanzas Cuantitativas</span>
+              <span class="tech-tag">NumPy</span>
+            </div>
+            <button class="btn-card-link view-project-btn" data-project="hiporefi-cl">
+              Ver detalles ➔
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 4: Credit Policy Optimizer -->
+        <div class="project-card" data-category="opensource">
+          <div class="project-top">
+            <span class="project-domain opensource">Open Source</span>
+            <a href="https://github.com/surzua/credit-policy-optimizer" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver repositorio credit-policy-optimizer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+          </div>
+          <h3 class="project-title">Credit Policy Optimizer: Frontera Eficiente de Riesgo</h3>
+          <div class="project-org">GitHub: surzua/credit-policy-optimizer</div>
+          <div class="project-body">
+            <div class="project-metric-highlight">
+              <span>Impacto:</span> <strong>Optimización de corte de mora y utilidad neta</strong>
+            </div>
+            <ul class="project-points">
+              <li><strong>Desafío:</strong> Ineficiencia al definir puntos de corte de aprobación crediticia entre volumen comercial y pérdida esperada (PD).</li>
+              <li><strong>Solución:</strong> Algoritmo de optimización que parametriza matrices de costo-beneficio y busca el cut-off óptimo en la curva ROC.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">Optimización</span>
+              <span class="tech-tag">SciPy Optimize</span>
+              <span class="tech-tag">Credit Risk</span>
+            </div>
+            <button class="btn-card-link view-project-btn" data-project="credit-policy">
+              Ver detalles ➔
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 5: Digital Account Risk -->
+        <div class="project-card" data-category="finance">
+          <div class="project-top">
+            <span class="project-domain finance">Banca & Finanzas</span>
+            <span class="cred-badge" style="padding: 2px 8px; font-size: 0.72rem;">2° Lugar Itaú Brasil</span>
+          </div>
+          <h3 class="project-title">Scoring Crediticio con Psicometría & Huella Digital</h3>
+          <div class="project-org">Banco Itaú · Inclusión Financiera</div>
+          <div class="project-body">
+            <div class="project-metric-highlight">
+              <span>Impacto:</span> <strong>Bancarización de segmentos no tradicionales</strong>
+            </div>
+            <ul class="project-points">
+              <li><strong>Desafío:</strong> Evaluar riesgo en segmentos no bancarizados sin historial crediticio en bureaus comerciales.</li>
+              <li><strong>Solución:</strong> Modelo de scoring alternativo combinando variables psicométricas con patrones transaccionales digitales.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">Machine Learning</span>
+              <span class="tech-tag">Psicometría</span>
+              <span class="tech-tag">LightGBM</span>
+            </div>
+            <button class="btn-card-link view-project-btn" data-project="digital-account-risk">
+              Ver detalles ➔
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 6: Fraud & Anomalies Retail -->
+        <div class="project-card" data-category="supply-chain">
+          <div class="project-top">
+            <span class="project-domain supply-chain">Supply Chain & Auditoría</span>
+          </div>
+          <h3 class="project-title">Detección de Fraude & Anomalías en Retail Mayorista</h3>
+          <div class="project-org">KPMG Insights Center</div>
+          <div class="project-body">
+            <div class="project-metric-highlight">
+              <span>Impacto:</span> <strong>Auditoría estocástica y reducción de pérdidas</strong>
+            </div>
+            <ul class="project-points">
+              <li><strong>Desafío:</strong> Anomalías no detectadas en pagos a proveedores y notas de crédito en cajas registradoras masivas.</li>
+              <li><strong>Solución:</strong> Modelos no supervisados de detección de outliers, OCR para validación de documentos y marco DAMA.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">Computer Vision</span>
+              <span class="tech-tag">Detección Outliers</span>
+              <span class="tech-tag">DAMA</span>
+            </div>
+            <button class="btn-card-link view-project-btn" data-project="fraud-retail">
+              Ver detalles ➔
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Technical Skills Matrix
+       ======================================================================== -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Caja de Herramientas</span>
+        <h2 class="section-title">Expertise Técnico & Estratégico</h2>
+        <p class="section-subtitle">
+          Dominio integral desde la formulación matemática abstracta hasta la ingeniería de software y la gestión de proyectos.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-box">
+          <div class="skill-box-header">
+            <div class="skill-box-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <h3 class="skill-box-title">Optimización Matemática</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">Pyomo</span>
+            <span class="skill-item">AMPL</span>
+            <span class="skill-item">MiniZinc</span>
+            <span class="skill-item">BoCop</span>
+            <span class="skill-item">Mixed-Integer (MIP)</span>
+            <span class="skill-item">Programación Lineal</span>
+            <span class="skill-item">Programación No Lineal</span>
+            <span class="skill-item">Simulación Numérica</span>
+          </div>
+        </div>
+
+        <div class="skill-box">
+          <div class="skill-box-header">
+            <div class="skill-box-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="skill-box-title">Data Science & Modelamiento</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">Python</span>
+            <span class="skill-item">Polars</span>
+            <span class="skill-item">Pandas</span>
+            <span class="skill-item">Scikit-Learn</span>
+            <span class="skill-item">LightGBM</span>
+            <span class="skill-item">PyTorch</span>
+            <span class="skill-item">SQL Avanzado</span>
+            <span class="skill-item">R</span>
+            <span class="skill-item">Git / Bash</span>
+          </div>
+        </div>
+
+        <div class="skill-box">
+          <div class="skill-box-header">
+            <div class="skill-box-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12A10 10 0 0 1 12 2z"></path>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+            </div>
+            <h3 class="skill-box-title">Generative AI & LLMs</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">Arquitecturas RAG</span>
+            <span class="skill-item">LangChain</span>
+            <span class="skill-item">APIs de LLMs</span>
+            <span class="skill-item">Prompt Engineering</span>
+            <span class="skill-item">Hugging Face</span>
+            <span class="skill-item">Vector Databases</span>
+          </div>
+        </div>
+
+        <div class="skill-box">
+          <div class="skill-box-header">
+            <div class="skill-box-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+              </svg>
+            </div>
+            <h3 class="skill-box-title">Cloud, Datos & DevOps</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">AWS</span>
+            <span class="skill-item">Google Cloud (GCP)</span>
+            <span class="skill-item">Docker</span>
+            <span class="skill-item">Linux</span>
+            <span class="skill-item">CI/CD Pipelines</span>
+            <span class="skill-item">Power BI (DAX)</span>
+            <span class="skill-item">Power Query</span>
+          </div>
+        </div>
+
+        <div class="skill-box">
+          <div class="skill-box-header">
+            <div class="skill-box-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3 class="skill-box-title">Estrategia & Liderazgo (MBA)</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">Business Case Design</span>
+            <span class="skill-item">Metodologías Ágiles (Scrum)</span>
+            <span class="skill-item">Data Governance (DAMA)</span>
+            <span class="skill-item">Rediseño de Procesos</span>
+            <span class="skill-item">Gestión de Portafolio</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Career & Education Timeline
+       ======================================================================== -->
+  <section id="trayectoria" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Historial Profesional</span>
+        <h2 class="section-title">Trayectoria & Formación de Élite</h2>
+        <p class="section-subtitle">
+          Evolución profesional liderando proyectos analíticos de alta envergadura y formación académica continua.
+        </p>
+      </div>
+
+      <div class="timeline-tabs">
+        <button class="timeline-tab-btn active" data-tab="experience">Experiencia Profesional</button>
+        <button class="timeline-tab-btn" data-tab="education">Formación Académica</button>
+      </div>
+
+      <!-- Experience Timeline -->
+      <div id="timeline-experience" class="timeline-container">
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Data Scientist Senior</div>
+              <div class="timeline-company">SmartJob – Grupo Falabella (Advanced Analytics - Data Supply Chain)</div>
+            </div>
+            <span class="timeline-period">Actualidad</span>
+          </div>
+          <div class="timeline-desc">
+            <ul>
+              <li><strong>Optimización de Red Logística:</strong> Desarrollo y validación del Business Case para el modelo de forecasting de capacidades, reduciendo los atrasos operativos en 2 p.p. en nodos críticos.</li>
+              <li><strong>Simplificación de Red:</strong> Liderazgo analítico para consolidar y eliminar el 40% de rutas redundantes, optimizando la entrega en alta demanda y previniendo caídas del sistema con impacto estimado de +100M en ventas.</li>
+              <li><strong>Modelamiento Cuantitativo:</strong> Integración de datos transaccionales y de inventario para la toma de decisiones operativas en tiempo real.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Data Scientist Senior</div>
+              <div class="timeline-company">Banco Itaú (Analytics – Banca Minorista)</div>
+            </div>
+          </div>
+          <div class="timeline-desc">
+            <ul>
+              <li><strong>Motor ItaúX:</strong> Arquitectura de recomendador hiperpersonalizado de productos financieros para ejecutivos de cuenta, logrando una efectividad comercial hasta 50% superior al promedio.</li>
+              <li><strong>Premio Transforma 2024:</strong> Ganador corporativo en la categoría <em>Innovación Data-Driven</em> y rediseño del pitch técnico de la iniciativa.</li>
+              <li><strong>Modelos Core de Clientes:</strong> Modelos RFM, propensión de compra, actividad transaccional y clustering de comercios para automatización de campañas.</li>
+              <li><strong>Cuenta Digital:</strong> Modelo de scoring de riesgo crediticio para segmentos no bancarizados utilizando variables psicométricas y transaccionales digitales.</li>
+              <li><strong>Competencia Regional:</strong> 2do lugar en la <em>Batalla de Datos Itaú Brasil</em> frente a equipos de analítica avanzada regionales.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Data Scientist Engineer</div>
+              <div class="timeline-company">Moneda Asset Management (Procesos y Sistemas, TI)</div>
+            </div>
+          </div>
+          <div class="timeline-desc">
+            <ul>
+              <li>Desarrollo de plataforma analítica para monitoreo y comparación de tipos de cambio (FX) mediante pipelines en Python y tableros en Power BI.</li>
+              <li>Construcción de sistema automatizado para administración, seguimiento y scoring de recomendaciones de fondos de inversión.</li>
+              <li>Implementación de políticas de Data Governance y optimización de flujos de extracción en entornos SQL.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Data Scientist</div>
+              <div class="timeline-company">KPMG (Data & Analytics – Insights Center)</div>
+            </div>
+          </div>
+          <div class="timeline-desc">
+            <ul>
+              <li><strong>Fraude y Anomalías:</strong> Modelos de Machine Learning para detección de fraude en pagos a proveedores retail y anomalías en emisión de notas de crédito en supermercados mayoristas.</li>
+              <li><strong>Computer Vision y OCR:</strong> Automatización de extracción y validación de texto a partir de imágenes de certificados digitales y cédulas de identidad.</li>
+              <li><strong>Data Governance:</strong> Asesoría técnica e implementación de gobernanza bajo metodología DAMA para aseguradoras y fondos de pensiones.</li>
+              <li><strong>Modelos de Riesgo:</strong> Perfilamiento de morosidad y desarrollo de la herramienta global <em>CbyC Tool</em> para cuantificación de riesgo de evasión fiscal.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Profesor Auxiliar</div>
+              <div class="timeline-company">Universidad de Chile (Facultad de Ciencias Físicas y Matemáticas)</div>
+            </div>
+          </div>
+          <div class="timeline-desc">
+            Docencia universitaria en cátedras avanzadas de ingeniería: Cálculo Diferencial e Integral, Cálculo en Varias Variables y Cálculo Avanzado.
+          </div>
+        </div>
+      </div>
+
+      <!-- Education Timeline -->
+      <div id="timeline-education" class="timeline-container" style="display: none;">
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Master of Business Administration (MBA)</div>
+              <div class="timeline-company">Universidad de Chile</div>
+            </div>
+          </div>
+          <span class="timeline-grade">Nota de Graduación: 6.3 / 7.0</span>
+          <div class="timeline-desc">
+            Formación ejecutiva orientada a estrategia corporativa, finanzas corporativas, formulación de modelos de negocio y liderazgo de equipos de alto rendimiento.
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Magíster en Ciencias de la Ingeniería, mención Matemática Aplicada</div>
+              <div class="timeline-company">Universidad de Chile</div>
+            </div>
+          </div>
+          <span class="timeline-grade">Nota de Graduación: 6.6 / 7.0</span>
+          <div class="timeline-desc">
+            Tesis de postgrado: <em>"Escurrimiento de Fluidos Newtonianos y no Newtonianos en medios porosos"</em> (Prof. Guía: Dr. Raúl Gormaz). Modelamiento de ecuaciones en derivadas parciales y métodos numéricos avanzados.
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Ingeniería Civil Matemática</div>
+              <div class="timeline-company">Universidad de Chile (FCFM - Beauchef)</div>
+            </div>
+          </div>
+          <span class="timeline-grade" style="color: #10b981; border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1);">
+            Nota de Graduación: 7.0 / 7.0 (Distinción Máxima)
+          </span>
+          <div class="timeline-desc">
+            Rigor matemático en análisis funcional, probabilidad y procesos estocásticos, optimización continua y discreta, y análisis numérico.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Contact / Call To Action
+       ======================================================================== -->
+  <section id="contacto" class="contact-section">
+    <div class="container">
+      <div class="contact-card">
+        <h2 class="contact-title">Iniciemos una Conversación</h2>
+        <p class="contact-subtitle">
+          Abierto a intercambiar perspectivas sobre optimización matemática, proyectos estratégicos de Data Science y oportunidades de alto impacto.
+        </p>
+
+        <div class="contact-channels">
+          <a href="https://www.linkedin.com/in/surzuab/" target="_blank" rel="noopener noreferrer" class="contact-link-pill">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
+            <span>LinkedIn: in/surzuab</span>
+          </a>
+
+          <a href="https://github.com/surzua" target="_blank" rel="noopener noreferrer" class="contact-link-pill">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            <span>GitHub: @surzua</span>
+          </a>
+
+          <button class="contact-link-pill copy-email-btn" style="cursor: pointer;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span>seb.urzua91@gmail.com</span>
+          </button>
+        </div>
+
+        <div style="font-size: 0.9rem; color: var(--text-muted);">
+          📍 Santiago, Chile · Disponible para proyectos estratégicos de analítica avanzada
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        © Sebastian Urzúa Bórquez · Portafolio Profesional
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/surzua" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/surzuab/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="#inicio">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       Project Details Modal
+       ======================================================================== -->
+  <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button id="modal-close-btn" class="modal-close" aria-label="Cerrar modal">✕</button>
+      <div id="modal-domain" class="modal-domain">DOMINIO</div>
+      <h3 id="modal-title" class="modal-title">Título del Proyecto</h3>
+      <div id="modal-org" style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 14px;">Organización</div>
+      
+      <div id="modal-metric" class="project-metric-highlight" style="margin-bottom: 20px;">
+        Métricas de impacto
+      </div>
+
+      <div class="modal-section-title">El Desafío / Problema de Negocio</div>
+      <p id="modal-problem" class="modal-text"></p>
+
+      <div class="modal-section-title">La Solución Matemática & Algorítmica</div>
+      <p id="modal-solution" class="modal-text"></p>
+
+      <div class="modal-section-title">Impacto Cuantitativo Generado</div>
+      <p id="modal-impact" class="modal-text"></p>
+
+      <div class="modal-section-title">Stack & Tecnologías Utilizadas</div>
+      <p id="modal-stack" class="modal-text" style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent-cyan);"></p>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <span class="toast-msg">¡Email copiado al portapapeles!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/assets/js/modern.js"></script>
+</body>
+</html>
