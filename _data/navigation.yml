@@ -1,9 +1,11 @@
 main:
-  - title: "Posts"
-    url: /posts/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
-    url: /tags/
-  - title: "About"
-    url: /about/
+  - title: "Inicio"
+    url: /#inicio
+  - title: "Casos de Impacto"
+    url: /#proyectos
+  - title: "Artículos"
+    url: /#articulos
+  - title: "Trayectoria"
+    url: /#trayectoria
+  - title: "Contacto"
+    url: /#contacto
