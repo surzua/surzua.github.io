@@ -17,7 +17,7 @@ title: Sebastian Urzúa Bórquez | Senior Data Scientist & Ingeniero Civil Matem
 name: Sebastian Urzúa Bórquez
 email: seb.urzua91@gmail.com
 description: >-
-  Ingeniero Civil Matemático (U. de Chile, Nota 7.0), MBA y Senior Data Scientist. Especialista en Optimización Matemática, Machine Learning y Estrategia de Negocio en Supply Chain, Banca y Retail.
+  Ingeniero Civil Matemático (U. de Chile, Nota 7.0), MBA y Senior Data Scientist. Especialista en Optimización Matemática, GenAI, Machine Learning y Estrategia de Negocio en Supply Chain, Banca y Retail.
 github_username: surzua
 minimal_mistakes_skin: default
 search: true
@@ -58,7 +58,7 @@ plugins:
 author:
   name   : "Sebastian Urzua B."
   avatar : "/assets/images/surzua.jpg"
-  bio    : "Científico de Datos apasionado por resolver problemas de negocio mediante Machine Learning e Inteligencia Artificial."
+  bio    : "Ingeniero Civil Matemático (U. de Chile, Nota 7.0), MBA y Senior Data Scientist. Especialista en Optimización Matemática, GenAI y Estrategia de Negocio en Supply Chain, Retail y Banca."
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"

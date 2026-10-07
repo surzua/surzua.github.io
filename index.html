@@ -41,6 +41,7 @@ layout: null
         <a href="#impacto" class="nav-link">Métricas</a>
         <a href="#pilares" class="nav-link">Pilares</a>
         <a href="#proyectos" class="nav-link">Casos de Impacto</a>
+        <a href="#articulos" class="nav-link">Artículos</a>
         <a href="#skills" class="nav-link">Expertise</a>
         <a href="#trayectoria" class="nav-link">Trayectoria</a>
         <a href="#contacto" class="nav-link">Contacto</a>
@@ -81,6 +82,7 @@ layout: null
       <a href="#impacto" class="nav-link">Métricas de Impacto</a>
       <a href="#pilares" class="nav-link">Pilares Estratégicos</a>
       <a href="#proyectos" class="nav-link">Casos de Estudio & Código</a>
+      <a href="#articulos" class="nav-link">Artículos & Ensayos</a>
       <a href="#skills" class="nav-link">Stack & Expertise</a>
       <a href="#trayectoria" class="nav-link">Trayectoria & Educación</a>
       <a href="#contacto" class="nav-link">Contacto</a>
@@ -95,7 +97,7 @@ layout: null
       <div class="hero-content">
         <div class="status-badge">
           <span class="status-dot"></span>
-          Data Scientist Senior · Falabella Grupo (Supply Chain Analytics)
+          Data Scientist Senior · Grupo Falabella (FTC – Advanced Analytics Supply Chain)
         </div>
 
         <h1 class="hero-title">
@@ -107,7 +109,7 @@ layout: null
         </div>
 
         <p class="hero-description">
-          Convierto problemas operativos y comerciales de alta complejidad en soluciones analíticas de alto impacto. Especialista en la convergencia entre <strong>optimización matemática rigurosa</strong>, <strong>Machine Learning en producción</strong> y <strong>estrategia ejecutiva de negocio (MBA)</strong> para Supply Chain, Banca y Retail.
+          Convierto problemas operativos y comerciales de alta complejidad en soluciones analíticas de alto impacto. Especialista en la formulación y despliegue de soluciones cuantitativas de extremo a extremo: desde <strong>optimización matemática rigurosa</strong> y <strong>experimentación causal (A/B Testing)</strong>, hasta <strong>pipelines productivos con LLMs (GenAI)</strong> y <strong>articulación estratégica de negocio (MBA)</strong> para Supply Chain, Retail y Banca.
         </p>
 
         <div class="hero-credentials">
@@ -115,10 +117,10 @@ layout: null
             <span>🎓</span> <b>Distinción Máxima (7.0 / 7.0)</b> Ing. Civil Matemática · U. de Chile
           </div>
           <div class="cred-badge">
-            <span>📊</span> <b>Magíster en Cs. de la Ingeniería (6.6 / 7.0)</b> U. de Chile
+            <span>📊</span> <b>Magíster en Cs. de la Ingeniería (6.6 / 7.0)</b> CMM U. de Chile
           </div>
           <div class="cred-badge">
-            <span>💼</span> <b>MBA (6.3 / 7.0)</b> U. de Chile
+            <span>💼</span> <b>MBA (6.3 / 7.0)</b> FCFM / DCS U. de Chile
           </div>
           <div class="cred-badge gold">
             <span>🏆</span> <b>Premio Transforma 2024</b> Innovación Data-Driven
@@ -162,8 +164,8 @@ layout: null
             <span>Pyomo & MIP Optimization</span>
           </div>
           <div class="floating-badge fb-2">
-            <span>📈</span>
-            <span>ML & RecSys en Producción</span>
+            <span>🤖</span>
+            <span>GenAI, LLMs & RecSys</span>
           </div>
         </div>
       </div>
@@ -177,27 +179,33 @@ layout: null
     <div class="container">
       <div class="metrics-grid">
         <div class="metric-card gold">
-          <div class="metric-number">+100M</div>
-          <div class="metric-title">Ventas Protegidas (Supply Chain)</div>
-          <div class="metric-desc">Consolidación y eliminación del 40% de rutas redundantes en red de distribución.</div>
+          <div class="metric-number">> 7.7M USD</div>
+          <div class="metric-title">Impacto Validado (GenAI)</div>
+          <div class="metric-desc">Pipeline de inferencia con LLMs y A/B Testing multivariable en Grupo Falabella (>3.8M USD en Chile).</div>
         </div>
 
         <div class="metric-card">
           <div class="metric-number">+50%</div>
           <div class="metric-title">Efectividad Comercial</div>
-          <div class="metric-desc">Arquitectura del motor de recomendación hiperpersonalizado ItaúX en banca.</div>
+          <div class="metric-desc">Motor Look-a-Likes e hiperpersonalización ItaúX (Ganador Premio Transforma 2024).</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-number">+100M CLP</div>
+          <div class="metric-title">Ventas Protegidas (CyberDay)</div>
+          <div class="metric-desc">Clustering espacial y baja del 40% de rutas redundantes en red de promesa logística.</div>
         </div>
 
         <div class="metric-card">
           <div class="metric-number">-2 p.p.</div>
           <div class="metric-title">Atrasos Operativos en Nodos</div>
-          <div class="metric-desc">Modelo cuantitativo de forecasting de capacidad para eventos de alta demanda.</div>
+          <div class="metric-desc">Forecasting predictivo de capacidad sobre ~500.000 órdenes/mes en red Colombia.</div>
         </div>
 
         <div class="metric-card gold">
           <div class="metric-number">7.0 / 7.0</div>
-          <div class="metric-title">Distinción Máxima</div>
-          <div class="metric-desc">Ingeniería Civil Matemática, Universidad de Chile (Beauchef).</div>
+          <div class="metric-title">Distinción Máxima (Beauchef)</div>
+          <div class="metric-desc">Ingeniería Civil Matemática, Universidad de Chile (Calificación máxima histórica).</div>
         </div>
 
         <div class="metric-card">
@@ -305,13 +313,44 @@ layout: null
 
       <div class="projects-filter">
         <button class="filter-btn active" data-filter="all">Todos los Casos</button>
-        <button class="filter-btn" data-filter="supply-chain">Supply Chain & Optimización</button>
+        <button class="filter-btn" data-filter="supply-chain">Supply Chain & Redes</button>
+        <button class="filter-btn" data-filter="genai">GenAI & LLMs</button>
         <button class="filter-btn" data-filter="finance">Banca & Finanzas</button>
-        <button class="filter-btn" data-filter="opensource">Open Source & Herramientas</button>
+        <button class="filter-btn" data-filter="opensource">Open Source</button>
       </div>
 
       <div class="projects-grid">
-        <!-- Project 1: Falabella Logistics -->
+        <!-- Project 1: Falabella GenAI Catalog -->
+        <div class="project-card" data-category="supply-chain genai">
+          <div class="project-top">
+            <span class="project-domain genai">GenAI & Supply Chain</span>
+            <span class="cred-badge gold" style="padding: 2px 8px; font-size: 0.72rem;">Impacto >7.7M USD</span>
+          </div>
+          <h3 class="project-title">Corrección de Catálogo con GenAI & A/B Testing</h3>
+          <div class="project-org">SmartJob – Grupo Falabella · FTC Corporate Promise Engine</div>
+          <div class="project-body">
+            <div class="project-metric-highlight">
+              <span>Impacto:</span> <strong>> 7.7M USD anuales regional (> 3.8M USD en Chile)</strong>
+            </div>
+            <ul class="project-points">
+              <li><strong>Desafío:</strong> Inconsistencias severas en dimensiones físicas y peso sin ground truth confiable, provocando errores en cobros de flete y pérdidas de cubicaje.</li>
+              <li><strong>Solución:</strong> Pipeline productivo de 5 fases en GCP / Vertex AI (few-shot prompting F2, ground truth sintético e imputación robusta) validado con Test A/A y A/B multivariable.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">Vertex AI (LLMs)</span>
+              <span class="tech-tag">A/B Testing</span>
+              <span class="tech-tag">GCP BigQuery</span>
+              <span class="tech-tag">Polars</span>
+            </div>
+            <button class="btn-card-link view-project-btn" data-project="falabella-genai">
+              Ver detalles ➔
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2: Falabella Logistics Forecasting & Topology -->
         <div class="project-card" data-category="supply-chain">
           <div class="project-top">
             <span class="project-domain supply-chain">Supply Chain</span>
@@ -319,22 +358,23 @@ layout: null
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             </a>
           </div>
-          <h3 class="project-title">Optimización de Red Logística & Forecasting de Capacidad</h3>
-          <div class="project-org">SmartJob – Grupo Falabella</div>
+          <h3 class="project-title">Forecasting de Capacidad & Red Logística</h3>
+          <div class="project-org">SmartJob – Grupo Falabella · FTC Red Logística</div>
           <div class="project-body">
             <div class="project-metric-highlight">
-              <span>Impacto:</span> <strong>-2 p.p. en atrasos · +100M ventas protegidas</strong>
+              <span>Impacto:</span> <strong>-2 p.p. en atrasos (Colombia) · +100M CLP ventas</strong>
             </div>
             <ul class="project-points">
-              <li><strong>Desafío:</strong> Cuellos de botella y sobrecostos por saturación operativa en nodos clave de despacho en eventos de alta demanda.</li>
-              <li><strong>Solución:</strong> Modelo cuantitativo de forecasting de capacidad y simplificación analítica para eliminar el 40% de rutas redundantes.</li>
+              <li><strong>Desafío:</strong> Saturación operativa en nodos críticos (cross-docking, picking y última milla) y 40% de rutas redundantes que arriesgaban SLA de entrega.</li>
+              <li><strong>Solución:</strong> Forecasting predictivo de series de tiempo para proyectar capacidades y clustering origen-destino para desestimar rutas redundantes.</li>
             </ul>
           </div>
           <div class="project-footer">
             <div class="project-tech">
-              <span class="tech-tag">Pyomo (MIP)</span>
+              <span class="tech-tag">Series de Tiempo</span>
+              <span class="tech-tag">Clustering Espacial</span>
               <span class="tech-tag">Polars</span>
-              <span class="tech-tag">Forecasting</span>
+              <span class="tech-tag">Pyomo (MIP)</span>
             </div>
             <button class="btn-card-link view-project-btn" data-project="falabella-logistics">
               Ver detalles ➔
@@ -342,28 +382,29 @@ layout: null
           </div>
         </div>
 
-        <!-- Project 2: ItaúX Recommender -->
+        <!-- Project 3: ItaúX Recommender -->
         <div class="project-card" data-category="finance">
           <div class="project-top">
             <span class="project-domain finance">Banca & Finanzas</span>
             <span class="cred-badge gold" style="padding: 2px 8px; font-size: 0.72rem;">Ganador Transforma 2024</span>
           </div>
-          <h3 class="project-title">ItaúX: Motor de Recomendación Hiperpersonalizado</h3>
-          <div class="project-org">Banco Itaú · Analytics Banca Minorista</div>
+          <h3 class="project-title">ItaúX: Motor Look-a-Likes e Hiperpersonalización</h3>
+          <div class="project-org">Banco Itaú · Analytics Banca Minorista (ItaúX)</div>
           <div class="project-body">
             <div class="project-metric-highlight">
-              <span>Impacto:</span> <strong>+50% efectividad comercial vs. promedio</strong>
+              <span>Impacto:</span> <strong>+50% tasa de contacto efectivo comercial</strong>
             </div>
             <ul class="project-points">
-              <li><strong>Desafío:</strong> Campañas masivas estáticas y baja tasa de conversión de productos financieros por ejecutivos de cuenta.</li>
-              <li><strong>Solución:</strong> Arquitectura de motor de recomendación integrando modelos RFM, propensión de compra y clustering de comercios.</li>
+              <li><strong>Desafío:</strong> Campañas comerciales masivas indiferenciadas con baja tasa de conversión y falta de priorización de rentabilidad para ejecutivos.</li>
+              <li><strong>Solución:</strong> Algoritmo multiclase basado en árboles de decisión balanceados por el margen financiero histórico para determinar canastas óptimas de productos.</li>
             </ul>
           </div>
           <div class="project-footer">
             <div class="project-tech">
-              <span class="tech-tag">LightGBM</span>
+              <span class="tech-tag">Árboles de Decisión</span>
               <span class="tech-tag">RecSys</span>
-              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">AWS MLOps</span>
+              <span class="tech-tag">Salesforce</span>
             </div>
             <button class="btn-card-link view-project-btn" data-project="itau-recommender">
               Ver detalles ➔
@@ -371,23 +412,52 @@ layout: null
           </div>
         </div>
 
-        <!-- Project 3: HipoRefi-CL -->
-        <div class="project-card" data-category="opensource">
+        <!-- Project 4: Itaú GenAI Pitch Ganador -->
+        <div class="project-card" data-category="finance genai">
           <div class="project-top">
-            <span class="project-domain opensource">Open Source</span>
+            <span class="project-domain genai">GenAI & Finanzas</span>
+          </div>
+          <h3 class="project-title">Pitch Ganador: Generador de Argumentarios (LLMs)</h3>
+          <div class="project-org">Banco Itaú · Laboratorio de Innovación ItaúX</div>
+          <div class="project-body">
+            <div class="project-metric-highlight">
+              <span>Impacto:</span> <strong>Discursos hiperpersonalizados en Salesforce CRM</strong>
+            </div>
+            <ul class="project-points">
+              <li><strong>Desafío:</strong> El ejecutivo requería adaptar su discurso en tiempo real según el perfil transaccional y sociodemográfico específico de cada cliente.</li>
+              <li><strong>Solución:</strong> Sistema de recomendación discursiva con LLMs que procesa tenencia de activos y transcripciones de llamadas telefónicas históricas.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">LLMs & Prompting</span>
+              <span class="tech-tag">Speech Analytics</span>
+              <span class="tech-tag">Salesforce CRM</span>
+              <span class="tech-tag">BigQuery</span>
+            </div>
+            <button class="btn-card-link view-project-btn" data-project="itau-pitch-llm">
+              Ver detalles ➔
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 5: HipoRefi-CL -->
+        <div class="project-card" data-category="opensource finance">
+          <div class="project-top">
+            <span class="project-domain opensource">Open Source & Finanzas</span>
             <a href="https://github.com/surzua/HipoRefi-CL" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver repositorio HipoRefi-CL">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             </a>
           </div>
-          <h3 class="project-title">HipoRefi-CL: Simulador & Optimizador Hipotecario</h3>
-          <div class="project-org">GitHub: surzua/HipoRefi-CL</div>
+          <h3 class="project-title">HipoRefi-CL: Optimizador Hipotecario en Chile</h3>
+          <div class="project-org">GitHub: surzua/HipoRefi-CL · Finanzas Cuantitativas</div>
           <div class="project-body">
             <div class="project-metric-highlight">
               <span>Impacto:</span> <strong>Optimización de VPN, TIR y Break-Even en UF</strong>
             </div>
             <ul class="project-points">
-              <li><strong>Desafío:</strong> Dificultad para determinar el momento óptimo de refinanciar créditos hipotecarios considerando costos operacionales chilenos.</li>
-              <li><strong>Solución:</strong> Algoritmo en Python que proyecta tablas de amortización, descuenta flujos a valor presente y evalúa sensibilidad de tasas.</li>
+              <li><strong>Desafío:</strong> Complejidad para determinar si refinanciar un crédito genera ahorro neto considerando costos operacionales chilenos (tasación, títulos, CBR).</li>
+              <li><strong>Solución:</strong> Algoritmo en Python que proyecta tablas de amortización, descuenta flujos a valor presente y evalúa la sensibilidad de tasas de mercado.</li>
             </ul>
           </div>
           <div class="project-footer">
@@ -395,6 +465,7 @@ layout: null
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Finanzas Cuantitativas</span>
               <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">Hipotecarios UF</span>
             </div>
             <button class="btn-card-link view-project-btn" data-project="hiporefi-cl">
               Ver detalles ➔
@@ -402,19 +473,49 @@ layout: null
           </div>
         </div>
 
-        <!-- Project 4: Credit Policy Optimizer -->
-        <div class="project-card" data-category="opensource">
+        <!-- Project 6: Digital Account Risk & Batalla de Datos -->
+        <div class="project-card" data-category="finance">
           <div class="project-top">
-            <span class="project-domain opensource">Open Source</span>
+            <span class="project-domain finance">Banca & Finanzas</span>
+            <span class="cred-badge" style="padding: 2px 8px; font-size: 0.72rem;">2° Lugar Itaú Brasil</span>
+          </div>
+          <h3 class="project-title">Scoring Alternativo & Batalla de Datos Regional</h3>
+          <div class="project-org">Banco Itaú · Inclusión Financiera & Analytics</div>
+          <div class="project-body">
+            <div class="project-metric-highlight">
+              <span>Impacto:</span> <strong>2° Lugar Regional LatAm · Bancarización no tradicional</strong>
+            </div>
+            <ul class="project-points">
+              <li><strong>Desafío:</strong> Evaluar solvencia en segmentos no bancarizados sin bureau crediticio y anticipar caídas de satisfacción del cliente (NPS).</li>
+              <li><strong>Solución:</strong> Modelos de scoring combinando psicometría con huella transaccional, más modelo predictivo proxy al NPS para acciones preventivas.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">LightGBM</span>
+              <span class="tech-tag">Psicometría</span>
+              <span class="tech-tag">Credit Risk</span>
+              <span class="tech-tag">BigQuery</span>
+            </div>
+            <button class="btn-card-link view-project-btn" data-project="itau-digital-risk">
+              Ver detalles ➔
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 7: Credit Policy Optimizer -->
+        <div class="project-card" data-category="opensource finance">
+          <div class="project-top">
+            <span class="project-domain opensource">Open Source & Riesgo</span>
             <a href="https://github.com/surzua/credit-policy-optimizer" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver repositorio credit-policy-optimizer">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             </a>
           </div>
           <h3 class="project-title">Credit Policy Optimizer: Frontera Eficiente de Riesgo</h3>
-          <div class="project-org">GitHub: surzua/credit-policy-optimizer</div>
+          <div class="project-org">GitHub: surzua/credit-policy-optimizer · Risk Analytics</div>
           <div class="project-body">
             <div class="project-metric-highlight">
-              <span>Impacto:</span> <strong>Optimización de corte de mora y utilidad neta</strong>
+              <span>Impacto:</span> <strong>Optimización de corte de mora (Cut-off) y utilidad</strong>
             </div>
             <ul class="project-points">
               <li><strong>Desafío:</strong> Ineficiencia al definir puntos de corte de aprobación crediticia entre volumen comercial y pérdida esperada (PD).</li>
@@ -426,6 +527,7 @@ layout: null
               <span class="tech-tag">Optimización</span>
               <span class="tech-tag">SciPy Optimize</span>
               <span class="tech-tag">Credit Risk</span>
+              <span class="tech-tag">ROC Curve</span>
             </div>
             <button class="btn-card-link view-project-btn" data-project="credit-policy">
               Ver detalles ➔
@@ -433,62 +535,131 @@ layout: null
           </div>
         </div>
 
-        <!-- Project 5: Digital Account Risk -->
-        <div class="project-card" data-category="finance">
-          <div class="project-top">
-            <span class="project-domain finance">Banca & Finanzas</span>
-            <span class="cred-badge" style="padding: 2px 8px; font-size: 0.72rem;">2° Lugar Itaú Brasil</span>
-          </div>
-          <h3 class="project-title">Scoring Crediticio con Psicometría & Huella Digital</h3>
-          <div class="project-org">Banco Itaú · Inclusión Financiera</div>
-          <div class="project-body">
-            <div class="project-metric-highlight">
-              <span>Impacto:</span> <strong>Bancarización de segmentos no tradicionales</strong>
-            </div>
-            <ul class="project-points">
-              <li><strong>Desafío:</strong> Evaluar riesgo en segmentos no bancarizados sin historial crediticio en bureaus comerciales.</li>
-              <li><strong>Solución:</strong> Modelo de scoring alternativo combinando variables psicométricas con patrones transaccionales digitales.</li>
-            </ul>
-          </div>
-          <div class="project-footer">
-            <div class="project-tech">
-              <span class="tech-tag">Machine Learning</span>
-              <span class="tech-tag">Psicometría</span>
-              <span class="tech-tag">LightGBM</span>
-            </div>
-            <button class="btn-card-link view-project-btn" data-project="digital-account-risk">
-              Ver detalles ➔
-            </button>
-          </div>
-        </div>
-
-        <!-- Project 6: Fraud & Anomalies Retail -->
+        <!-- Project 8: Fraud & Anomalies Retail + Actuarial -->
         <div class="project-card" data-category="supply-chain">
           <div class="project-top">
             <span class="project-domain supply-chain">Supply Chain & Auditoría</span>
           </div>
-          <h3 class="project-title">Detección de Fraude & Anomalías en Retail Mayorista</h3>
-          <div class="project-org">KPMG Insights Center</div>
+          <h3 class="project-title">Detección de Fraude & Modelos Actuariales</h3>
+          <div class="project-org">KPMG · Data & Analytics Insights Center</div>
           <div class="project-body">
             <div class="project-metric-highlight">
-              <span>Impacto:</span> <strong>Auditoría estocástica y reducción de pérdidas</strong>
+              <span>Impacto:</span> <strong>Scoring multivariable · Vectorización en R (IAS 19)</strong>
             </div>
             <ul class="project-points">
-              <li><strong>Desafío:</strong> Anomalías no detectadas en pagos a proveedores y notas de crédito en cajas registradoras masivas.</li>
-              <li><strong>Solución:</strong> Modelos no supervisados de detección de outliers, OCR para validación de documentos y marco DAMA.</li>
+              <li><strong>Desafío:</strong> Fugas de capital en retail mayorista y lentitud en hojas de cálculo para cálculo de pasivos laborales (indemnizaciones PIAS).</li>
+              <li><strong>Solución:</strong> Motor estadístico ponderando >20 reglas de negocio para cientos de miles de transacciones y migración de modelos a scripts vectorizados en R.</li>
             </ul>
           </div>
           <div class="project-footer">
             <div class="project-tech">
-              <span class="tech-tag">Computer Vision</span>
-              <span class="tech-tag">Detección Outliers</span>
+              <span class="tech-tag">Scoring Multivariable</span>
+              <span class="tech-tag">R Vectorizado</span>
+              <span class="tech-tag">K-Prototypes</span>
               <span class="tech-tag">DAMA</span>
             </div>
-            <button class="btn-card-link view-project-btn" data-project="fraud-retail">
+            <button class="btn-card-link view-project-btn" data-project="kpmg-fraud-audit">
               Ver detalles ➔
             </button>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Articles & Technical Essays Section
+       ======================================================================== -->
+  <section id="articulos" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Divulgación & Análisis Técnico</span>
+        <h2 class="section-title">Artículos & Ensayos Cuantitativos</h2>
+        <p class="section-subtitle">
+          Análisis profundos donde convergen finanzas cuantitativas, investigación operativa, Machine Learning y visión de negocio aplicada a problemas reales.
+        </p>
+      </div>
+
+      <div class="articles-grid">
+        <!-- Article 1: Featured HipoRefi-CL -->
+        <article class="article-card featured">
+          <div class="article-badge-row">
+            <span class="project-domain finance">Finanzas Cuantitativas</span>
+            <span class="article-read-time">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Artículo Destacado · Próxima Publicación
+            </span>
+          </div>
+          <h3 class="article-title">
+            <a href="/articulos/hiporefi-cl-decision-refinanciamiento/" class="article-title-link">
+              HipoRefi-CL: ¿Cuándo conviene realmente refinanciar un crédito hipotecario en Chile?
+            </a>
+          </h3>
+          <p class="article-summary">
+            Un análisis cuantitativo riguroso que modela la estructura de amortización en UF, el impacto real de los gastos operacionales (tasación, estudio de títulos, conservador y notaría) y la evaluación de VPN y TIR para identificar el punto óptimo de decisión financiera.
+          </p>
+          <div class="article-meta-bottom">
+            <div class="article-tags">
+              <span class="tech-tag">Hipotecarios UF</span>
+              <span class="tech-tag">VPN & TIR</span>
+              <span class="tech-tag">Simulación Python</span>
+              <span class="tech-tag">Sensibilidad de Tasas</span>
+            </div>
+            <a href="/articulos/hiporefi-cl-decision-refinanciamiento/" class="btn-card-link">
+              Ver Estructura / Leer Borrador ➔
+            </a>
+          </div>
+        </article>
+
+        <!-- Article 2: GenAI & A/B Testing in Supply Chain -->
+        <article class="article-card">
+          <div class="article-badge-row">
+            <span class="project-domain genai">GenAI & Retail</span>
+            <span class="article-read-time">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              En Preparación
+            </span>
+          </div>
+          <h3 class="article-title">
+            De la Inferencia con LLMs al Impacto Causal: Corrigiendo Catálogos Masivos con Vertex AI y A/B Testing
+          </h3>
+          <p class="article-summary">
+            Cómo estructurar un pipeline de 5 fases para resolver la falta de ground truth en catálogos de e-commerce y validar estadísticamente un retorno superior a 7.7M USD mediante diseño experimental riguroso.
+          </p>
+          <div class="article-meta-bottom">
+            <div class="article-tags">
+              <span class="tech-tag">Vertex AI</span>
+              <span class="tech-tag">Few-Shot Prompting</span>
+              <span class="tech-tag">A/B Testing</span>
+            </div>
+            <span class="coming-soon-badge">Próximamente</span>
+          </div>
+        </article>
+
+        <!-- Article 3: RecSys in Banking -->
+        <article class="article-card">
+          <div class="article-badge-row">
+            <span class="project-domain supply-chain">Banca & Analytics</span>
+            <span class="article-read-time">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              En Preparación
+            </span>
+          </div>
+          <h3 class="article-title">
+            Recomendadores Multiproducto y Margen Financiero: Lecciones del Motor ItaúX
+          </h3>
+          <p class="article-summary">
+            Por qué maximizar probabilidad de clic no es suficiente en banca: balanceando la función objetivo con el margen de contribución histórico y empoderando al ejecutivo con argumentarios contextuales en CRM.
+          </p>
+          <div class="article-meta-bottom">
+            <div class="article-tags">
+              <span class="tech-tag">RecSys</span>
+              <span class="tech-tag">Margen Financiero</span>
+              <span class="tech-tag">Premio Transforma</span>
+            </div>
+            <span class="coming-soon-badge">Próximamente</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -516,17 +687,17 @@ layout: null
                 <line x1="12" y1="16" x2="12.01" y2="16"></line>
               </svg>
             </div>
-            <h3 class="skill-box-title">Optimización Matemática</h3>
+            <h3 class="skill-box-title">Optimización & Investigación Operativa</h3>
           </div>
           <div class="skill-items">
             <span class="skill-item">Pyomo</span>
             <span class="skill-item">AMPL</span>
             <span class="skill-item">MiniZinc</span>
-            <span class="skill-item">BoCop</span>
-            <span class="skill-item">Mixed-Integer (MIP)</span>
+            <span class="skill-item">Mixed-Integer (MILP)</span>
             <span class="skill-item">Programación Lineal</span>
             <span class="skill-item">Programación No Lineal</span>
             <span class="skill-item">Simulación Numérica</span>
+            <span class="skill-item">Ruteo & Grafos</span>
           </div>
         </div>
 
@@ -538,18 +709,18 @@ layout: null
                 <polyline points="8 6 2 12 8 18"></polyline>
               </svg>
             </div>
-            <h3 class="skill-box-title">Data Science & Modelamiento</h3>
+            <h3 class="skill-box-title">Data Science & Experimentación</h3>
           </div>
           <div class="skill-items">
-            <span class="skill-item">Python</span>
-            <span class="skill-item">Polars</span>
-            <span class="skill-item">Pandas</span>
+            <span class="skill-item">Python (Polars, Pandas)</span>
             <span class="skill-item">Scikit-Learn</span>
             <span class="skill-item">LightGBM</span>
             <span class="skill-item">PyTorch</span>
+            <span class="skill-item">A/B Testing & Tests A/A</span>
+            <span class="skill-item">Muestreo Estratificado</span>
+            <span class="skill-item">Series de Tiempo</span>
             <span class="skill-item">SQL Avanzado</span>
-            <span class="skill-item">R</span>
-            <span class="skill-item">Git / Bash</span>
+            <span class="skill-item">R Vectorizado</span>
           </div>
         </div>
 
@@ -561,15 +732,16 @@ layout: null
                 <path d="M12 6v6l4 2"></path>
               </svg>
             </div>
-            <h3 class="skill-box-title">Generative AI & LLMs</h3>
+            <h3 class="skill-box-title">Inteligencia Artificial & LLMs (GenAI)</h3>
           </div>
           <div class="skill-items">
-            <span class="skill-item">Arquitecturas RAG</span>
-            <span class="skill-item">LangChain</span>
+            <span class="skill-item">Google Vertex AI</span>
+            <span class="skill-item">Prompt Engineering (Few-Shot)</span>
             <span class="skill-item">APIs de LLMs</span>
-            <span class="skill-item">Prompt Engineering</span>
-            <span class="skill-item">Hugging Face</span>
-            <span class="skill-item">Vector Databases</span>
+            <span class="skill-item">Clasificación Semántica</span>
+            <span class="skill-item">Ground Truth Sintético</span>
+            <span class="skill-item">Speech Analytics en CRM</span>
+            <span class="skill-item">Arquitecturas RAG</span>
           </div>
         </div>
 
@@ -580,16 +752,37 @@ layout: null
                 <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
               </svg>
             </div>
-            <h3 class="skill-box-title">Cloud, Datos & DevOps</h3>
+            <h3 class="skill-box-title">Cloud, MLOps & Arquitectura</h3>
           </div>
           <div class="skill-items">
-            <span class="skill-item">AWS</span>
-            <span class="skill-item">Google Cloud (GCP)</span>
-            <span class="skill-item">Docker</span>
-            <span class="skill-item">Linux</span>
+            <span class="skill-item">Google Cloud Platform (BigQuery)</span>
+            <span class="skill-item">AWS (MLOps Framework, S3)</span>
+            <span class="skill-item">Docker & Linux</span>
             <span class="skill-item">CI/CD Pipelines</span>
-            <span class="skill-item">Power BI (DAX)</span>
-            <span class="skill-item">Power Query</span>
+            <span class="skill-item">Git & GitHub</span>
+            <span class="skill-item">Salesforce CRM</span>
+            <span class="skill-item">SQL Server</span>
+          </div>
+        </div>
+
+        <div class="skill-box">
+          <div class="skill-box-header">
+            <div class="skill-box-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="skill-box-title">Visualización & Business Intelligence</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-item">Power BI</span>
+            <span class="skill-item">DAX Avanzado</span>
+            <span class="skill-item">Power Query (M)</span>
+            <span class="skill-item">Matplotlib / Seaborn</span>
+            <span class="skill-item">Reporting Ejecutivo</span>
+            <span class="skill-item">Tableros de Decisión</span>
           </div>
         </div>
 
@@ -601,14 +794,38 @@ layout: null
                 <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
               </svg>
             </div>
-            <h3 class="skill-box-title">Estrategia & Liderazgo (MBA)</h3>
+            <h3 class="skill-box-title">Estrategia Ejecutiva & Negocio (MBA)</h3>
           </div>
           <div class="skill-items">
-            <span class="skill-item">Business Case Design</span>
-            <span class="skill-item">Metodologías Ágiles (Scrum)</span>
-            <span class="skill-item">Data Governance (DAMA)</span>
+            <span class="skill-item">Diseño de Business Cases Cuantitativos</span>
+            <span class="skill-item">Metodologías Ágiles (Scrum con POs)</span>
+            <span class="skill-item">Data Governance (Metodología DAMA)</span>
+            <span class="skill-item">Finanzas Corporativas & P&L</span>
             <span class="skill-item">Rediseño de Procesos</span>
-            <span class="skill-item">Gestión de Portafolio</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications & Languages Bar -->
+      <div style="margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+        <div class="metric-card" style="text-align: left; padding: 18px 24px;">
+          <div style="font-size: 0.85rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 8px;">
+            📜 Certificaciones Profesionales
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+            • <b>Microsoft:</b> Azure AI Fundamentals | Azure Fundamentals (2021)<br>
+            • <b>DeepLearning.AI:</b> TensorFlow Developer | Improving Deep Neural Networks (2021)<br>
+            • <b>Coursera:</b> Neural Networks & Deep Learning | Cluster Analysis in Data Mining | Git
+          </div>
+        </div>
+
+        <div class="metric-card" style="text-align: left; padding: 18px 24px;">
+          <div style="font-size: 0.85rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 8px;">
+            🌐 Idiomas
+          </div>
+          <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            • <b>Español:</b> Nativo<br>
+            • <b>Inglés:</b> Avanzado (Fluidez Técnica / Negocios Internacionales)
           </div>
         </div>
       </div>
@@ -624,7 +841,7 @@ layout: null
         <span class="section-tag">Historial Profesional</span>
         <h2 class="section-title">Trayectoria & Formación de Élite</h2>
         <p class="section-subtitle">
-          Evolución profesional liderando proyectos analíticos de alta envergadura y formación académica continua.
+          Evolución profesional liderando proyectos analíticos de alto impacto y formación académica continua.
         </p>
       </div>
 
@@ -635,43 +852,50 @@ layout: null
 
       <!-- Experience Timeline -->
       <div id="timeline-experience" class="timeline-container">
+        <!-- Falabella -->
         <div class="timeline-card">
           <div class="timeline-dot"></div>
           <div class="timeline-header">
             <div>
               <div class="timeline-role">Data Scientist Senior</div>
-              <div class="timeline-company">SmartJob – Grupo Falabella (Advanced Analytics - Data Supply Chain)</div>
+              <div class="timeline-company">SmartJob – Grupo Falabella (FTC – Advanced Analytics Supply Chain)</div>
             </div>
-            <span class="timeline-period">Actualidad</span>
+            <span class="timeline-period">Ene 2026 – Sep 2026 · Alcance Regional</span>
           </div>
           <div class="timeline-desc">
             <ul>
-              <li><strong>Optimización de Red Logística:</strong> Desarrollo y validación del Business Case para el modelo de forecasting de capacidades, reduciendo los atrasos operativos en 2 p.p. en nodos críticos.</li>
-              <li><strong>Simplificación de Red:</strong> Liderazgo analítico para consolidar y eliminar el 40% de rutas redundantes, optimizando la entrega en alta demanda y previniendo caídas del sistema con impacto estimado de +100M en ventas.</li>
-              <li><strong>Modelamiento Cuantitativo:</strong> Integración de datos transaccionales y de inventario para la toma de decisiones operativas en tiempo real.</li>
+              <li><strong>Liderazgo Analítico & Alcance Regional:</strong> Integrante del equipo de Advanced Analytics en Falabella Tecnológico Corporativo (FTC), atendiendo el dominio de Supply Chain en el portafolio corporativo <em>Corporate Promise Engine</em> con cobertura transversal en Chile, Perú y Colombia (picking 1P/3P, centros de distribución, cross-docking, despacho y click & collect), colaborando con Product Owners de Red Logística y Catálogo.</li>
+              <li><strong>Corrección Automatizada de Catálogo (Pipeline GenAI & A/B Testing):</strong> Ante la inexistencia de un ground truth confiable en dimensiones físicas y peso que causaba distorsiones en cobros de flete y cubicaje, diseñé un pipeline productivo de 5 fases en GCP / Vertex AI: (1) normalización textual F2, (2) etiquetado semántico LLM con few-shot por categoría, (3) normalización a categorías canónicas, (4) determinación de rangos factibles con ground truth sintético, e (5) imputación robusta por mediana estadística. Validación causal con A/B Testing estratificado multivariable y Test A/A previo. <strong>Impacto económico validado experimentalmente en > 7.7M USD anuales regional (> 3.8M USD anuales en Falabella Chile)</strong>.</li>
+              <li><strong>Forecasting de Capacidades y Mitigación de Cuellos de Botella:</strong> Modelamiento predictivo de series de tiempo para proyectar capacidades operativas y anticipar saturaciones en nodos críticos, logrando una <strong>reducción de atrasos operativos en 2 puntos porcentuales</strong> sobre ~500.000 órdenes mensuales en la red de Colombia.</li>
+              <li><strong>Simplificación Topológica de la Red Logística:</strong> Modelamiento espacial mediante clustering origen-destino para consolidar y dar de baja el <strong>40% de rutas redundantes</strong>. Prevención de saturación y caídas del motor de promesa en CyberDay, <strong>protegiendo +100M CLP en ventas</strong> y reduciendo en 70% el tiempo operacional en la parametrización de red.</li>
+              <li><strong>Stack Tecnológico:</strong> GCP (BigQuery, Vertex AI), Python (Pandas, Polars, Scikit-Learn), LLMs / Prompt Engineering, Git, CI/CD.</li>
             </ul>
           </div>
         </div>
 
+        <!-- Banco Itaú -->
         <div class="timeline-card">
           <div class="timeline-dot"></div>
           <div class="timeline-header">
             <div>
               <div class="timeline-role">Data Scientist Senior</div>
-              <div class="timeline-company">Banco Itaú (Analytics – Banca Minorista)</div>
+              <div class="timeline-company">Banco Itaú (Analytics Banca Minorista – Laboratorio ItaúX)</div>
             </div>
+            <span class="timeline-period">Ene 2022 – Sep 2025 · Santiago, Chile</span>
           </div>
           <div class="timeline-desc">
             <ul>
-              <li><strong>Motor ItaúX:</strong> Arquitectura de recomendador hiperpersonalizado de productos financieros para ejecutivos de cuenta, logrando una efectividad comercial hasta 50% superior al promedio.</li>
-              <li><strong>Premio Transforma 2024:</strong> Ganador corporativo en la categoría <em>Innovación Data-Driven</em> y rediseño del pitch técnico de la iniciativa.</li>
-              <li><strong>Modelos Core de Clientes:</strong> Modelos RFM, propensión de compra, actividad transaccional y clustering de comercios para automatización de campañas.</li>
-              <li><strong>Cuenta Digital:</strong> Modelo de scoring de riesgo crediticio para segmentos no bancarizados utilizando variables psicométricas y transaccionales digitales.</li>
-              <li><strong>Competencia Regional:</strong> 2do lugar en la <em>Batalla de Datos Itaú Brasil</em> frente a equipos de analítica avanzada regionales.</li>
+              <li><strong>Motor Look-a-Likes e Hiperpersonalización (Ganador Premio Transforma 2024):</strong> Diseñado en el laboratorio de innovación ItaúX (sucursales piloto IS3 y PB4) para reemplazar campañas masivas BAU. Algoritmo multiclase en árboles de decisión balanceados por el margen financiero histórico de cada producto contratado para definir canastas óptimas (consumo, hipotecarios, TC, depósitos, fondos mutuos, remuneraciones y seguros). <strong>Incremento del +50% en tasa de contacto efectivo</strong> y galardonado con el <strong>Premio corporativo Transforma 2024 en Innovación Data-Driven</strong>.</li>
+              <li><strong>Generador de Argumentario Comercial "Pitch Ganador" (LLMs en CRM):</strong> Sistema de recomendación discursiva con LLMs que sintetiza variables sociodemográficas y de tenencia de activos con transcripciones de llamadas telefónicas históricas, generando discursos comerciales hiperpersonalizados integrados directamente en Salesforce CRM.</li>
+              <li><strong>Modelos Core de Clientes y Automatización MLOps:</strong> Modelos de propensión transaccional productivizados sobre arquitectura MLOps en AWS. Segmentaciones analíticas recurrentes (RFM, clustering de comercios) mediante consultas programadas en BigQuery e integradas a Salesforce CRM.</li>
+              <li><strong>Competencia Regional (Batalla de Datos Itaú Brasil):</strong> <strong>2do lugar regional</strong> entre equipos de analítica avanzada de América Latina mediante el diseño de un modelo predictivo proxy al Net Promoter Score (NPS) para anticipar insatisfacciones y gatillar acciones preventivas.</li>
+              <li><strong>Exploración de Scoring Alternativo (PoC Cuenta Digital):</strong> Modelos de riesgo crediticio para segmentos no bancarizados a partir de encuestas psicométricas como variables proxy de cumplimiento.</li>
+              <li><strong>Stack Tecnológico:</strong> AWS (MLOps framework), Google BigQuery, SQL avanzado, Python (Scikit-Learn, Pandas), LLMs / Prompt Engineering, Salesforce CRM.</li>
             </ul>
           </div>
         </div>
 
+        <!-- Moneda Asset Management -->
         <div class="timeline-card">
           <div class="timeline-dot"></div>
           <div class="timeline-header">
@@ -679,16 +903,18 @@ layout: null
               <div class="timeline-role">Data Scientist Engineer</div>
               <div class="timeline-company">Moneda Asset Management (Procesos y Sistemas, TI)</div>
             </div>
+            <span class="timeline-period">May 2021 – Ene 2022 · Santiago, Chile</span>
           </div>
           <div class="timeline-desc">
             <ul>
-              <li>Desarrollo de plataforma analítica para monitoreo y comparación de tipos de cambio (FX) mediante pipelines en Python y tableros en Power BI.</li>
-              <li>Construcción de sistema automatizado para administración, seguimiento y scoring de recomendaciones de fondos de inversión.</li>
-              <li>Implementación de políticas de Data Governance y optimización de flujos de extracción en entornos SQL.</li>
+              <li><strong>Monitoreo Automatizado de Divisas (FX):</strong> Pipeline diario en Python para la extracción, conciliación y seguimiento de tipos de cambio internacionales y locales, con detección automática de desfases operativos entre mesas de dinero, control de spreads y alertas de volatilidad. Tableros ejecutivos en Power BI.</li>
+              <li><strong>Data Governance & Optimización de Consultas:</strong> Estandarización de flujos y gobierno de datos en SQL Server corporativo, mejorando significativamente tiempos de ejecución de reportes financieros críticos.</li>
+              <li><strong>Stack Tecnológico:</strong> Python, SQL Server, Power BI (DAX, Power Query), Git.</li>
             </ul>
           </div>
         </div>
 
+        <!-- KPMG -->
         <div class="timeline-card">
           <div class="timeline-dot"></div>
           <div class="timeline-header">
@@ -696,17 +922,21 @@ layout: null
               <div class="timeline-role">Data Scientist</div>
               <div class="timeline-company">KPMG (Data & Analytics – Insights Center)</div>
             </div>
+            <span class="timeline-period">Oct 2017 – May 2021 · Santiago, Chile</span>
           </div>
           <div class="timeline-desc">
             <ul>
-              <li><strong>Fraude y Anomalías:</strong> Modelos de Machine Learning para detección de fraude en pagos a proveedores retail y anomalías en emisión de notas de crédito en supermercados mayoristas.</li>
-              <li><strong>Computer Vision y OCR:</strong> Automatización de extracción y validación de texto a partir de imágenes de certificados digitales y cédulas de identidad.</li>
-              <li><strong>Data Governance:</strong> Asesoría técnica e implementación de gobernanza bajo metodología DAMA para aseguradoras y fondos de pensiones.</li>
-              <li><strong>Modelos de Riesgo:</strong> Perfilamiento de morosidad y desarrollo de la herramienta global <em>CbyC Tool</em> para cuantificación de riesgo de evasión fiscal.</li>
+              <li><strong>Detección de Fraude y Auditoría Cuantitativa en Retail / Mayoristas:</strong> Co-diseño de más de 20 reglas de negocio y construcción de motor estadístico de scoring multivariable que ponderó reglas para priorizar transacciones sospechosas en cientos de miles de registros (notas de crédito y pagos a proveedores).</li>
+              <li><strong>Perfilamiento de Morosidad (Concesionarias de Autopistas):</strong> Segmentación de usuarios con algoritmos K-Prototypes tratando simultáneamente variables numéricas y categóricas para conducta de pago de telepeaje (TAG) y riesgo de incobrabilidad.</li>
+              <li><strong>Modernización y Vectorización de Modelos Actuariales:</strong> Reingeniería de cálculo de pasivos laborales de Provisión por Indemnización por Años de Servicio (PIAS / IAS 19), migrando hojas de cálculo manuales a scripts vectorizados en R con drástica optimización en cómputo y trazabilidad matemática ante comités de auditoría.</li>
+              <li><strong>Visión Computacional y OCR:</strong> Scripts de extracción automatizada de texto con OpenCV y Tesseract OCR para formularios legales y documentos en inscripción tributaria.</li>
+              <li><strong>Data Governance:</strong> Asesoría e implementación de marcos de gobernanza bajo estándar DAMA para compañías de seguros y administradoras de fondos de pensiones.</li>
+              <li><strong>Stack Tecnológico:</strong> Python, R, OpenCV, Tesseract OCR, SQL, Power BI, Metodología DAMA.</li>
             </ul>
           </div>
         </div>
 
+        <!-- Universidad de Chile -->
         <div class="timeline-card">
           <div class="timeline-dot"></div>
           <div class="timeline-header">
@@ -714,9 +944,10 @@ layout: null
               <div class="timeline-role">Profesor Auxiliar</div>
               <div class="timeline-company">Universidad de Chile (Facultad de Ciencias Físicas y Matemáticas)</div>
             </div>
+            <span class="timeline-period">Mar 2011 – Jul 2017 · Santiago, Chile</span>
           </div>
           <div class="timeline-desc">
-            Docencia universitaria en cátedras avanzadas de ingeniería: Cálculo Diferencial e Integral, Cálculo en Varias Variables y Cálculo Avanzado.
+            Docencia y cátedras de ejercicios para cursos formativos y avanzados de ingeniería: Cálculo Diferencial e Integral, Cálculo en Varias Variables, Álgebra Lineal y Cálculo Avanzado. Preparación de material pedagógico, diseño y corrección de evaluaciones para grupos de más de 80 alumnos por semestre.
           </div>
         </div>
       </div>
@@ -728,12 +959,13 @@ layout: null
           <div class="timeline-header">
             <div>
               <div class="timeline-role">Master of Business Administration (MBA)</div>
-              <div class="timeline-company">Universidad de Chile</div>
+              <div class="timeline-company">Universidad de Chile – FCFM / DCS</div>
             </div>
+            <span class="timeline-period">Graduación: Jul 2025</span>
           </div>
           <span class="timeline-grade">Nota de Graduación: 6.3 / 7.0</span>
           <div class="timeline-desc">
-            Formación ejecutiva orientada a estrategia corporativa, finanzas corporativas, formulación de modelos de negocio y liderazgo de equipos de alto rendimiento.
+            Formación directiva en estrategia corporativa, finanzas, diseño de modelos de negocio y liderazgo de equipos de alto rendimiento. Integración de visión de negocio con capacidades técnicas avanzadas.
           </div>
         </div>
 
@@ -742,12 +974,13 @@ layout: null
           <div class="timeline-header">
             <div>
               <div class="timeline-role">Magíster en Ciencias de la Ingeniería, mención Matemática Aplicada</div>
-              <div class="timeline-company">Universidad de Chile</div>
+              <div class="timeline-company">Universidad de Chile – Centro de Modelamiento Matemático (CMM)</div>
             </div>
+            <span class="timeline-period">Graduación: Jun 2017</span>
           </div>
           <span class="timeline-grade">Nota de Graduación: 6.6 / 7.0</span>
           <div class="timeline-desc">
-            Tesis de postgrado: <em>"Escurrimiento de Fluidos Newtonianos y no Newtonianos en medios porosos"</em> (Prof. Guía: Dr. Raúl Gormaz). Modelamiento de ecuaciones en derivadas parciales y métodos numéricos avanzados.
+            Tesis de postgrado: <em>"Escurrimiento de Fluidos Newtonianos y no Newtonianos en medios porosos"</em> (Profesor Guía: Dr. Raúl Gormaz). Modelamiento de ecuaciones diferenciales en derivadas parciales y simulación numérica avanzada.
           </div>
         </div>
 
@@ -758,12 +991,13 @@ layout: null
               <div class="timeline-role">Ingeniería Civil Matemática</div>
               <div class="timeline-company">Universidad de Chile (FCFM - Beauchef)</div>
             </div>
+            <span class="timeline-period">Graduación: Jun 2017</span>
           </div>
           <span class="timeline-grade" style="color: #10b981; border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1);">
             Nota de Graduación: 7.0 / 7.0 (Distinción Máxima)
           </span>
           <div class="timeline-desc">
-            Rigor matemático en análisis funcional, probabilidad y procesos estocásticos, optimización continua y discreta, y análisis numérico.
+            <strong>Calificación máxima histórica en examen de titulación y defensa de grado.</strong> Rigor analítico en análisis matemático, teoría de probabilidades, optimización continua y discreta, y análisis numérico.
           </div>
         </div>
       </div>

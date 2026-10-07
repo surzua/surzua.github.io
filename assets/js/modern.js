@@ -111,8 +111,9 @@ function initProjectFiltering() {
       const filter = btn.getAttribute('data-filter');
 
       projectCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || category === filter) {
+        const categoryAttr = card.getAttribute('data-category') || '';
+        const categories = categoryAttr.split(/\s+/);
+        if (filter === 'all' || categories.includes(filter)) {
           card.style.display = 'flex';
           setTimeout(() => {
             card.style.opacity = '1';
@@ -161,65 +162,85 @@ function initTimelineTabs() {
    Project Details Modal
    ========================================================================== */
 const projectData = {
+  'falabella-genai': {
+    title: 'Corrección Automatizada de Variables de Catálogo (Pipeline GenAI & A/B Testing)',
+    org: 'SmartJob – Grupo Falabella (FTC – Corporate Promise Engine)',
+    domain: 'GenAI & Supply Chain',
+    metric: '> 7.7M USD anuales regional (> 3.8M USD en Chile) · A/B Testing Causal',
+    problem: 'Inconsistencias severas y errores tipográficos/unidades en dimensiones físicas empaquetadas (alto, largo, ancho y peso), causando subcobro o sobrecobro de fletes a clientes, pérdidas en almacenamiento y fricciones contractuales con sellers. La inexistencia de un ground truth confiable impedía modelos supervisados estándar.',
+    solution: 'Diseño e implementación de un pipeline productivo de 5 fases en GCP / Vertex AI: (1) Preprocesamiento: normalización y limpieza textual de títulos, marcas, modelos, descripciones y taxonomía F2; (2) Etiquetado semántico con LLMs mediante few-shot learning especializado por categoría F2 para agrupar SKUs con packaging equiparable; (3) Normalización y colapso de respuestas a categorías canónicas; (4) Rangos factibles con ground truth sintético combinando distribuciones empíricas del cluster y conocimiento experto inferido; (5) Imputación robusta mediante la mediana estadística de SKUs válidos. Validación experimental causal con A/B Testing estratificado multivariable (seller, precio, categoría, rotación) con Test A/A previo.',
+    impact: 'Impacto económico validado experimentalmente en > 7.7M USD anuales a nivel corporativo regional (> 3.8M USD anuales únicamente en Falabella Chile) por regularización de cobros de flete, ventas y cubicaje óptimo.',
+    stack: 'GCP (Vertex AI, BigQuery), Python (Polars, Pandas, Scikit-Learn), LLMs / Few-Shot Prompting, A/B Testing, CI/CD'
+  },
   'falabella-logistics': {
-    title: 'Optimización de Red Logística & Forecasting de Capacidad',
-    org: 'SmartJob – Grupo Falabella (Supply Chain Analytics)',
+    title: 'Forecasting de Capacidades & Simplificación Topológica de Red',
+    org: 'SmartJob – Grupo Falabella (FTC – Red Logística)',
     domain: 'Supply Chain & Optimización',
-    metric: '+100M en ventas protegidas · -2 p.p. en atrasos críticos',
-    problem: 'En eventos de alta demanda y picos de tráfico en e-commerce y retail mayorista, los nodos logísticos sufrían saturaciones y cuellos de botella que generaban retrasos acumulativos y ponían en riesgo el cumplimiento comercial.',
-    solution: 'Liderazgo analítico y construcción del Business Case para un modelo de forecasting cuantitativo de capacidad en nodos de transferencia, integrando datos transaccionales de órdenes, stock e inventario en tiempo real. Formulación de modelos matemáticos para consolidar y podar el 40% de rutas redundantes en la red de despacho.',
-    impact: 'Reducción de los atrasos operativos en 2 puntos porcentuales en nodos críticos de la red, disminución de costos por fletes no eficientes y mitigación de fallas del sistema con un impacto estimado superior a +100M en ventas.',
-    stack: 'Python, Polars, Pyomo (Mixed-Integer Programming), Modelos Cuantitativos de Inventario, AWS, CI/CD'
+    metric: '-2 p.p. en atrasos (Colombia) · +100M CLP ventas protegidas (CyberDay)',
+    problem: 'Sobrecargas operativas en nodos críticos de la red e-commerce regional (cross-docking, picking y última milla) y topología de red sobredimensionada con rutas redundantes que ponían en riesgo la promesa de entrega y la estabilidad del motor en eventos de alta demanda.',
+    solution: 'Modelamiento predictivo de series de tiempo para proyectar capacidades operativas y anticipar saturaciones en nodos críticos de la red. Implementación de modelamiento espacial mediante clustering origen-destino para consolidar y dar de baja el 40% de rutas redundantes en la red logística.',
+    impact: 'Reducción de atrasos operativos en 2 puntos porcentuales sobre un flujo mensual de aproximadamente 500.000 órdenes en la red de Colombia. Prevención de saturación y caídas del motor de promesa en CyberDay (+100M CLP en ventas protegidas) y un 70% de reducción de tiempo operacional en la parametrización de la red.',
+    stack: 'GCP (BigQuery), Python (Polars, Scikit-Learn), Pyomo (MIP), Series de Tiempo, Clustering Espacial, Git'
   },
   'itau-recommender': {
-    title: 'ItaúX: Motor de Recomendación Hiperpersonalizado',
-    org: 'Banco Itaú (Analytics – Banca Minorista)',
+    title: 'ItaúX: Motor Look-a-Likes e Hiperpersonalización Comercial',
+    org: 'Banco Itaú (Analytics Banca Minorista – Laboratorio ItaúX)',
     domain: 'Banca & Machine Learning',
-    metric: '+50% efectividad comercial · Ganador Premio Transforma 2024',
-    problem: 'Los ejecutivos de cuenta comercializaban productos financieros de forma manual o mediante campañas genéricas estáticas, con baja tasa de conversión y fricción para el cliente.',
-    solution: 'Diseño integral de la arquitectura del motor de recomendación ItaúX. Se integraron modelos de propensión de compra, análisis de actividad transaccional (RFM) y algoritmos de clustering de comercios para entregar al ejecutivo la oferta óptima en el momento oportuno.',
-    impact: 'Incremento de la efectividad comercial de hasta un 50% superior al promedio de campañas estándar. Ganador corporativo absoluto en la categoría "Innovación Data-Driven" en el Premio Transforma 2024.',
-    stack: 'Python, Scikit-Learn, LightGBM, SQL Avanzado, Arquitectura de Producción, Rediseño de Pitch Técnico'
+    metric: '+50% tasa de contacto efectivo · Ganador Premio Transforma 2024',
+    problem: 'Campañas comerciales masivas e indiferenciadas (BAU) en banca minorista generaban baja conversión, fricción con el cliente y falta de priorización de rentabilidad para ejecutivos de sucursales digitales.',
+    solution: 'Diseño integral en el laboratorio de innovación ItaúX (sucursales piloto IS3 y PB4). Algoritmo multiclase basado en árboles de decisión balanceados por el margen financiero histórico de cada producto contratado. Las hojas del árbol determinan la canasta óptima y sus probabilidades definen el orden de prioridad comercial (créditos de consumo, hipotecarios, tarjetas de crédito, depósitos a plazo, fondos mutuos, abono de remuneraciones y seguros).',
+    impact: 'Incremento del +50% en la tasa de contacto efectivo frente al promedio de sucursales digitales del banco. Proyecto galardonado con el premio corporativo Transforma 2024 en la categoría Innovación Data-Driven.',
+    stack: 'AWS (MLOps framework), Python (Scikit-Learn, Pandas), LightGBM, SQL Avanzado, Google BigQuery, Salesforce CRM'
+  },
+  'itau-pitch-llm': {
+    title: 'Generador de Argumentario Comercial "Pitch Ganador" (LLMs en CRM)',
+    org: 'Banco Itaú (Analytics Banca Minorista – Laboratorio ItaúX)',
+    domain: 'GenAI & Finanzas',
+    metric: 'Discursos hiperpersonalizados en Salesforce CRM · Speech Analytics',
+    problem: 'Aunque el ejecutivo comercial recibía la sugerencia de producto del motor recomendador, existía heterogeneidad y falta de personalización en la conversación telefónica para conectar con las necesidades y perfil de cada cliente.',
+    solution: 'Desarrollo de un sistema de recomendación discursiva basado en LLMs que sintetiza variables sociodemográficas y de tenencia de activos con transcripciones de audio históricas de llamadas ejecutivo-cliente. Generación de discursos comerciales hiperpersonalizados que emparejan la acción comercial con el beneficio bancario más afín, integrado directamente en Salesforce CRM.',
+    impact: 'Generación de valor comercial en sucursales remotas mediante personalización en tiempo real del pitch de ventas en CRM y mayor consistencia comunicacional.',
+    stack: 'LLMs / Prompt Engineering, Speech Analytics, Google BigQuery, Salesforce CRM, Python'
   },
   'hiporefi-cl': {
-    title: 'HipoRefi-CL: Simulador & Optimizador de Refinanciamiento Hipotecario',
+    title: 'HipoRefi-CL: Simulador & Optimizador Hipotecario en Chile',
     org: 'Open Source · github.com/surzua/HipoRefi-CL',
-    domain: 'Herramientas Cuantitativas & Finanzas',
-    metric: 'Simulación Estocástica de Flujos · Análisis de Break-Even',
-    problem: 'El mercado hipotecario chileno opera en UF y con costos operacionales (tasación, estudio de títulos, conservador, gastos notariales) que dificultan evaluar si un refinanciamiento a menor tasa efectivamente genera ahorro financiero neto considerando la duración residual del crédito.',
-    solution: 'Algoritmo cuantitativo en Python que proyecta tablas de amortización completas (sistema francés/UF), descuenta flujos a valor presente neto (VPN), calcula tasas internas de retorno (TIR) y determina con precisión el plazo de recupero (payback) del costo de refinanciamiento.',
-    impact: 'Herramienta reproducible y de código abierto para que usuarios y analistas evalúen el punto óptimo de decisión de prepago y renegociación frente a la curva de tasas de mercado.',
-    stack: 'Python, NumPy, Pandas, Modelamiento Financiero Cuantitativo'
+    domain: 'Finanzas Cuantitativas & Open Source',
+    metric: 'Modelamiento en UF · VPN, TIR y Break-Even con Gastos Operacionales',
+    problem: 'El mercado hipotecario chileno opera en UF y con costos operacionales (tasación, estudio de títulos, conservador de bienes raíces, notarías) que dificultan evaluar si un refinanciamiento a menor tasa nominal realmente genera ahorro neto en el horizonte del deudor.',
+    solution: 'Algoritmo cuantitativo en Python que proyecta tablas de amortización completas (sistema francés/UF), descuenta flujos a valor presente neto (VPN), calcula tasas internas de retorno (TIR) y determina con precisión el plazo de recupero (break-even) del costo de refinanciamiento frente a curvas de tasas de mercado.',
+    impact: 'Herramienta reproducible, transparente y de código abierto para deudores e instituciones financieras para optimizar la decisión económica de prepago y refinanciamiento.',
+    stack: 'Python, NumPy, Pandas, Modelamiento Financiero Cuantitativo en UF'
+  },
+  'itau-digital-risk': {
+    title: 'Scoring Alternativo con Psicometría & 2° Lugar Itaú Brasil',
+    org: 'Banco Itaú (Analytics Banca Minorista)',
+    domain: 'Inclusión Financiera & Riesgo Alternativo',
+    metric: '2° Lugar Regional Batalla de Datos Itaú Brasil · PoC Cuenta Digital',
+    problem: 'Segmentos desbancarizados carecen de historial en bureaus de crédito tradicionales, impidiendo su acceso a cuentas y créditos. Asimismo, la red requería anticipar insatisfacciones y caídas en NPS.',
+    solution: 'Investigación y diseño experimental de modelos de riesgo crediticio para segmentos no bancarizados a partir de encuestas psicométricas como variables proxy de cumplimiento. Asimismo, diseño de un modelo predictivo proxy al Net Promoter Score (NPS) para anticipar insatisfacciones y gatillar acciones preventivas.',
+    impact: '2do lugar regional en la Batalla de Datos Itaú Brasil frente a equipos de analítica avanzada de toda Latinoamérica. Viabilidad de evaluación de riesgo para la Cuenta Digital sin historial crediticio tradicional.',
+    stack: 'AWS MLOps, Google BigQuery, Python, LightGBM, Modelos Psicométricos, SQL'
   },
   'credit-policy': {
-    title: 'Credit Policy Optimizer: Optimización de Frontera Eficiente de Crédito',
+    title: 'Credit Policy Optimizer: Frontera Eficiente de Riesgo',
     org: 'Open Source · github.com/surzua/credit-policy-optimizer',
     domain: 'Riesgo Financiero & Optimización',
-    metric: 'Búsqueda de Cut-off Óptimo · Maximización de Retorno Neto',
-    problem: 'La fijación tradicional de cortes de scoring crediticio se basa en reglas estáticas que no equilibran simultáneamente el volumen de colocación deseado, la pérdida esperada (Expected Loss / PD) y el margen de intermediación financiera.',
-    solution: 'Framework algorítmico que desacopla la probabilidad de default estimada del corte de decisión, simulando diferentes matrices de costo/beneficio y optimizando el umbral de aprobación para maximizar la función de utilidad del portafolio.',
-    impact: 'Generación automatizada de curvas de trade-off entre riesgo y volumen para la toma de decisiones ágil en comités de crédito.',
+    metric: 'Búsqueda de Cut-off Óptimo · Maximización de Utilidad Neta',
+    problem: 'La fijación tradicional de cortes de scoring crediticio se basa en reglas estáticas que no equilibran simultáneamente el volumen de colocación deseado, la pérdida esperada (Expected Loss / PD) y el margen financiero.',
+    solution: 'Framework algorítmico que desacopla la probabilidad de default estimada del corte de decisión, simulando matrices de costo-beneficio y optimizando el umbral de aprobación sobre la curva ROC para maximizar la función de utilidad del portafolio.',
+    impact: 'Generación automatizada de curvas de trade-off entre riesgo y volumen para la toma de decisiones ágil y rigurosa en comités de crédito.',
     stack: 'Python, SciPy Optimize, Matplotlib, Scikit-Learn, Risk Analytics'
   },
-  'digital-account-risk': {
-    title: 'Scoring de Riesgo Crediticio con Psicometría & Huella Digital',
-    org: 'Banco Itaú (Analytics – Banca Minorista)',
-    domain: 'Inclusión Financiera & Riesgo Alternativo',
-    metric: '2° Lugar Regional Batalla de Datos Itaú Brasil',
-    problem: 'Una gran proporción de la población joven y segmentos no bancarizados carecen de historial financiero en bureaus de crédito tradicionales, impidiendo su acceso a cuentas digitales y microcréditos.',
-    solution: 'Desarrollo de un modelo de riesgo crediticio alternativo que combinó variables psicométricas (evaluaciones de comportamiento y toma de decisiones) con variables transaccionales digitales incipientes para predecir propensión de pago y morosidad.',
-    impact: 'Habilitación de la originación de la Cuenta Digital para segmentos antes no atendidos, manteniendo controlada la tasa de default. El proyecto y equipo obtuvieron el 2° lugar en la Batalla de Datos Regional de Itaú Brasil compitiendo contra equipos de toda Latinoamérica.',
-    stack: 'Python, LightGBM, Modelos Estadísticos No Lineales, Variables Psicométricas, SQL'
-  },
-  'fraud-retail': {
-    title: 'Detección de Fraude & Anomalías en Retail Mayorista',
+  'kpmg-fraud-audit': {
+    title: 'Detección de Fraude en Retail & Vectorización Actuarial',
     org: 'KPMG (Data & Analytics – Insights Center)',
-    domain: 'Supply Chain & Analítica Forense',
-    metric: 'Detección Estocástica en Tiempo Real · Gobernanza DAMA',
-    problem: 'Vulnerabilidades operativas en el proceso de pago a proveedores de retail y emisión anómala de notas de crédito en cajas de supermercados mayoristas generaban pérdidas directas no detectadas por auditorías manuales.',
-    solution: 'Implementación de algoritmos de Machine Learning no supervisados y de cálculo estocástico para detección de outliers y patrones fraudulentos en flujos de transacciones masivas. Integración de visión computacional y OCR para validar certificados digitales y cédulas.',
-    impact: 'Detección temprana de fraudes multimillonarios, cuantificación de riesgo y establecimiento de directrices de gobernanza de datos bajo la metodología DAMA para la industria.',
-    stack: 'Machine Learning, Computer Vision (OCR), Cálculo Estocástico, DAMA Governance, SQL'
+    domain: 'Supply Chain & Auditoría Cuantitativa',
+    metric: 'Scoring Multivariable de Fraude · Vectorización de Pasivos en R (IAS 19)',
+    problem: 'Vulnerabilidades en notas de crédito y pagos a proveedores en retail mayorista; morosidad en telepeaje de autopistas; y tiempos excesivos en el cálculo manual de pasivos laborales de indemnización (PIAS / IAS 19).',
+    solution: 'Co-diseño de más de 20 reglas de negocio y construcción de motor estadístico de scoring multivariable para priorizar transacciones sospechosas en cientos de miles de registros. Modelamiento de morosidad con K-Prototypes en TAG de autopistas urbanas. Reingeniería y vectorización de modelos actuariales en scripts de R.',
+    impact: 'Fiscalización focalizada de fraudes y fugas de capital en retail; optimización drástica de tiempos de cómputo actuarial garantizando trazabilidad y reproducibilidad matemática ante comités de auditoría; y marcos de Data Governance DAMA para aseguradoras y AFPs.',
+    stack: 'Python, R Vectorizado, OpenCV, Tesseract OCR, K-Prototypes, Metodología DAMA, SQL'
   }
 };
 
