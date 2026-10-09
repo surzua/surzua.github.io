@@ -46,19 +46,19 @@ permalink: /articulos/el-umbral-del-apagon-fragilidad-electrica-santiago/
 
 <div class="article-kpi-grid">
   <div class="article-kpi-card">
-    <div class="article-kpi-value" style="color: #ef4444;">HR = 483.0</div>
+    <div class="article-kpi-value kpi-val-danger">HR = 483.0</div>
     <div class="article-kpi-label">Riesgo relativo de colapso por red aérea en postes ($p < 0.0001$)</div>
   </div>
   <div class="article-kpi-card">
-    <div class="article-kpi-value" style="color: #10b981;">HR = 1.000</div>
+    <div class="article-kpi-value kpi-val-success">HR = 1.000</div>
     <div class="article-kpi-label">Impacto de la masa de arbolado urbano ($p = 0.9961$, efecto nulo)</div>
   </div>
   <div class="article-kpi-card">
-    <div class="article-kpi-value" style="color: #06b6d4;">&gt; 40 km/h</div>
+    <div class="article-kpi-value kpi-val-cyan">&gt; 40 km/h</div>
     <div class="article-kpi-label">Brecha comunal de resistencia a ráfagas de viento ($W_{50}$)</div>
   </div>
   <div class="article-kpi-card">
-    <div class="article-kpi-value" style="color: #f59e0b;">8 Horas</div>
+    <div class="article-kpi-value kpi-val-amber">8 Horas</div>
     <div class="article-kpi-label">Mediana de supervivencia en tercil vulnerable vs. &gt;75% continuo en tercil alto</div>
   </div>
 </div>
