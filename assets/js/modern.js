@@ -169,7 +169,7 @@ function initTimelineTabs() {
 const projectData = {
   'falabella-genai': {
     title: 'Corrección Automatizada de Variables de Catálogo (Pipeline GenAI & A/B Testing)',
-    org: 'SmartJob – Grupo Falabella (FTC – Corporate Promise Engine)',
+    org: 'SmartJob · Consultoría para Grupo Falabella (FTC – Corporate Promise Engine)',
     domain: 'GenAI & Supply Chain',
     metric: '> 7.7M USD anuales regional (> 3.8M USD en Chile) · A/B Testing Causal',
     problem: 'Inconsistencias severas y errores tipográficos/unidades en dimensiones físicas empaquetadas (alto, largo, ancho y peso), causando subcobro o sobrecobro de fletes a clientes, pérdidas en almacenamiento y fricciones contractuales con sellers. La inexistencia de un ground truth confiable impedía modelos supervisados estándar.',
@@ -179,7 +179,7 @@ const projectData = {
   },
   'falabella-logistics': {
     title: 'Forecasting de Capacidades & Simplificación Topológica de Red',
-    org: 'SmartJob – Grupo Falabella (FTC – Red Logística)',
+    org: 'SmartJob · Consultoría para Grupo Falabella (FTC – Red Logística)',
     domain: 'Supply Chain & Optimización',
     metric: '-2 p.p. en atrasos (Colombia) · +100M CLP ventas protegidas (CyberDay)',
     problem: 'Sobrecargas operativas en nodos críticos de la red e-commerce regional (cross-docking, picking y última milla) y topología de red sobredimensionada con rutas redundantes que ponían en riesgo la promesa de entrega y la estabilidad del motor en eventos de alta demanda.',
