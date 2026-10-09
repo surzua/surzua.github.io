@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTimelineTabs();
   initProjectModals();
   initEmailCopy();
+  initReadingProgressBar();
+  initArticleTables();
 });
 
 /* ==========================================================================
@@ -48,13 +50,16 @@ function initNavbarScroll() {
   const header = document.querySelector('.header');
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
+  const isArticlePage = document.body.classList.contains('article-page');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
-      header.classList.add('scrolled');
+    if (window.scrollY > 30 || isArticlePage) {
+      header?.classList.add('scrolled');
     } else {
-      header.classList.remove('scrolled');
+      header?.classList.remove('scrolled');
     }
+
+    if (isArticlePage) return; // Preserve active state on article pages
 
     let currentSection = '';
     const scrollPosition = window.scrollY + 100;
@@ -330,4 +335,54 @@ function showToast(message) {
   setTimeout(() => {
     toast.classList.remove('show');
   }, 3500);
+}
+
+/* ==========================================================================
+   Article Reading Progress Bar
+   ========================================================================== */
+function initReadingProgressBar() {
+  const progressBar = document.getElementById('reading-progress-bar');
+  const article = document.querySelector('.article-body');
+  if (!progressBar || !article) return;
+
+  function updateProgress() {
+    const rect = article.getBoundingClientRect();
+    const articleTop = window.scrollY + rect.top;
+    const articleHeight = article.offsetHeight;
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    const start = articleTop - 100;
+    const total = articleHeight - windowHeight + 200;
+
+    if (total <= 0) {
+      progressBar.style.width = '100%';
+      return;
+    }
+
+    if (scrollY < start) {
+      progressBar.style.width = '0%';
+    } else {
+      const progress = Math.min(100, Math.max(0, ((scrollY - start) / total) * 100));
+      progressBar.style.width = `${progress}%`;
+    }
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+}
+
+/* ==========================================================================
+   Article Table Responsive Auto-Wrapper
+   ========================================================================== */
+function initArticleTables() {
+  document.querySelectorAll('.article-body table').forEach(table => {
+    if (!table.parentElement.classList.contains('article-table-wrapper')) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'article-table-wrapper';
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    }
+  });
 }
