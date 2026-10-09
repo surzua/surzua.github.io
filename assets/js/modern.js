@@ -169,7 +169,7 @@ function initTimelineTabs() {
 const projectData = {
   'retail-omnichannel-genai': {
     title: 'Corrección Automatizada de Variables de Catálogo (Pipeline GenAI & A/B Testing)',
-    org: 'SmartJob – Grupo Retail Omnicanal (Retail Tech – Motor de Promesa Logística)',
+    org: 'SmartJob · Consultoría para Grupo Retail Omnicanal (Retail Tech – Motor de Promesa Logística)',
     domain: 'GenAI & Supply Chain',
     metric: '> 7.7M USD anuales regional (> 3.8M USD en Chile) · A/B Testing Causal',
     problem: 'Inconsistencias severas y errores tipográficos/unidades en dimensiones físicas empaquetadas (alto, largo, ancho y peso), causando subcobro o sobrecobro de fletes a clientes, pérdidas en almacenamiento y fricciones contractuales con sellers. La inexistencia de un ground truth confiable impedía modelos supervisados estándar.',
@@ -179,7 +179,7 @@ const projectData = {
   },
   'retail-omnichannel-logistics': {
     title: 'Forecasting de Capacidades & Simplificación Topológica de Red',
-    org: 'SmartJob – Grupo Retail Omnicanal (Retail Tech – Red Logística)',
+    org: 'SmartJob · Consultoría para Grupo Retail Omnicanal (Retail Tech – Red Logística)',
     domain: 'Supply Chain & Optimización',
     metric: '-2 p.p. en atrasos (Región Andina) · +100M CLP ventas protegidas (CyberDay)',
     problem: 'Sobrecargas operativas en nodos críticos de la red e-commerce regional (cross-docking, picking y última milla) y topología de red sobredimensionada con rutas redundantes que ponían en riesgo la promesa de entrega y la estabilidad del motor en eventos de alta demanda.',
