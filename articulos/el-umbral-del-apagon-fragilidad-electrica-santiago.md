@@ -192,7 +192,11 @@ $$\text{logit}\Big(P(Y(i, t) = 1)\Big) = \ln\left(\frac{P}{1 - P}\right) = \eta(
 
 El predictor lineal $\eta(i, t)$ se especifica como:
 
-$$\eta(i, t) = \beta_0 + \beta_1 R(i, t) + \beta_2 W(i, t) + \beta_3 \frac{W(i, t)^2}{100} + \beta_4 \text{NSE}(i) + \beta_5 (R \cdot \text{NSE}) + \beta_6 (W \cdot \text{NSE}) + \beta_7 \text{RedAérea}(i) + \beta_8 \text{Empresa}_{\text{CGE}}(i) + \beta_9 \text{Arbolado}(i)$$
+$$\begin{aligned}
+\eta(i, t) = \; &\beta_0 + \beta_1 R(i, t) + \beta_2 W(i, t) + \beta_3 \frac{W(i, t)^2}{100} + \beta_4 \text{NSE}(i) \\
+&+ \beta_5 \big(R \cdot \text{NSE}\big) + \beta_6 \big(W \cdot \text{NSE}\big) + \beta_7 \text{RedAérea}(i) \\
+&+ \beta_8 \text{Empresa}_{\text{CGE}}(i) + \beta_9 \text{Arbolado}(i)
+\end{aligned}$$
 
 Donde:
 * $R(i, t)$: Precipitación acumulada en 24 horas (mm).
@@ -210,11 +214,19 @@ El umbral de falla crítica al 50% ($P = 0.50$, lo que implica $\text{logit}(0.5
 
 Fijando una ráfaga basal $W_0$, el **umbral de precipitación crítica** $R_{50}$ para la comuna $i$ es:
 
-$$R_{50}(i \mid W_0) = -\frac{\beta_0 + \beta_2 W_0 + \beta_3 \frac{W_0^2}{100} + \beta_4 \text{NSE}(i) + \beta_6 (W_0 \cdot \text{NSE}(i)) + \beta_7 \text{RedAérea}(i) + \beta_8 \text{Empresa}(i) + \beta_9 \text{Arbolado}(i)}{\beta_1 + \beta_5 \text{NSE}(i)}$$
+$$\begin{aligned}
+R_{50}(i \mid W_0) = -\frac{1}{\beta_1 + \beta_5 \text{NSE}(i)} \cdot \Big(&\beta_0 + \beta_2 W_0 + \beta_3 \frac{W_0^2}{100} + \beta_4 \text{NSE}(i) \\
+&+ \beta_6 (W_0 \cdot \text{NSE}(i)) + \beta_7 \text{RedAérea}(i) \\
+&+ \beta_8 \text{Empresa}(i) + \beta_9 \text{Arbolado}(i)\Big)
+\end{aligned}$$
 
 Análogamente, fijando una precipitación constante $R_0$, el **umbral de viento crítico** $W_{50}$ se despeja resolviendo la ecuación cuadrática en $W$:
 
-$$\frac{\beta_3}{100} W^2 + \Big(\beta_2 + \beta_6 \text{NSE}(i)\Big) W + \Big(\beta_0 + \beta_1 R_0 + \beta_4 \text{NSE}(i) + \beta_5 (R_0 \cdot \text{NSE}(i)) + \beta_7 \text{RedAérea}(i) + \beta_8 \text{Empresa}(i) + \beta_9 \text{Arbolado}(i)\Big) = 0$$
+$$\begin{aligned}
+\frac{\beta_3}{100} W^2 &+ \Big(\beta_2 + \beta_6 \text{NSE}(i)\Big) W \\
+&+ \Big(\beta_0 + \beta_1 R_0 + \beta_4 \text{NSE}(i) + \beta_5 (R_0 \cdot \text{NSE}(i)) \\
+&\quad + \beta_7 \text{RedAérea}(i) + \beta_8 \text{Empresa}(i) + \beta_9 \text{Arbolado}(i)\Big) = 0
+\end{aligned}$$
 
 Resolviendo por fórmula cuadrática ordinaria se obtiene la velocidad exacta de rotura comunal $W_{50}(i \mid R_0)$.
 

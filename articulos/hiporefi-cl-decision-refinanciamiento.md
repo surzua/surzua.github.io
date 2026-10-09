@@ -176,7 +176,10 @@ El sistema además evalúa la **regla de asegurabilidad técnica al vencimiento*
 
 Para migrar una hipoteca a un nuevo banco $k$, se incurre en una serie de costos de cierre regulados por ley:
 
-$$G_k = \text{Prepago}(S_0) + \text{Tasación} + \text{Estudio de Títulos} + \text{Notaría} + \text{Conservador (CBR)} + \text{Timbres (DL 3475)}$$
+$$\begin{aligned}
+G_k = \; &\text{Prepago}(S_0) + \text{Tasación} + \text{Estudio de Títulos} \\
+&+ \text{Notaría} + \text{Conservador (CBR)} + \text{Timbres (DL 3475)}
+\end{aligned}$$
 
 HipoRefi-CL codifica cada restricción legal en `src/core/switching_costs.py`:
 
