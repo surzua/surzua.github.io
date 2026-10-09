@@ -212,6 +212,16 @@ const projectData = {
     impact: 'Herramienta reproducible, transparente y de código abierto para deudores e instituciones financieras para optimizar la decisión económica de prepago y refinanciamiento.',
     stack: 'Python, NumPy, Pandas, Modelamiento Financiero Cuantitativo en UF'
   },
+  'gridbreak-cl': {
+    title: 'GridBreak-CL: Fragilidad Eléctrica & Estrés Climático en Santiago',
+    org: 'Open Source · github.com/surzua/gridbreak-cl · gridbreak-cl.streamlit.app',
+    domain: 'Infraestructura Crítica & Causalidad',
+    metric: 'HR = 483.0 en Red Aérea · HR = 1.000 Arbolado (p = 0.9961) · Brecha W50 > 40 km/h',
+    problem: 'Tras los temporales de 2024 con más de 2 millones de personas sin suministro eléctrico en Santiago, las distribuidoras atribuyeron el colapso a "fuerza mayor climática insuperable" y a la caída de ramas del ornato municipal.',
+    solution: 'Auditoría cuantitativa independiente integrando telemetría de la SEC (>100.000 observaciones horarias), estaciones meteorológicas de DMC/Open-Meteo con interpolación espacial IDW, datos CASEN/INE y catastro de redes de la CNE. Modelamiento con GLM Binomial Logit (curvas de fragilidad R50 y W50 con términos cinéticos cuadráticos) y Análisis de Supervivencia con estimador Kaplan-Meier y modelo de riesgos proporcionales de Cox.',
+    impact: 'Demostración empírica de que el arbolado no explica el colapso (HR = 1.000), mientras que el cableado aéreo en postes multiplica por 483 veces el riesgo instantáneo de falla masiva (p < 0.0001). Comunas vulnerables colapsan con vientos estándar (<45 km/h) a las 8 horas de iniciada la lluvia, mientras sectores oriente resisten más de 115 km/h.',
+    stack: 'Python, Polars, Scikit-Learn, Statsmodels, Lifelines (Survival Analysis), Streamlit, Plotly, GeoPandas, IDW Interpolation'
+  },
   'itau-digital-risk': {
     title: 'Scoring Alternativo con Psicometría & 2° Lugar Itaú Brasil',
     org: 'Banco Itaú (Analytics Banca Minorista)',
