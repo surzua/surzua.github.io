@@ -185,10 +185,10 @@ const projectData = {
     title: 'Forecasting de Capacidades & Simplificación Topológica de Red',
     org: 'SmartJob · Consultoría para Grupo Retail Omnicanal (Retail Tech – Red Logística)',
     domain: 'Supply Chain & Optimización',
-    metric: '-2 p.p. en atrasos (Región Andina) · +100M CLP ventas protegidas (CyberDay)',
+    metric: '-2 p.p. en atrasos (SLA) · +100M CLP ventas protegidas (CyberDay)',
     problem: 'Sobrecargas operativas en nodos críticos de la red e-commerce regional (cross-docking, picking y última milla) y topología de red sobredimensionada con rutas redundantes que ponían en riesgo la promesa de entrega y la estabilidad del motor en eventos de alta demanda.',
     solution: 'Modelamiento predictivo de series de tiempo para proyectar capacidades operativas y anticipar saturaciones en nodos críticos de la red. Implementación de modelamiento espacial mediante clustering origen-destino para consolidar y dar de baja el 40% de rutas redundantes en la red logística.',
-    impact: 'Reducción de atrasos operativos en 2 puntos porcentuales sobre un flujo mensual de aproximadamente 500.000 órdenes en la red de Región Andina. Prevención de saturación y caídas del motor de promesa en CyberDay (+100M CLP en ventas protegidas) y un 70% de reducción de tiempo operacional en la parametrización de la red.',
+    impact: 'Reducción de atrasos operativos en 2 puntos porcentuales sobre un flujo mensual de aproximadamente 500.000 órdenes en la red regional. Prevención de saturación y caídas del motor de promesa en CyberDay (+100M CLP en ventas protegidas) y un 70% de reducción de tiempo operacional en la parametrización de la red.',
     stack: 'GCP (BigQuery), Python (Polars, Scikit-Learn), Pyomo (MIP), Series de Tiempo, Clustering Espacial, Git'
   },
   'itau-recommender': {
@@ -870,7 +870,7 @@ function initCommandPalette() {
         id: 'proj-retail-omnichannel-logistics',
         category: 'projects',
         title: 'Retail Omnicanal Logistics: Forecasting & Simplificación de Red',
-        desc: '-2 p.p. en atrasos (Región Andina) · +100M CLP ventas protegidas (CyberDay)',
+        desc: '-2 p.p. en atrasos (SLA) · +100M CLP ventas protegidas (CyberDay)',
         icon: '🚚',
         badge: 'Modal',
         keywords: 'retail-omnichannel logistics supply chain forecasting series de tiempo red cross docking picking pyomo clustering',
@@ -975,7 +975,7 @@ function initCommandPalette() {
         desc: 'LightGBM Tabular Global (H=14) · Regresión Cuantílica p90 · Balanceo prescriptivo',
         icon: '📄',
         badge: lang === 'es' ? 'Leer' : (lang === 'en' ? 'Read' : 'Ler'),
-        keywords: 'articulo ensayo supply chain forecasting prediccion demanda logistica redes complejas lightgbm timeseries pinball loss region-andina wape',
+        keywords: 'articulo ensayo supply chain forecasting prediccion demanda logistica redes complejas lightgbm timeseries pinball loss wape',
         action: () => { window.location.href = '/articulos/blog-supply-chain-forecasting/'; }
       },
 

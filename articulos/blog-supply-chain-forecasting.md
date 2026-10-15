@@ -68,7 +68,7 @@ permalink: /articulos/blog-supply-chain-forecasting/
 
 ## 📑 Tabla de Contenidos
 1. [Introducción: La Paradoja de la Capacidad en Redes Logísticas](#1-introducción-la-paradoja-de-la-capacidad-en-redes-logísticas)
-2. [El Ecosistema Físico y Operacional: Red Multieslabón Región Andina](#2-el-ecosistema-físico-y-operacional-red-multieslabón-region-andina)
+2. [El Ecosistema Físico y Operacional: Red Multieslabón](#2-el-ecosistema-físico-y-operacional-red-multieslabón)
 3. [El Dataset: Modelando Estacionalidades Múltiples y Shocks Comerciales](#3-el-dataset-modelando-estacionalidades-múltiples-y-shocks-comerciales)
 4. [Diagnóstico Estadístico Riguroso: Estacionariedad y Autocorrelación](#4-diagnóstico-estadístico-riguroso-estacionariedad-y-autocorrelación)
 5. [El Principio de Parsimonia: Fijando el Baseline Operacional](#5-el-principio-de-parsimonia-fijando-el-baseline-operacional)
@@ -103,9 +103,9 @@ Este artículo detalla la solución técnica y metodológica que diseñamos para
 
 ---
 
-## 2. El Ecosistema Físico y Operacional: Red Multieslabón Región Andina
+## 2. El Ecosistema Físico y Operacional: Red Multieslabón
 
-Para contextualizar el modelado, estructuramos una topología representativa de la operación nacional en Región Andina, coordinando un volumen superior a las **500.000 órdenes mensuales** distribuidas en tres tipologías de nodos:
+Para contextualizar el modelado, estructuramos una topología representativa de la operación logística regional, coordinando un volumen superior a las **500.000 órdenes mensuales** distribuidas en tres tipologías de nodos:
 
 ```text
                             [ Bodegas Sellers 1P / 3P ]
@@ -113,17 +113,17 @@ Para contextualizar el modelado, estructuramos una topología representativa de 
                                          ▼
                  ┌───────────────────────────────────────────────┐
                  │       HUBS PRINCIPALES DE CONSOLIDACIÓN       │
-                 │   • Hub Hub Central   (Capacidad: 10.500 bultos)   │
-                 │   • Hub Hub Norte (Capacidad:  6.000 bultos)   │
-                 │   • Hub Hub Sur     (Capacidad:  4.000 bultos)   │
+                 │   • Hub Central  (Capacidad: 10.500 bultos)   │
+                 │   • Hub Norte    (Capacidad:  6.000 bultos)   │
+                 │   • Hub Sur      (Capacidad:  4.000 bultos)   │
                  └───────┬───────────────────────────────┬───────┘
                          │                               │
                          ▼                               ▼
        ┌──────────────────────────────────┐    ┌──────────────────────────────────┐
        │     CROSS-DOCKING REGIONAL       │    │     CLICK & COLLECT TIENDAS      │
-       │ • XD XD Oriente (Cap: 1.700/d)  │    │ • CC CC Store Alpha Hub Central (Cap: 850) │
-       │ • XD XD Costera (Cap: 1.950/d) │    │ • CC CC Store Beta Hub Norte (Cap: 650) │
-       │                                  │    │ • CC CC Store Gamma Chía    (Cap: 500) │
+       │ • XD Oriente (Cap: 1.700/d)  │    │ • CC Store Alpha   (Cap: 850) │
+       │ • XD Costera (Cap: 1.950/d) │    │ • CC Store Beta    (Cap: 650) │
+       │                                  │    │ • CC Store Gamma   (Cap: 500) │
        └──────────────────────────────────┘    └──────────────────────────────────┘
 ```
 
@@ -140,58 +140,58 @@ Para contextualizar el modelado, estructuramos una topología representativa de 
     </thead>
     <tbody>
       <tr>
-        <td><strong>Hub_Bogota</strong></td>
+        <td><strong>Hub_Central</strong></td>
         <td>Hub / Fulfillment Center</td>
-        <td>Hub Central D.C.</td>
+        <td>Región Central</td>
         <td style="text-align: center;"><strong>10.500 bultos/día</strong></td>
-        <td>Macro-nodo central; consolida 1P y despacha troncales nacionales.</td>
+        <td>Macro-nodo central; consolida 1P y despacha troncales de red.</td>
       </tr>
       <tr>
-        <td><strong>Hub_Medellin</strong></td>
+        <td><strong>Hub_Norte</strong></td>
         <td>Hub / Fulfillment Center</td>
-        <td>Antioquia</td>
+        <td>Región Norte</td>
         <td style="text-align: center;"><strong>6.000 bultos/día</strong></td>
         <td>Hub metropolitano de alta densidad y reexpedición regional.</td>
       </tr>
       <tr>
-        <td><strong>Hub_Hub Sur</strong></td>
+        <td><strong>Hub_Sur</strong></td>
         <td>Hub / Fulfillment Center</td>
-        <td>Valle del Cauca</td>
+        <td>Región Sur</td>
         <td style="text-align: center;"><strong>4.000 bultos/día</strong></td>
-        <td>Nodo estratégico para el suroccidente region-andinano.</td>
+        <td>Nodo estratégico para la macrozona sur.</td>
       </tr>
       <tr>
-        <td><strong>XD_XD Oriente</strong></td>
+        <td><strong>XD_Oriente</strong></td>
         <td>Plataforma Cross-Docking</td>
-        <td>Santander</td>
+        <td>Región Oriente</td>
         <td style="text-align: center;"><strong>1.700 bultos/día</strong></td>
         <td>Transferencia rápida sin almacenaje prolongado (in/out &lt; 12h).</td>
       </tr>
       <tr>
-        <td><strong>XD_XD Costera</strong></td>
+        <td><strong>XD_Costera</strong></td>
         <td>Plataforma Cross-Docking</td>
-        <td>Costa Atlántica</td>
+        <td>Región Costera</td>
         <td style="text-align: center;"><strong>1.950 bultos/día</strong></td>
-        <td>Plataforma de desconsolidación para la región norte.</td>
+        <td>Plataforma de desconsolidación para la zona costera.</td>
       </tr>
       <tr>
-        <td><strong>CC_CC Store Alpha_Bog</strong></td>
+        <td><strong>CC_Store_Alpha</strong></td>
         <td>Punto Click & Collect</td>
-        <td>Hub Central D.C.</td>
+        <td>Región Central</td>
         <td style="text-align: center;"><strong>850 paquetes/día</strong></td>
-        <td>Módulo de retiro en tienda física (última milla asistida).</td>
+        <td>Módulo de retiro en tienda física principal (última milla asistida).</td>
       </tr>
       <tr>
-        <td><strong>CC_Santafe_Med</strong></td>
+        <td><strong>CC_Store_Beta</strong></td>
         <td>Punto Click & Collect</td>
-        <td>Antioquia</td>
+        <td>Región Norte</td>
         <td style="text-align: center;"><strong>650 paquetes/día</strong></td>
         <td>Retiro en tienda en centro comercial de alto tráfico.</td>
       </tr>
       <tr>
-        <td><strong>CC_CC Store Gamma_Chia</strong></td>
+        <td><strong>CC_Store_Gamma</strong></td>
         <td>Punto Click & Collect</td>
-        <td>Cundinamarca</td>
+        <td>Región Central</td>
         <td style="text-align: center;"><strong>500 paquetes/día</strong></td>
         <td>Nodo suburbano satélite de última milla.</td>
       </tr>
@@ -212,8 +212,8 @@ $$y_{i,t} = \text{Base}_i \times f_{\text{semanal}}(t) \times f_{\text{quincena}
 
 1. **Estacionalidad Semanal ($f_{\text{semanal}}$):**  
    Picos intensos los domingos ($1.20\times$) y lunes ($1.25\times$) por acumulación de compras de fin de semana, con valles los sábados ($0.85\times$).
-2. **Efecto Quincena Región Andinana ($f_{\text{quincena}}$):**  
-   Incremento determinista del $+18\%$ ($1.18\times$) en los rangos de pago de salario formal: días 14 al 17 y 28 al 31 de cada mes.
+2. **Efecto Ciclo Quincenal ($f_{\text{quincena}}$):**  
+   Incremento determinista del $+18\%$ ($1.18\times$) en los rangos de pago de nóminas formales: días 14 al 17 y 28 al 31 de cada mes.
 3. **Eventos Comerciales Masivos ($f_{\text{evento}}$):**  
    - **CyberDays (19 al 23 de mayo):** Shock de demanda de $+110\%$ ($2.10\times$).
    - **Black Friday (26 al 29 de noviembre):** Shock de demanda de $+80\%$ ($1.80\times$).
@@ -226,7 +226,7 @@ El análisis gráfico inicial revela con claridad cómo interactúan estas fuerz
 
 <div class="article-figure">
   <div class="article-figure-container">
-    <img src="/assets/images/timeseries/01_eda_network_overview.png" alt="Visión General de la Demanda de la Red Logística en Región Andina" loading="lazy">
+    <img src="/assets/images/timeseries/01_eda_network_overview.png" alt="Visión General de la Demanda de la Red Logística Multirregional" loading="lazy">
   </div>
   <div class="article-figcaption">
     <strong>Figura 1: Visión General de la Demanda Diaria Agregada y Desagregada por Nodo Logístico.</strong><br>
@@ -239,7 +239,7 @@ El análisis gráfico inicial revela con claridad cómo interactúan estas fuerz
     <span>🔍</span> Hallazgo Operativo Clave
   </div>
   <p style="margin-bottom: 0;">
-    Mientras el Hub Hub Central absorbe aproximadamente el 40% del flujo nacional, los puntos Click & Collect operan en una escala volumétrica un orden de magnitud inferior, pero exhiben <strong>idéntica sensibilidad estacional</strong> a las quincenas y shocks comerciales. Esto convierte el problema en un candidato idóneo para un <strong>modelo global compartido</strong>.
+    Mientras el Hub Central absorbe aproximadamente el 40% del flujo de la red, los puntos Click & Collect operan en una escala volumétrica un orden de magnitud inferior, pero exhiben <strong>idéntica sensibilidad estacional</strong> a las quincenas y shocks comerciales. Esto convierte el problema en un candidato idóneo para un <strong>modelo global compartido</strong>.
   </p>
 </div>
 
@@ -267,56 +267,56 @@ $$\Delta y_t = \alpha + \beta t + \gamma y_{t-1} + \sum_{s=1}^p \delta_s \Delta 
     </thead>
     <tbody>
       <tr>
-        <td><strong>Hub_Bogota</strong></td>
+        <td><strong>Hub_Central</strong></td>
         <td style="text-align: center;"><strong>-4.3393</strong></td>
         <td style="text-align: center;">$3.79 \times 10^{-4}$</td>
         <td style="text-align: center;">-3.45, -2.87, -2.57</td>
         <td><strong>Estacionaria en media ($p &lt; 0.01$)</strong></td>
       </tr>
       <tr>
-        <td><strong>Hub_Medellin</strong></td>
+        <td><strong>Hub_Norte</strong></td>
         <td style="text-align: center;"><strong>-4.2875</strong></td>
         <td style="text-align: center;">$4.67 \times 10^{-4}$</td>
         <td style="text-align: center;">-3.45, -2.87, -2.57</td>
         <td><strong>Estacionaria en media ($p &lt; 0.01$)</strong></td>
       </tr>
       <tr>
-        <td><strong>Hub_Hub Sur</strong></td>
+        <td><strong>Hub_Sur</strong></td>
         <td style="text-align: center;"><strong>-4.3048</strong></td>
         <td style="text-align: center;">$4.36 \times 10^{-4}$</td>
         <td style="text-align: center;">-3.45, -2.87, -2.57</td>
         <td><strong>Estacionaria en media ($p &lt; 0.01$)</strong></td>
       </tr>
       <tr>
-        <td><strong>XD_XD Oriente</strong></td>
+        <td><strong>XD_Oriente</strong></td>
         <td style="text-align: center;"><strong>-4.4168</strong></td>
         <td style="text-align: center;">$2.77 \times 10^{-4}$</td>
         <td style="text-align: center;">-3.45, -2.87, -2.57</td>
         <td><strong>Estacionaria en media ($p &lt; 0.01$)</strong></td>
       </tr>
       <tr>
-        <td><strong>XD_XD Costera</strong></td>
+        <td><strong>XD_Costera</strong></td>
         <td style="text-align: center;"><strong>-3.9850</strong></td>
         <td style="text-align: center;">$1.49 \times 10^{-3}$</td>
         <td style="text-align: center;">-3.45, -2.87, -2.57</td>
         <td><strong>Estacionaria en media ($p &lt; 0.01$)</strong></td>
       </tr>
       <tr>
-        <td><strong>CC_CC Store Alpha_Bog</strong></td>
+        <td><strong>CC_Store_Alpha</strong></td>
         <td style="text-align: center;"><strong>-4.4527</strong></td>
         <td style="text-align: center;">$2.39 \times 10^{-4}$</td>
         <td style="text-align: center;">-3.45, -2.87, -2.57</td>
         <td><strong>Estacionaria en media ($p &lt; 0.01$)</strong></td>
       </tr>
       <tr>
-        <td><strong>CC_Santafe_Med</strong></td>
+        <td><strong>CC_Store_Beta</strong></td>
         <td style="text-align: center;"><strong>-4.3384</strong></td>
         <td style="text-align: center;">$3.81 \times 10^{-4}$</td>
         <td style="text-align: center;">-3.45, -2.87, -2.57</td>
         <td><strong>Estacionaria en media ($p &lt; 0.01$)</strong></td>
       </tr>
       <tr>
-        <td><strong>CC_CC Store Gamma_Chia</strong></td>
+        <td><strong>CC_Store_Gamma</strong></td>
         <td style="text-align: center;"><strong>-4.5608</strong></td>
         <td style="text-align: center;">$1.52 \times 10^{-4}$</td>
         <td style="text-align: center;">-3.45, -2.87, -2.57</td>
@@ -330,14 +330,14 @@ $$\Delta y_t = \alpha + \beta t + \gamma y_{t-1} + \sum_{s=1}^p \delta_s \Delta 
 
 ### 4.2 Análisis Espectral: ACF y PACF
 
-Inspeccionamos la estructura de dependencia serial a través de la función de autocorrelación total (ACF) y la función de autocorrelación parcial (PACF) para el nodo principal (Hub Hub Central):
+Inspeccionamos la estructura de dependencia serial a través de la función de autocorrelación total (ACF) y la función de autocorrelación parcial (PACF) para el nodo principal (Hub Central):
 
 <div class="article-figure">
   <div class="article-figure-container">
     <img src="/assets/images/timeseries/02_acf_pacf_diagnostics.png" alt="Diagnóstico de Autocorrelación (ACF) y Autocorrelación Parcial (PACF)" loading="lazy">
   </div>
   <div class="article-figcaption">
-    <strong>Figura 2: Diagnóstico Espectral de Autocorrelación Total (ACF) y Parcial (PACF) en Hub Hub Central.</strong><br>
+    <strong>Figura 2: Diagnóstico Espectral de Autocorrelación Total (ACF) y Parcial (PACF) en Hub Central.</strong><br>
     Crestas periódicas en rezagos múltiplos de 7 ($\rho_7, \rho_{14}, \rho_{21}, \rho_{28}$) confirman una estacionalidad semanal pura ($s = 7$). El PACF colapsa drásticamente tras los rezagos 1 y 7 dentro de las bandas de confianza de Bartlett.
   </div>
 </div>
@@ -380,7 +380,7 @@ $$\text{WAPE} = \frac{\sum_{i,t} \vert y_{i,t} - \hat{y}_{i,t} \vert}{\sum_{i,t}
       <tr>
         <td><strong>MAPE</strong></td>
         <td>$\frac{1}{N} \sum \frac{\vert y - \hat{y} \vert}{y}$</td>
-        <td>Se indetermina ante $y=0$ (días feriados o nodos chicos sin despacho). Además, sobrepondera el error relativo en nodos satélite: un error de 5 bultos en Click & Collect (de 10 reales = 50%) pesa lo mismo que un error de 5.000 bultos en Hub Hub Central (de 10.000 reales = 50%).</td>
+        <td>Se indetermina ante $y=0$ (días feriados o nodos chicos sin despacho). Además, sobrepondera el error relativo en nodos satélite: un error de 5 bultos en Click & Collect (de 10 reales = 50%) pesa lo mismo que un error de 5.000 bultos en Hub Central (de 10.000 reales = 50%).</td>
       </tr>
       <tr>
         <td><strong>RMSE</strong></td>
@@ -405,14 +405,14 @@ Evaluamos el Seasonal Naive sobre el histórico completo:
 
 Nodo Logístico        | WAPE Baseline (%) | MAE (Bultos/día) | Volumen Total Evaluado
 -------------------------------------------------------------------------------------
-Hub_Bogota           |            14.33% |         1.272,1 |             3.178.527
-Hub_Medellin         |            14.34% |           711,6 |             1.776.969
-Hub_Hub Sur             |            13.97% |           465,4 |             1.193.048
-XD_XD Costera      |            14.30% |           237,3 |               593.878
-XD_XD Oriente       |            14.55% |           207,4 |               510.298
-CC_CC Store Alpha_Bog     |            14.34% |           101,7 |               253.939
-CC_Santafe_Med       |            14.53% |            77,5 |               190.779
-CC_CC Store Gamma_Chia     |            13.95% |            57,7 |               148.222
+Hub_Central          |            14.33% |         1.272,1 |             3.178.527
+Hub_Norte            |            14.34% |           711,6 |             1.776.969
+Hub_Sur              |            13.97% |           465,4 |             1.193.048
+XD_Costera           |            14.30% |           237,3 |               593.878
+XD_Oriente           |            14.55% |           207,4 |               510.298
+CC_Store_Alpha       |            14.34% |           101,7 |               253.939
+CC_Store_Beta        |            14.53% |            77,5 |               190.779
+CC_Store_Gamma       |            13.95% |            57,7 |               148.222
 ```
 
 <div class="article-callout warning">
@@ -520,7 +520,7 @@ Una decisión arquitectónica fundamental fue seleccionar el paradigma de modela
       </tr>
       <tr>
         <td><strong>Aprendizaje Cruzado</strong></td>
-        <td>Nulo. No transfiere patrones estacionales entre Hub Central, Hub Norte o Hub Sur.</td>
+        <td>Nulo. No transfiere patrones estacionales entre diferentes centros de la red.</td>
         <td>Excelente, pero exige gran volumen de datos históricos.</td>
         <td><strong>Óptimo. Aprende dinámicas globales compartidas y ajusta por metadatos del nodo.</strong></td>
       </tr>
@@ -724,21 +724,21 @@ Para cuantificar el impacto, simulamos dos políticas operativas durante el per�
 
 ## 11. Resultados Cuantitativos e Impacto en Negocio
 
-### 11.1 El Caso de Estudio: Hub Hub Norte en Black Friday
+### 11.1 El Caso de Estudio: Hub Norte en Black Friday
 
 Examinamos el comportamiento del cono de incertidumbre y la activación de alertas en el nodo de mayor tensión de la red:
 
 <div class="article-figure">
   <div class="article-figure-container">
-    <img src="/assets/images/timeseries/05_uncertainty_cone_hub_hub-norte.png" alt="Cono de Incertidumbre y Alerta de Saturación en Hub Hub Norte" loading="lazy">
+    <img src="/assets/images/timeseries/05_uncertainty_cone_hub_norte.png" alt="Cono de Incertidumbre y Alerta de Saturación en Hub Norte" loading="lazy">
   </div>
   <div class="article-figcaption">
-    <strong>Figura 5: Cono de Incertidumbre Probabilística $[p_{10}, p_{90}]$ y Detección de Saturación en Hub Hub Norte.</strong><br>
+    <strong>Figura 5: Cono de Incertidumbre Probabilística $[p_{10}, p_{90}]$ y Detección de Saturación en Hub Norte.</strong><br>
     La curva azul punteada marca la mediana proyectada; el área sombreada delimita el intervalo $[p_{10}, p_{90}]$; la línea roja marca la capacidad fija (6.000 bultos/día). Las franjas naranjas indican días donde la alerta se activó 14 días antes, permitiendo coordinar desvíos antes del desborde.
   </div>
 </div>
 
-Durante los días de Black Friday (27 y 28 de noviembre), la demanda real superó con fuerza los 7.000 bultos/día. Gracias a que la banda superior $p_{90}$ detectó el rebase de capacidad dos semanas antes, la operación activó a tiempo el desvío hacia Hub Hub Sur, **evitando el colapso del nodo y asegurando la promesa de entrega**.
+Durante los días de Black Friday (27 y 28 de noviembre), la demanda real superó con fuerza los 7.000 bultos/día. Gracias a que la banda superior $p_{90}$ detectó el rebase de capacidad dos semanas antes, la operación activó a tiempo el desvío hacia Hub Sur, **evitando el colapso del nodo y asegurando la promesa de entrega**.
 
 ### 11.2 Vista Comparativa Multieslabón (Hub Central, Hub Norte y Hub Sur)
 
@@ -746,11 +746,11 @@ Para verificar que el sistema no genera falsas alarmas ni desequilibrios en otro
 
 <div class="article-figure">
   <div class="article-figure-container">
-    <img src="/assets/images/timeseries/06_multi_hub_mitigation_comparison.png" alt="Monitoreo Simultáneo Multieslabón en Hubs Hub Central, Hub Norte y Hub Sur" loading="lazy">
+    <img src="/assets/images/timeseries/06_multi_hub_mitigation_comparison.png" alt="Monitoreo Simultáneo Multieslabón en Hubs Principales" loading="lazy">
   </div>
   <div class="article-figcaption">
-    <strong>Figura 6: Monitoreo Multieslabón y Capacidad Residual en Hubs Principales de Región Andina.</strong><br>
-    Hub Hub Central absorbió el pico sin saturación gracias a su capacidad de 10.500 bultos; Hub Hub Norte activó alertas tempranas oportunas; Hub Hub Sur operó con holgura sustancial (~3.000 de 4.000 bultos), ratificando que era el receptor idóneo para absorber las órdenes re-enrutadas.
+    <strong>Figura 6: Monitoreo Multieslabón y Capacidad Residual en Hubs Principales de la Red.</strong><br>
+    Hub Central absorbió el pico sin saturación gracias a su capacidad de 10.500 bultos; Hub Norte activó alertas tempranas oportunas; Hub Sur operó con holgura sustancial (~3.000 de 4.000 bultos), ratificando que era el receptor idóneo para absorber las órdenes re-enrutadas.
   </div>
 </div>
 
@@ -797,7 +797,7 @@ Los resultados de la simulación de red sobre las **376.256 órdenes** evaluadas
   </table>
 </div>
 
-A nivel de régimen mensual regular sobre las **500.000 órdenes de la red en Región Andina**, la mitigación continua de picos semanales y quincenales genera una **reducción estructural neta de 2.03 puntos porcentuales** en la tasa de atrasos:
+A nivel de régimen mensual regular sobre las **500.000 órdenes de la red regional**, la mitigación continua de picos semanales y quincenales genera una **reducción estructural neta de 2.03 puntos porcentuales** en la tasa de atrasos:
 
 $$\Delta \text{Tasa de Atrasos} = -2.03 \text{ pp} \quad \Longrightarrow \quad 500.000 \times 2.03\% \approx \mathbf{10.150 \text{ órdenes/mes rescatadas a tiempo}}$$
 
