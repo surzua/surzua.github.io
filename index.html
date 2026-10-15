@@ -45,17 +45,24 @@ layout: null
       </a>
 
       <nav class="nav-desktop">
-        <a href="#inicio" class="nav-link active">Inicio</a>
-        <a href="#impacto" class="nav-link">Métricas</a>
-        <a href="#pilares" class="nav-link">Pilares</a>
-        <a href="#proyectos" class="nav-link">Casos de Impacto</a>
-        <a href="#articulos" class="nav-link">Artículos</a>
-        <a href="#skills" class="nav-link">Expertise</a>
-        <a href="#trayectoria" class="nav-link">Trayectoria</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
+        <a href="#inicio" class="nav-link active" data-i18n="nav.inicio">Inicio</a>
+        <a href="#impacto" class="nav-link" data-i18n="nav.impacto">Métricas</a>
+        <a href="#pilares" class="nav-link" data-i18n="nav.pilares">Pilares</a>
+        <a href="#proyectos" class="nav-link" data-i18n="nav.proyectos">Casos de Impacto</a>
+        <a href="#articulos" class="nav-link" data-i18n="nav.articulos">Artículos</a>
+        <a href="#skills" class="nav-link" data-i18n="nav.skills">Expertise</a>
+        <a href="#trayectoria" class="nav-link" data-i18n="nav.trayectoria">Trayectoria</a>
+        <a href="#contacto" class="nav-link" data-i18n="nav.contacto">Contacto</a>
       </nav>
 
       <div class="header-actions">
+        <!-- Segmented Language Control -->
+        <div class="lang-selector-pill" role="group" aria-label="Seleccionar idioma">
+          <button class="lang-btn active" data-lang="es" aria-pressed="true" title="Español">ES</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false" title="English">EN</button>
+          <button class="lang-btn" data-lang="pt" aria-pressed="false" title="Português">PT</button>
+        </div>
+
         <button id="theme-toggle-btn" class="icon-btn" aria-label="Cambiar tema">
           <!-- Icon injected by JS -->
         </button>
@@ -72,7 +79,7 @@ layout: null
           </svg>
         </a>
 
-        <a href="#contacto" class="btn btn-primary btn-sm">Contactar</a>
+        <a href="#contacto" class="btn btn-primary btn-sm" data-i18n="nav.contact_btn">Contactar</a>
 
         <button id="mobile-toggle-btn" class="icon-btn mobile-toggle" aria-label="Abrir menú">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -86,14 +93,21 @@ layout: null
 
     <!-- Mobile Drawer -->
     <div id="mobile-nav" class="mobile-nav">
-      <a href="#inicio" class="nav-link">Inicio</a>
-      <a href="#impacto" class="nav-link">Métricas de Impacto</a>
-      <a href="#pilares" class="nav-link">Pilares Estratégicos</a>
-      <a href="#proyectos" class="nav-link">Casos de Estudio & Código</a>
-      <a href="#articulos" class="nav-link">Artículos & Ensayos</a>
-      <a href="#skills" class="nav-link">Stack & Expertise</a>
-      <a href="#trayectoria" class="nav-link">Trayectoria & Educación</a>
-      <a href="#contacto" class="nav-link">Contacto</a>
+      <div style="display: flex; justify-content: center; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);">
+        <div class="lang-selector-pill" role="group" aria-label="Seleccionar idioma">
+          <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" data-lang="pt" aria-pressed="false">PT</button>
+        </div>
+      </div>
+      <a href="#inicio" class="nav-link" data-i18n="nav.inicio">Inicio</a>
+      <a href="#impacto" class="nav-link" data-i18n="nav.impacto">Métricas</a>
+      <a href="#pilares" class="nav-link" data-i18n="nav.pilares">Pilares</a>
+      <a href="#proyectos" class="nav-link" data-i18n="nav.proyectos">Casos de Impacto</a>
+      <a href="#articulos" class="nav-link" data-i18n="nav.articulos">Artículos</a>
+      <a href="#skills" class="nav-link" data-i18n="nav.skills">Expertise</a>
+      <a href="#trayectoria" class="nav-link" data-i18n="nav.trayectoria">Trayectoria</a>
+      <a href="#contacto" class="nav-link" data-i18n="nav.contacto">Contacto</a>
     </div>
   </header>
 
@@ -103,7 +117,7 @@ layout: null
   <section id="inicio" class="hero">
     <div class="container hero-grid">
       <div class="hero-content">
-        <div class="status-badge">
+        <div class="status-badge" data-i18n="hero.status">
           <span class="status-dot"></span>
           Senior Data Scientist &amp; Consultor Cuantitativo · Disponible para proyectos
         </div>
@@ -112,31 +126,31 @@ layout: null
           Sebastian <span class="gradient-text">Urzúa Bórquez</span>
         </h1>
 
-        <div class="hero-subtitle">
+        <div class="hero-subtitle" data-i18n="hero.subtitle">
           Senior Data Scientist & <span class="tag-highlight">Ingeniero Civil Matemático</span> (MBA)
         </div>
 
-        <p class="hero-description">
+        <p class="hero-description" data-i18n="hero.desc">
           Convierto problemas operativos y comerciales de alta complejidad en soluciones analíticas de alto impacto. Especialista en la formulación y despliegue de soluciones cuantitativas de extremo a extremo: desde <strong>optimización matemática rigurosa</strong> y <strong>experimentación causal (A/B Testing)</strong>, hasta <strong>pipelines productivos con LLMs (GenAI)</strong> y <strong>articulación estratégica de negocio (MBA)</strong> para Supply Chain, Retail y Banca.
         </p>
 
         <div class="hero-credentials">
-          <div class="cred-badge gold">
+          <div class="cred-badge gold" data-i18n="hero.cred1">
             <span>🎓</span> <b>Distinción Máxima (7.0 / 7.0)</b> Ing. Civil Matemática · U. de Chile
           </div>
-          <div class="cred-badge">
+          <div class="cred-badge" data-i18n="hero.cred2">
             <span>📊</span> <b>Magíster en Cs. de la Ingeniería (6.6 / 7.0)</b> CMM U. de Chile
           </div>
-          <div class="cred-badge">
+          <div class="cred-badge" data-i18n="hero.cred3">
             <span>💼</span> <b>MBA (6.3 / 7.0)</b> FCFM / DCS U. de Chile
           </div>
-          <div class="cred-badge gold">
+          <div class="cred-badge gold" data-i18n="hero.cred4">
             <span>🏆</span> <b>Premio Transforma 2024</b> Innovación Data-Driven
           </div>
         </div>
 
         <div class="hero-actions">
-          <a href="#proyectos" class="btn btn-primary">
+          <a href="#proyectos" class="btn btn-primary" data-i18n="hero.btn_projects">
             Explorar Casos de Impacto
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -187,39 +201,39 @@ layout: null
     <div class="container">
       <div class="metrics-grid">
         <div class="metric-card gold">
-          <div class="metric-number">> 7.7M USD</div>
-          <div class="metric-title">Impacto Validado (GenAI)</div>
-          <div class="metric-desc">Pipeline de inferencia con LLMs y A/B Testing multivariable para Grupo Retail Omnicanal (>3.8M USD en Chile).</div>
+          <div class="metric-number" data-target="7.7" data-prefix="> " data-suffix="M USD" data-decimals="1">> 7.7M USD</div>
+          <div class="metric-title" data-i18n="metrics.m1_title">Impacto Validado (GenAI)</div>
+          <div class="metric-desc" data-i18n="metrics.m1_desc">Pipeline de inferencia con LLMs y A/B Testing multivariable para Grupo Retail Omnicanal (>3.8M USD en Chile).</div>
         </div>
 
         <div class="metric-card">
-          <div class="metric-number">+50%</div>
-          <div class="metric-title">Efectividad Comercial</div>
-          <div class="metric-desc">Motor Look-a-Likes e hiperpersonalización ItaúX (Ganador Premio Transforma 2024).</div>
+          <div class="metric-number" data-target="50" data-prefix="+" data-suffix="%" data-decimals="0">+50%</div>
+          <div class="metric-title" data-i18n="metrics.m2_title">Efectividad Comercial</div>
+          <div class="metric-desc" data-i18n="metrics.m2_desc">Motor Look-a-Likes e hiperpersonalización ItaúX (Ganador Premio Transforma 2024).</div>
         </div>
 
         <div class="metric-card">
-          <div class="metric-number">+100M CLP</div>
-          <div class="metric-title">Ventas Protegidas (CyberDay)</div>
-          <div class="metric-desc">Clustering espacial y baja del 40% de rutas redundantes en red de promesa logística.</div>
+          <div class="metric-number" data-target="100" data-prefix="+" data-suffix="M CLP" data-decimals="0">+100M CLP</div>
+          <div class="metric-title" data-i18n="metrics.m3_title">Ventas Protegidas (CyberDay)</div>
+          <div class="metric-desc" data-i18n="metrics.m3_desc">Clustering espacial y baja del 40% de rutas redundantes en red de promesa logística.</div>
         </div>
 
         <div class="metric-card">
-          <div class="metric-number">-2 p.p.</div>
-          <div class="metric-title">Atrasos Operativos en Nodos</div>
-          <div class="metric-desc">Forecasting predictivo de capacidad sobre ~500.000 órdenes/mes en red Región Andina.</div>
+          <div class="metric-number" data-target="2" data-prefix="-" data-suffix=" p.p." data-decimals="0">-2 p.p.</div>
+          <div class="metric-title" data-i18n="metrics.m4_title">Atrasos Operativos en Nodos</div>
+          <div class="metric-desc" data-i18n="metrics.m4_desc">Forecasting predictivo de capacidad sobre ~500.000 órdenes/mes en red Región Andina.</div>
         </div>
 
         <div class="metric-card gold">
-          <div class="metric-number">7.0 / 7.0</div>
-          <div class="metric-title">Distinción Máxima (Beauchef)</div>
-          <div class="metric-desc">Ingeniería Civil Matemática, Universidad de Chile (Hub Surficación máxima histórica).</div>
+          <div class="metric-number" data-target="7.0" data-prefix="" data-suffix=" / 7.0" data-decimals="1">7.0 / 7.0</div>
+          <div class="metric-title" data-i18n="metrics.m5_title">Distinción Máxima (Beauchef)</div>
+          <div class="metric-desc" data-i18n="metrics.m5_desc">Ingeniería Civil Matemática, Universidad de Chile (Hub Surficación máxima histórica).</div>
         </div>
 
         <div class="metric-card">
-          <div class="metric-number">2° Lugar</div>
-          <div class="metric-title">Batalla de Datos Regional</div>
-          <div class="metric-desc">Itaú Brasil vs. equipos analíticos avanzados de toda Latinoamérica.</div>
+          <div class="metric-number" data-target="2" data-prefix="" data-suffix="° Lugar" data-suffix-en="nd Place" data-decimals="0">2° Lugar</div>
+          <div class="metric-title" data-i18n="metrics.m6_title">2° Lugar Regional</div>
+          <div class="metric-desc" data-i18n="metrics.m6_desc">Batalla de Datos Regional: Itaú Brasil vs. equipos analíticos avanzados de toda Latinoamérica.</div>
         </div>
       </div>
     </div>
@@ -231,9 +245,9 @@ layout: null
   <section id="pilares" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Capacidades Estratégicas</span>
-        <h2 class="section-title">El Triángulo de Valor</h2>
-        <p class="section-subtitle">
+        <span class="section-tag" data-i18n="pillars.tag">Capacidades Estratégicas</span>
+        <h2 class="section-title" data-i18n="pillars.title">El Triángulo de Valor</h2>
+        <p class="section-subtitle" data-i18n="pillars.subtitle">
           La combinación sinérgica entre matemática rigurosa, despliegue computacional moderno y retorno económico medible.
         </p>
       </div>
@@ -250,8 +264,8 @@ layout: null
               <line x1="8.5" y1="15.5" x2="15.5" y2="8.5"></line>
             </svg>
           </div>
-          <h3 class="pillar-title">Optimización Matemática & Operaciones</h3>
-          <p class="pillar-text">
+          <h3 class="pillar-title" data-i18n="pillars.p1_title">Optimización Matemática & Operaciones</h3>
+          <p class="pillar-text" data-i18n="pillars.p1_desc">
             Investigación operativa aplicada a la toma de decisiones complejas: programación lineal, entera y mixta (MIP), ruteo de vehículos (VRP), simulación numérica y gestión cuantitativa de inventarios.
           </p>
           <div class="pillar-tags">
@@ -271,8 +285,8 @@ layout: null
               <line x1="12" y1="22.08" x2="12" y2="12"></line>
             </svg>
           </div>
-          <h3 class="pillar-title">Machine Learning & Analytics en Producción</h3>
-          <p class="pillar-text">
+          <h3 class="pillar-title" data-i18n="pillars.p2_title">Machine Learning & Analytics en Producción</h3>
+          <p class="pillar-text" data-i18n="pillars.p2_desc">
             Diseño, hub-surbración y puesta en marcha de sistemas analíticos: motores de recomendación hiperpersonalizados, scoring de riesgo crediticio alternativo, propensión de compra y detección de anomalías en tiempo real.
           </p>
           <div class="pillar-tags">
@@ -291,8 +305,8 @@ layout: null
               <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
             </svg>
           </div>
-          <h3 class="pillar-title">Estrategia Ejecutiva & Retorno de Negocio (MBA)</h3>
-          <p class="pillar-text">
+          <h3 class="pillar-title" data-i18n="pillars.p3_title">Estrategia Ejecutiva & Retorno de Negocio (MBA)</h3>
+          <p class="pillar-text" data-i18n="pillars.p3_desc">
             Traducción fluida entre algoritmos complejos y el P&L de la compañía. Formulación de Business Cases, evaluación de riesgo financiero, gobernanza de datos bajo metodología DAMA e interlocución con C-Level.
           </p>
           <div class="pillar-tags">
@@ -312,19 +326,19 @@ layout: null
   <section id="proyectos" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Portafolio Seleccionado</span>
-        <h2 class="section-title">Casos de Impacto & Proyectos</h2>
-        <p class="section-subtitle">
+        <span class="section-tag" data-i18n="projects.tag">Portafolio Seleccionado</span>
+        <h2 class="section-title" data-i18n="projects.title">Casos de Impacto & Proyectos</h2>
+        <p class="section-subtitle" data-i18n="projects.subtitle">
           Iniciativas donde la formulación matemática y el modelamiento predictivo generaron ventajas competitivas comprobables.
         </p>
       </div>
 
       <div class="projects-filter">
-        <button class="filter-btn active" data-filter="all">Todos los Casos</button>
-        <button class="filter-btn" data-filter="supply-chain">Supply Chain & Redes</button>
-        <button class="filter-btn" data-filter="genai">GenAI & LLMs</button>
-        <button class="filter-btn" data-filter="finance">Banca & Finanzas</button>
-        <button class="filter-btn" data-filter="opensource">Open Source</button>
+        <button class="filter-btn active" data-filter="all" data-i18n="filter.all">Todos los Casos</button>
+        <button class="filter-btn" data-filter="supply-chain" data-i18n="filter.supply_chain">Supply Chain & Redes</button>
+        <button class="filter-btn" data-filter="genai" data-i18n="filter.genai">GenAI & LLMs</button>
+        <button class="filter-btn" data-filter="finance" data-i18n="filter.finance">Banca & Finanzas</button>
+        <button class="filter-btn" data-filter="opensource" data-i18n="filter.opensource">Open Source</button>
       </div>
 
       <div class="projects-grid">
@@ -618,9 +632,9 @@ layout: null
   <section id="articulos" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Divulgación & Análisis Técnico</span>
-        <h2 class="section-title">Artículos & Ensayos Cuantitativos</h2>
-        <p class="section-subtitle">
+        <span class="section-tag" data-i18n="articles.tag">Divulgación & Análisis Técnico</span>
+        <h2 class="section-title" data-i18n="articles.title">Artículos & Ensayos Cuantitativos</h2>
+        <p class="section-subtitle" data-i18n="articles.subtitle">
           Análisis profundos donde convergen finanzas cuantitativas, investigación operativa, Machine Learning y visión de negocio aplicada a problemas reales.
         </p>
       </div>
@@ -746,9 +760,9 @@ layout: null
   <section id="skills" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Caja de Herramientas</span>
-        <h2 class="section-title">Expertise Técnico & Estratégico</h2>
-        <p class="section-subtitle">
+        <span class="section-tag" data-i18n="skills.tag">Caja de Herramientas</span>
+        <h2 class="section-title" data-i18n="skills.title">Expertise Técnico & Estratégico</h2>
+        <p class="section-subtitle" data-i18n="skills.subtitle">
           Dominio integral desde la formulación matemática abstracta hasta la ingeniería de software y la gestión de proyectos.
         </p>
       </div>
@@ -914,16 +928,16 @@ layout: null
   <section id="trayectoria" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Historial Profesional</span>
-        <h2 class="section-title">Trayectoria & Formación de Élite</h2>
-        <p class="section-subtitle">
+        <span class="section-tag" data-i18n="trajectory.tag">Historial Profesional</span>
+        <h2 class="section-title" data-i18n="trajectory.title">Trayectoria & Formación de Élite</h2>
+        <p class="section-subtitle" data-i18n="trajectory.subtitle">
           Evolución profesional liderando proyectos analíticos de alto impacto y formación académica continua.
         </p>
       </div>
 
       <div class="timeline-tabs">
-        <button class="timeline-tab-btn active" data-tab="experience">Experiencia Profesional</button>
-        <button class="timeline-tab-btn" data-tab="education">Formación Académica</button>
+        <button class="timeline-tab-btn active" data-tab="experience" data-i18n="trajectory.tab_exp">Experiencia Profesional</button>
+        <button class="timeline-tab-btn" data-tab="education" data-i18n="trajectory.tab_edu">Formación Académica</button>
       </div>
 
       <!-- Experience Timeline -->
@@ -1086,8 +1100,8 @@ layout: null
   <section id="contacto" class="contact-section">
     <div class="container">
       <div class="contact-card">
-        <h2 class="contact-title">Iniciemos una Conversación</h2>
-        <p class="contact-subtitle">
+        <h2 class="contact-title" data-i18n="contact.title">Iniciemos una Conversación</h2>
+        <p class="contact-subtitle" data-i18n="contact.subtitle">
           Abierto a intercambiar perspectivas sobre optimización matemática, proyectos estratégicos de Data Science y oportunidades de alto impacto.
         </p>
 
@@ -1115,7 +1129,7 @@ layout: null
           </button>
         </div>
 
-        <div style="font-size: 0.9rem; color: var(--text-muted);">
+        <div style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="contact.location">
           📍 Santiago, Chile · Disponible para proyectos estratégicos de analítica avanzada
         </div>
       </div>
@@ -1127,13 +1141,13 @@ layout: null
        ======================================================================== -->
   <footer class="footer">
     <div class="container footer-content">
-      <div>
+      <div data-i18n="footer.rights">
         © Sebastian Urzúa Bórquez · Portafolio Profesional
       </div>
       <div class="footer-links">
         <a href="https://github.com/surzua" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/surzuab/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="#inicio">Volver arriba ↑</a>
+        <a href="#inicio" data-i18n="footer.top">Volver arriba ↑</a>
       </div>
     </div>
   </footer>
@@ -1148,20 +1162,20 @@ layout: null
       <h3 id="modal-title" class="modal-title">Título del Proyecto</h3>
       <div id="modal-org" style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 14px;">Organización</div>
       
-      <div id="modal-metric" class="project-metric-highlight" style="margin-bottom: 20px;">
+      <div id="modal-metric" class="project-metric-highlight" style="margin-bottom: 20px;" data-i18n="modal.metrics">
         Métricas de impacto
       </div>
 
-      <div class="modal-section-title">El Desafío / Problema de Negocio</div>
+      <div class="modal-section-title" data-i18n="modal.challenge">El Desafío / Problema de Negocio</div>
       <p id="modal-problem" class="modal-text"></p>
 
-      <div class="modal-section-title">La Solución Matemática & Algorítmica</div>
+      <div class="modal-section-title" data-i18n="modal.solution">La Solución Matemática & Algorítmica</div>
       <p id="modal-solution" class="modal-text"></p>
 
-      <div class="modal-section-title">Impacto Cuantitativo Generado</div>
+      <div class="modal-section-title" data-i18n="modal.impact">Impacto Cuantitativo Generado</div>
       <p id="modal-impact" class="modal-text"></p>
 
-      <div class="modal-section-title">Stack & Tecnologías Utilizadas</div>
+      <div class="modal-section-title" data-i18n="modal.stack">Stack & Tecnologías Utilizadas</div>
       <p id="modal-stack" class="modal-text" style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent-cyan);"></p>
     </div>
   </div>
@@ -1172,10 +1186,11 @@ layout: null
       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
       <polyline points="22 4 12 14.01 9 11.01"></polyline>
     </svg>
-    <span class="toast-msg">¡Email copiado al portapapeles!</span>
+    <span class="toast-msg" data-i18n="contact.toast">¡Email copiado al portapapeles!</span>
   </div>
 
   <!-- Scripts -->
+  <script src="/assets/js/i18n.js"></script>
   <script src="/assets/js/modern.js"></script>
 </body>
 </html>

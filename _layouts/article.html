@@ -57,14 +57,21 @@ layout: null
       </a>
 
       <nav class="nav-desktop">
-        <a href="/#inicio" class="nav-link">Inicio</a>
-        <a href="/#proyectos" class="nav-link">Casos de Impacto</a>
-        <a href="/#articulos" class="nav-link active">Artículos</a>
-        <a href="/#trayectoria" class="nav-link">Trayectoria</a>
-        <a href="/#contacto" class="nav-link">Contacto</a>
+        <a href="/#inicio" class="nav-link" data-i18n="nav.inicio">Inicio</a>
+        <a href="/#proyectos" class="nav-link" data-i18n="nav.proyectos">Casos de Impacto</a>
+        <a href="/#articulos" class="nav-link active" data-i18n="nav.articulos">Artículos</a>
+        <a href="/#trayectoria" class="nav-link" data-i18n="nav.trayectoria">Trayectoria</a>
+        <a href="/#contacto" class="nav-link" data-i18n="nav.contacto">Contacto</a>
       </nav>
 
       <div class="header-actions">
+        <!-- Segmented Language Control -->
+        <div class="lang-selector-pill" role="group" aria-label="Seleccionar idioma">
+          <button class="lang-btn active" data-lang="es" aria-pressed="true" title="Español">ES</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false" title="English">EN</button>
+          <button class="lang-btn" data-lang="pt" aria-pressed="false" title="Português">PT</button>
+        </div>
+
         <button id="theme-toggle-btn" class="icon-btn" aria-label="Cambiar tema">
           <!-- Icon injected by JS -->
         </button>
@@ -93,11 +100,18 @@ layout: null
 
     <!-- Mobile Drawer -->
     <div id="mobile-nav" class="mobile-nav">
-      <a href="/#inicio" class="nav-link">Inicio</a>
-      <a href="/#proyectos" class="nav-link">Casos de Impacto</a>
-      <a href="/#articulos" class="nav-link active">Artículos</a>
-      <a href="/#trayectoria" class="nav-link">Trayectoria</a>
-      <a href="/#contacto" class="nav-link">Contacto</a>
+      <div style="display: flex; justify-content: center; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle);">
+        <div class="lang-selector-pill" role="group" aria-label="Seleccionar idioma">
+          <button class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" data-lang="pt" aria-pressed="false">PT</button>
+        </div>
+      </div>
+      <a href="/#inicio" class="nav-link" data-i18n="nav.inicio">Inicio</a>
+      <a href="/#proyectos" class="nav-link" data-i18n="nav.proyectos">Casos de Impacto</a>
+      <a href="/#articulos" class="nav-link active" data-i18n="nav.articulos">Artículos</a>
+      <a href="/#trayectoria" class="nav-link" data-i18n="nav.trayectoria">Trayectoria</a>
+      <a href="/#contacto" class="nav-link" data-i18n="nav.contacto">Contacto</a>
     </div>
 
     <!-- Reading Progress Bar -->
@@ -183,6 +197,7 @@ layout: null
     </div>
   </footer>
 
+  <script src="/assets/js/i18n.js"></script>
   <script src="/assets/js/modern.js"></script>
 </body>
 </html>

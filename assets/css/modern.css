@@ -258,6 +258,52 @@ code, .mono {
   transform: translateY(-1px);
 }
 
+/* ==========================================================================
+   Language Selector Pill (Segmented Control)
+   ========================================================================== */
+.lang-selector-pill {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  gap: 2px;
+  box-shadow: var(--shadow-sm);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition);
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.lang-btn:hover {
+  color: var(--text-primary);
+}
+
+.lang-btn.active {
+  background: var(--grad-primary);
+  color: #ffffff;
+  box-shadow: 0 0 10px var(--accent-cyan-glow);
+}
+
+/* Smooth transition for translatable text */
+[data-i18n] {
+  transition: opacity 0.12s ease-in-out;
+}
+
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -581,6 +627,29 @@ code, .mono {
   -webkit-text-fill-color: transparent;
   margin-bottom: 4px;
   line-height: 1.1;
+  display: inline-block;
+  transform-origin: left center;
+  transition: opacity 0.2s ease;
+}
+
+.metric-number.counting {
+  opacity: 0.95;
+}
+
+.metric-number.counted {
+  animation: numberPulse 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes numberPulse {
+  0% {
+    transform: scale(0.96);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .metric-card.gold .metric-number {

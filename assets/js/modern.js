@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initEmailCopy();
   initReadingProgressBar();
   initArticleTables();
+  initKpiCounters();
 });
 
 /* ==========================================================================
@@ -316,10 +317,16 @@ function initEmailCopy() {
     box.addEventListener('click', () => {
       const email = 'seb.urzua91@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
-        showToast('¡Email copiado al portapapeles! (seb.urzua91@gmail.com)');
-      }).catch(() => {
-        window.location.href = `mailto:${email}`;
-      });
+      const lang = localStorage.getItem('portfolio_lang') || 'es';
+      const toastTexts = {
+        es: '¡Email copiado al portapapeles! (seb.urzua91@gmail.com)',
+        en: 'Email copied to clipboard! (seb.urzua91@gmail.com)',
+        pt: 'E-mail copiado para a área de transferência! (seb.urzua91@gmail.com)'
+      };
+      showToast(toastTexts[lang] || toastTexts.es);
+    }).catch(() => {
+      window.location.href = `mailto:${email}`;
+    });
     });
   });
 }
@@ -384,5 +391,94 @@ function initArticleTables() {
       table.parentNode.insertBefore(wrapper, table);
       wrapper.appendChild(table);
     }
+  });
+}
+
+/* ==========================================================================
+   KPI Metrics Counter Animation (Count-Up on Scroll)
+   ========================================================================== */
+function initKpiCounters() {
+  const metricNumbers = document.querySelectorAll('.metric-number[data-target]');
+  if (!metricNumbers.length) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function getLohub-surzedSuffix(element) {
+    const currentLang = localStorage.getItem('portfolio_lang') || 'es';
+    if (currentLang === 'en' && element.hasAttribute('data-suffix-en')) {
+      return element.getAttribute('data-suffix-en');
+    }
+    if (currentLang === 'pt' && element.hasAttribute('data-suffix-pt')) {
+      return element.getAttribute('data-suffix-pt');
+    }
+    return element.getAttribute('data-suffix') || '';
+  }
+
+  function formatValue(element, value) {
+    const prefix = element.getAttribute('data-prefix') || '';
+    const suffix = getLohub-surzedSuffix(element);
+    const decimals = parseInt(element.getAttribute('data-decimals') || '0', 10);
+    return `${prefix}${value.toFixed(decimals)}${suffix}`;
+  }
+
+  function animateNumber(element) {
+    const target = parseFloat(element.getAttribute('data-target'));
+    const duration = parseInt(element.getAttribute('data-duration') || '1600', 10);
+
+    if (isNaN(target)) return;
+
+    if (prefersReducedMotion) {
+      element.textContent = formatValue(element, target);
+      element.classList.add('counted');
+      return;
+    }
+
+    element.classList.add('counting');
+    let startTime = null;
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+
+      // Smooth cubic ease-out curve for natural deceleration
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      const currentVal = target * easeProgress;
+
+      element.textContent = formatValue(element, currentVal);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        element.textContent = formatValue(element, target);
+        element.classList.remove('counting');
+        element.classList.add('counted');
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateNumber(entry.target);
+        obs.unobserve(entry.target); // Execute once per session for optimal performance
+      }
+    });
+  }, {
+    threshold: 0.25,
+    rootMargin: '0px 0px -30px 0px'
+  });
+
+  metricNumbers.forEach(num => observer.observe(num));
+
+  // Dynamically reformat suffix if language changes after being counted
+  window.addEventListener('languageChanged', () => {
+    metricNumbers.forEach(el => {
+      const target = parseFloat(el.getAttribute('data-target'));
+      if (!isNaN(target) && el.classList.contains('counted')) {
+        el.textContent = formatValue(el, target);
+      }
+    });
   });
 }
