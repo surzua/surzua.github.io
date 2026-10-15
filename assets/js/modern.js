@@ -974,12 +974,12 @@ function initCommandPalette() {
       {
         id: 'art-supply-chain',
         category: 'articles',
-        title: 'Predicción de Demanda & Capacidad Logística en Redes Complejas',
-        desc: 'Forecasting de series de tiempo, optimización MIP y balance de capacidades operativas',
+        title: 'De la Predicción a la Prescripción: Time Series Forecasting en Supply Chain',
+        desc: 'LightGBM Tabular Global (H=14) · Regresión Cuantílica p90 · Balanceo prescriptivo',
         icon: '📄',
         badge: lang === 'es' ? 'Leer' : (lang === 'en' ? 'Read' : 'Ler'),
-        keywords: 'articulo ensayo supply chain forecasting prediccion demanda logistica redes complejas mip pyomo',
-        action: () => { window.location.href = '/articulos/blog_supply_chain_forecasting/'; }
+        keywords: 'articulo ensayo supply chain forecasting prediccion demanda logistica redes complejas lightgbm timeseries pinball loss region-andina wape',
+        action: () => { window.location.href = '/articulos/blog-supply-chain-forecasting/'; }
       },
 
       // 4. Quick Actions
