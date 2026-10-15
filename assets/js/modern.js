@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initArticleTables();
   initKpiCounters();
   initHeroGraph();
+  initBentoGlow();
+  initCommandPalette();
 });
 
 /* ==========================================================================
@@ -261,6 +263,29 @@ const projectData = {
   }
 };
 
+function openProjectModalById(projectId) {
+  const modalOverlay = document.getElementById('project-modal');
+  if (!modalOverlay) {
+    window.location.href = `/#proyectos`;
+    return;
+  }
+  const data = projectData[projectId];
+  if (data) {
+    document.getElementById('modal-title').textContent = data.title;
+    document.getElementById('modal-org').textContent = data.org;
+    document.getElementById('modal-domain').textContent = data.domain;
+    document.getElementById('modal-metric').textContent = data.metric;
+    document.getElementById('modal-problem').textContent = data.problem;
+    document.getElementById('modal-solution').textContent = data.solution;
+    document.getElementById('modal-impact').textContent = data.impact;
+    document.getElementById('modal-stack').textContent = data.stack;
+
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+window.openProjectModalById = openProjectModalById;
+
 function initProjectModals() {
   const modalOverlay = document.getElementById('project-modal');
   const modalClose = document.getElementById('modal-close-btn');
@@ -272,21 +297,7 @@ function initProjectModals() {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const projectId = btn.getAttribute('data-project');
-      const data = projectData[projectId];
-
-      if (data) {
-        document.getElementById('modal-title').textContent = data.title;
-        document.getElementById('modal-org').textContent = data.org;
-        document.getElementById('modal-domain').textContent = data.domain;
-        document.getElementById('modal-metric').textContent = data.metric;
-        document.getElementById('modal-problem').textContent = data.problem;
-        document.getElementById('modal-solution').textContent = data.solution;
-        document.getElementById('modal-impact').textContent = data.impact;
-        document.getElementById('modal-stack').textContent = data.stack;
-
-        modalOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
+      openProjectModalById(projectId);
     });
   });
 
@@ -707,4 +718,617 @@ function initHeroGraph() {
       setTimeout(renderFrame, 50);
     });
   }
+}
+
+/* ==========================================================================
+   Bento Glow: Reactive Holographic Spotlight & Border Glow Engine
+   ========================================================================== */
+function initBentoGlow() {
+  // Disable on touch devices to conserve resources and avoid erratic touch coords
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+
+  const glowCards = document.querySelectorAll(
+    '.pillar-card, .project-card, .article-card, .skill-box, .bento-glow'
+  );
+  if (!glowCards.length) return;
+
+  glowCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--mouse-x', '-500px');
+      card.style.setProperty('--mouse-y', '-500px');
+    });
+  });
+}
+
+/* ==========================================================================
+   Command Palette (⌘K Spotlight) Engine
+   ========================================================================== */
+function initCommandPalette() {
+  const overlay = document.getElementById('cmd-palette');
+  const triggerBtn = document.getElementById('cmd-palette-trigger');
+  const searchInput = document.getElementById('cmd-search-input');
+  const resultsList = document.getElementById('cmd-results-list');
+  const closeBtn = document.getElementById('cmd-close-btn');
+  const resultsCount = document.getElementById('cmd-results-count');
+
+  if (!overlay || !searchInput || !resultsList) return;
+
+  const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0 ||
+                navigator.userAgent.toUpperCase().indexOf('MAC') >= 0;
+
+  // Adapt shortcut badges according to operating system
+  if (!isMac) {
+    document.querySelectorAll('.cmd-shortcut-badge').forEach(el => {
+      el.textContent = 'Ctrl K';
+    });
+    if (triggerBtn) {
+      const triggerText = triggerBtn.querySelector('.cmd-trigger-text');
+      if (triggerText && triggerText.textContent.includes('⌘K')) {
+        triggerText.textContent = triggerText.textContent.replace('⌘K', 'Ctrl K');
+      }
+    }
+  }
+
+  let selectedIndex = 0;
+  let filteredCommands = [];
+
+  function getCatalog() {
+    const lang = localStorage.getItem('portfolio_lang') || 'es';
+    const isArticle = document.body.classList.contains('article-page');
+    const pathPrefix = isArticle ? '/' : '';
+
+    return [
+      // 1. Navigation
+      {
+        id: 'nav-inicio',
+        category: 'nav',
+        title: lang === 'es' ? 'Inicio' : (lang === 'en' ? 'Home' : 'Início'),
+        desc: lang === 'es' ? 'Volver a la cabecera y presentación principal' : (lang === 'en' ? 'Return to top header and presentation' : 'Voltar ao cabeçalho e apresentação'),
+        icon: '🏠',
+        badge: lang === 'es' ? 'Sección' : (lang === 'en' ? 'Section' : 'Seção'),
+        keywords: 'inicio home hero header perfil sebastian urzua presentacion',
+        action: () => navigateTo(`${pathPrefix}#inicio`)
+      },
+      {
+        id: 'nav-pilares',
+        category: 'nav',
+        title: lang === 'es' ? 'Pilares Estratégicos' : (lang === 'en' ? 'Strategic Pillars' : 'Pilares Estratégicos'),
+        desc: lang === 'es' ? 'Optimización, Machine Learning y Estrategia de Negocio' : (lang === 'en' ? 'Optimization, Machine Learning, and Business Strategy' : 'Otimização, Machine Learning e Estratégia'),
+        icon: '⚡',
+        badge: lang === 'es' ? 'Sección' : (lang === 'en' ? 'Section' : 'Seção'),
+        keywords: 'pilares triangulo de valor optimizacion ml negocio roi mba operaciones',
+        action: () => navigateTo(`${pathPrefix}#pilares`)
+      },
+      {
+        id: 'nav-proyectos',
+        category: 'nav',
+        title: lang === 'es' ? 'Casos de Impacto & Proyectos' : (lang === 'en' ? 'Impact Cases & Projects' : 'Casos de Impacto & Projetos'),
+        desc: lang === 'es' ? 'Soluciones cuantitativas en Supply Chain, Banca y Retail' : (lang === 'en' ? 'Quantitative solutions in Supply Chain, Banking, and Retail' : 'Soluções quantitativas em Supply Chain, Bancos e Varejo'),
+        icon: '💼',
+        badge: lang === 'es' ? 'Sección' : (lang === 'en' ? 'Section' : 'Seção'),
+        keywords: 'proyectos casos impacto supply chain retail banca open source portafolio',
+        action: () => navigateTo(`${pathPrefix}#proyectos`)
+      },
+      {
+        id: 'nav-articulos',
+        category: 'nav',
+        title: lang === 'es' ? 'Artículos & Ensayos Cuantitativos' : (lang === 'en' ? 'Articles & Quantitative Essays' : 'Artigos & Ensaios Quantitativos'),
+        desc: lang === 'es' ? 'Investigaciones aplicadas, modelos causales y finanzas' : (lang === 'en' ? 'Applied research, causal models, and finance' : 'Pesquisas aplicadas, modelos causais e finanças'),
+        icon: '📝',
+        badge: lang === 'es' ? 'Sección' : (lang === 'en' ? 'Section' : 'Seção'),
+        keywords: 'articulos blog ensayos publicaciones gridbreak hiporefi supply chain apagon causalidad',
+        action: () => navigateTo(`${pathPrefix}#articulos`)
+      },
+      {
+        id: 'nav-skills',
+        category: 'nav',
+        title: lang === 'es' ? 'Expertise & Stack Tecnológico' : (lang === 'en' ? 'Expertise & Tech Stack' : 'Expertise & Stack Tecnológico'),
+        desc: lang === 'es' ? 'Python, Polars, Pyomo, GCP, AWS, Vertex AI, Scikit-Learn' : (lang === 'en' ? 'Python, Polars, Pyomo, GCP, AWS, Vertex AI, Scikit-Learn' : 'Python, Polars, Pyomo, GCP, AWS, Vertex AI, Scikit-Learn'),
+        icon: '🛠️',
+        badge: lang === 'es' ? 'Sección' : (lang === 'en' ? 'Section' : 'Seção'),
+        keywords: 'skills tecnologias stack python polars pyomo gcp aws bigquery vertex ai mlops git',
+        action: () => navigateTo(`${pathPrefix}#skills`)
+      },
+      {
+        id: 'nav-trayectoria',
+        category: 'nav',
+        title: lang === 'es' ? 'Trayectoria & Formación' : (lang === 'en' ? 'Career & Education' : 'Trajetória & Formação'),
+        desc: lang === 'es' ? 'Experiencia profesional y formación en U. de Chile (Nota 7.0)' : (lang === 'en' ? 'Professional experience & education at U. of Chile (7.0 GPA)' : 'Experiência profissional e formação na U. do Chile'),
+        icon: '🎓',
+        badge: lang === 'es' ? 'Sección' : (lang === 'en' ? 'Section' : 'Seção'),
+        keywords: 'trayectoria experiencia educacion cv carrera smartjob retail-omnichannel itau kpmg cmm fcfm mba beauchef',
+        action: () => navigateTo(`${pathPrefix}#trayectoria`)
+      },
+      {
+        id: 'nav-contacto',
+        category: 'nav',
+        title: lang === 'es' ? 'Contacto Directo' : (lang === 'en' ? 'Direct Contact' : 'Contato Direto'),
+        desc: 'seb.urzua91@gmail.com · Santiago, Chile',
+        icon: '📬',
+        badge: lang === 'es' ? 'Sección' : (lang === 'en' ? 'Section' : 'Seção'),
+        keywords: 'contacto email correo santiago chile mensaje reunion linkedin fono',
+        action: () => navigateTo(`${pathPrefix}#contacto`)
+      },
+
+      // 2. Featured Projects (Modal triggers)
+      {
+        id: 'proj-retail-omnichannel-genai',
+        category: 'projects',
+        title: 'Retail Omnicanal GenAI: Corrección de Catálogo (Pipeline Vertex AI)',
+        desc: '> 7.7M USD anuales regional · A/B Testing Causal · LLMs Few-Shot',
+        icon: '🤖',
+        badge: 'Modal',
+        keywords: 'retail-omnichannel genai retail catalogo vertex ai ab testing causal sku cubicaje fletes llm prompting smartjob',
+        action: () => openProjectModalById('retail-omnichannel-genai')
+      },
+      {
+        id: 'proj-retail-omnichannel-logistics',
+        category: 'projects',
+        title: 'Retail Omnicanal Logistics: Forecasting & Simplificación de Red',
+        desc: '-2 p.p. en atrasos (Región Andina) · +100M CLP ventas protegidas (CyberDay)',
+        icon: '🚚',
+        badge: 'Modal',
+        keywords: 'retail-omnichannel logistics supply chain forecasting series de tiempo red cross docking picking pyomo clustering',
+        action: () => openProjectModalById('retail-omnichannel-logistics')
+      },
+      {
+        id: 'proj-itau-recommender',
+        category: 'projects',
+        title: 'ItaúX: Motor Look-a-Likes e Hiperpersonalización Comercial',
+        desc: '+50% tasa de contacto efectivo · Ganador Premio Transforma 2024',
+        icon: '🎯',
+        badge: 'Modal',
+        keywords: 'itau itaux look a likes motor recomendador comercial arboles de decision lightgbm transforms banca',
+        action: () => openProjectModalById('itau-recommender')
+      },
+      {
+        id: 'proj-itau-pitch-llm',
+        category: 'projects',
+        title: 'Pitch Ganador: Argumentario Comercial con LLMs en Salesforce',
+        desc: 'Speech Analytics · Discursos hiperpersonalizados en CRM',
+        icon: '💬',
+        badge: 'Modal',
+        keywords: 'pitch ganador itau llms speech analytics salesforce crm llamadas argumentario comercial',
+        action: () => openProjectModalById('itau-pitch-llm')
+      },
+      {
+        id: 'proj-gridbreak-cl',
+        category: 'projects',
+        title: 'GridBreak-CL: Fragilidad Eléctrica ante Estrés Climático',
+        desc: 'HR = 483.0 en Red Aérea · Análisis de Supervivencia & GLM Logit',
+        icon: '⚡',
+        badge: 'Modal',
+        keywords: 'gridbreak cl fragilidad electrica supervivencia santiago temporal sec cox kaplan meier arbolado postes open meteo',
+        action: () => openProjectModalById('gridbreak-cl')
+      },
+      {
+        id: 'proj-hiporefi-cl',
+        category: 'projects',
+        title: 'HipoRefi-CL: Optimizador & Simulador Hipotecario en Chile',
+        desc: 'Modelamiento en UF · VPN, TIR y Break-Even con Gastos Operacionales',
+        icon: '🏦',
+        badge: 'Modal',
+        keywords: 'hiporefi cl hipotecario refinanciamiento tasas uf vpn tir simulador credito amortizacion prepago',
+        action: () => openProjectModalById('hiporefi-cl')
+      },
+      {
+        id: 'proj-credit-policy',
+        category: 'projects',
+        title: 'Credit Policy Optimizer: Frontera Eficiente de Riesgo',
+        desc: 'Búsqueda de Cut-off Óptimo · Curva ROC & Maximización de Utilidad',
+        icon: '📈',
+        badge: 'Modal',
+        keywords: 'credit policy optimizer riesgo financiero scoring roc cutoff utilidad morosidad default',
+        action: () => openProjectModalById('credit-policy')
+      },
+      {
+        id: 'proj-itau-digital-risk',
+        category: 'projects',
+        title: 'Scoring Alternativo con Psicometría & 2° Lugar Itaú Brasil',
+        desc: 'Inclusión Financiera · Batalla de Datos Latinoamérica · PoC Cuenta Digital',
+        icon: '🏆',
+        badge: 'Modal',
+        keywords: 'itau riesgo digital psicometria desbancarizados batalla de datos brasil nps inclusion financiera',
+        action: () => openProjectModalById('itau-digital-risk')
+      },
+      {
+        id: 'proj-kpmg-fraud-audit',
+        category: 'projects',
+        title: 'KPMG: Detección de Fraude en Retail & Vectorización Actuarial',
+        desc: 'Scoring Multivariable de Fraude · Vectorización de Pasivos en R (IAS 19)',
+        icon: '🔍',
+        badge: 'Modal',
+        keywords: 'kpmg fraude retail auditoria scoring r vectorizado ias 19 telepeaje k-prototypes dama',
+        action: () => openProjectModalById('kpmg-fraud-audit')
+      },
+
+      // 3. Articles & Quantitative Essays
+      {
+        id: 'art-gridbreak',
+        category: 'articles',
+        title: 'El Umbral del Apagón: Fragilidad Eléctrica en Santiago',
+        desc: 'Auditoría cuantitativa independiente · Telemetría SEC & Open-Meteo · Modelo de Cox',
+        icon: '📄',
+        badge: lang === 'es' ? 'Leer' : (lang === 'en' ? 'Read' : 'Ler'),
+        keywords: 'articulo ensayo el umbral del apagon fragilidad electrica santiago sec open meteo cox supervivencia',
+        action: () => { window.location.href = '/articulos/el-umbral-del-apagon-fragilidad-electrica-santiago/'; }
+      },
+      {
+        id: 'art-hiporefi',
+        category: 'articles',
+        title: 'HipoRefi-CL: ¿Cuándo conviene refinanciar un crédito hipotecario?',
+        desc: 'Modelamiento riguroso en UF · Gastos operacionales · Punto de equilibrio (VPN/TIR)',
+        icon: '📄',
+        badge: lang === 'es' ? 'Leer' : (lang === 'en' ? 'Read' : 'Ler'),
+        keywords: 'articulo ensayo hiporefi cl refinanciar credito hipotecario chile tasas vpn tir',
+        action: () => { window.location.href = '/articulos/hiporefi-cl-decision-refinanciamiento/'; }
+      },
+      {
+        id: 'art-supply-chain',
+        category: 'articles',
+        title: 'Predicción de Demanda & Capacidad Logística en Redes Complejas',
+        desc: 'Forecasting de series de tiempo, optimización MIP y balance de capacidades operativas',
+        icon: '📄',
+        badge: lang === 'es' ? 'Leer' : (lang === 'en' ? 'Read' : 'Ler'),
+        keywords: 'articulo ensayo supply chain forecasting prediccion demanda logistica redes complejas mip pyomo',
+        action: () => { window.location.href = '/articulos/blog_supply_chain_forecasting/'; }
+      },
+
+      // 4. Quick Actions
+      {
+        id: 'act-copy-email',
+        category: 'actions',
+        title: lang === 'es' ? 'Copiar Correo Electrónico' : (lang === 'en' ? 'Copy Email Address' : 'Copiar E-mail'),
+        desc: 'seb.urzua91@gmail.com',
+        icon: '📋',
+        badge: lang === 'es' ? 'Acción' : (lang === 'en' ? 'Action' : 'Ação'),
+        keywords: 'copiar email correo seb.urzua91@gmail.com contacto portapapeles clipboard copy',
+        action: () => copyEmailToClipboard()
+      },
+      {
+        id: 'act-toggle-theme',
+        category: 'actions',
+        title: lang === 'es' ? 'Alternar Tema Claro / Oscuro' : (lang === 'en' ? 'Toggle Light / Dark Theme' : 'Alternar Modo Claro / Escuro'),
+        desc: lang === 'es' ? 'Cambiar el contraste visual de la interfaz' : (lang === 'en' ? 'Switch visual interface contrast' : 'Mudar o contraste visual da interface'),
+        icon: '🌓',
+        badge: lang === 'es' ? 'Tema' : (lang === 'en' ? 'Theme' : 'Tema'),
+        keywords: 'tema dark mode light mode modo oscuro claro contraste toggle color',
+        action: () => toggleTheme()
+      },
+      {
+        id: 'act-lang-es',
+        category: 'actions',
+        title: 'Cambiar Idioma: Español (ES)',
+        desc: 'Interfaz, métricas y proyectos en español',
+        icon: '🇪🇸',
+        badge: 'i18n',
+        keywords: 'idioma espanol es spanish linguagem castellano',
+        action: () => switchLanguage('es')
+      },
+      {
+        id: 'act-lang-en',
+        category: 'actions',
+        title: 'Switch Language: English (EN)',
+        desc: 'Interface, metrics, and project details in English',
+        icon: '🇬🇧',
+        badge: 'i18n',
+        keywords: 'idioma english en ingles language translate translation',
+        action: () => switchLanguage('en')
+      },
+      {
+        id: 'act-lang-pt',
+        category: 'actions',
+        title: 'Mudar Idioma: Português (PT)',
+        desc: 'Interface, métricas e projetos em português',
+        icon: '🇧🇷',
+        badge: 'i18n',
+        keywords: 'idioma portugues pt portuguese linguagem traducao',
+        action: () => switchLanguage('pt')
+      },
+      {
+        id: 'act-open-github',
+        category: 'actions',
+        title: 'GitHub @surzua',
+        desc: 'github.com/surzua · Repositorios, algoritmos & notebooks',
+        icon: '🐙',
+        badge: 'Link',
+        keywords: 'github repositorio codigo fuente python open source surzua link',
+        action: () => window.open('https://github.com/surzua', '_blank')
+      },
+      {
+        id: 'act-open-linkedin',
+        category: 'actions',
+        title: 'LinkedIn: Sebastian Urzúa Bórquez',
+        desc: 'linkedin.com/in/surzuab/ · Red profesional & trayectoria',
+        icon: '💼',
+        badge: 'Link',
+        keywords: 'linkedin perfil profesional conectar mensaje surzuab red link',
+        action: () => window.open('https://www.linkedin.com/in/surzuab/', '_blank')
+      }
+    ];
+  }
+
+  function navigateTo(target) {
+    if (target.startsWith('#')) {
+      const el = document.querySelector(target);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.location.href = `/${target}`;
+      }
+    } else {
+      window.location.href = target;
+    }
+  }
+
+  function copyEmailToClipboard() {
+    const email = 'seb.urzua91@gmail.com';
+    const lang = localStorage.getItem('portfolio_lang') || 'es';
+    const toastTexts = {
+      es: '¡Email copiado al portapapeles! (seb.urzua91@gmail.com)',
+      en: 'Email copied to clipboard! (seb.urzua91@gmail.com)',
+      pt: 'E-mail copiado para a área de transferência! (seb.urzua91@gmail.com)'
+    };
+
+    navigator.clipboard.writeText(email).then(() => {
+      showToast(toastTexts[lang] || toastTexts.es);
+    }).catch(() => {
+      window.location.href = `mailto:${email}`;
+    });
+  }
+
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateThemeIcon(next);
+  }
+
+  function switchLanguage(lang) {
+    if (typeof window.setPortfolioLanguage === 'function') {
+      window.setPortfolioLanguage(lang);
+    }
+  }
+
+  function normalize(str) {
+    return (str || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .trim();
+  }
+
+  function filterCommands(query) {
+    const catalog = getCatalog();
+    const cleanQuery = normalize(query);
+
+    if (!cleanQuery) {
+      return catalog;
+    }
+
+    const tokens = cleanQuery.split(/\s+/).filter(Boolean);
+
+    return catalog.filter(cmd => {
+      const corpus = normalize(`${cmd.title} ${cmd.desc} ${cmd.keywords} ${cmd.category}`);
+      return tokens.every(token => corpus.includes(token));
+    });
+  }
+
+  function getCategoryLabel(catKey) {
+    const lang = localStorage.getItem('portfolio_lang') || 'es';
+    const labels = {
+      nav: { es: 'Navegación Rápida', en: 'Quick Navigation', pt: 'Navegação Rápida' },
+      projects: { es: 'Casos de Impacto & Proyectos', en: 'Impact Cases & Projects', pt: 'Casos de Impacto & Projetos' },
+      articles: { es: 'Artículos & Ensayos', en: 'Articles & Essays', pt: 'Artigos & Ensaios' },
+      actions: { es: 'Acciones & Configuración', en: 'Actions & Settings', pt: 'Ações & Configurações' }
+    };
+    return labels[catKey] ? (labels[catKey][lang] || labels[catKey].es) : catKey;
+  }
+
+  function renderResults() {
+    const query = searchInput.value;
+    filteredCommands = filterCommands(query);
+    resultsList.innerHTML = '';
+
+    const lang = localStorage.getItem('portfolio_lang') || 'es';
+
+    if (resultsCount) {
+      const resultText = lang === 'en' ? `${filteredCommands.length} results` : 
+                        (lang === 'pt' ? `${filteredCommands.length} resultados` : `${filteredCommands.length} resultados`);
+      resultsCount.textContent = resultText;
+    }
+
+    if (filteredCommands.length === 0) {
+      const emptyDiv = document.createElement('div');
+      emptyDiv.className = 'cmd-empty-state';
+      emptyDiv.innerHTML = `
+        <div class="cmd-empty-icon">🔍</div>
+        <div class="cmd-empty-title">
+          ${lang === 'en' ? 'No matching commands found' : (lang === 'pt' ? 'Nenhum comando encontrado' : 'No se encontraron comandos')}
+        </div>
+        <div class="cmd-empty-hint">
+          ${lang === 'en' ? 'Try searching for "Supply Chain", "Retail Omnicanal", "GenAI", or "Email"' : (lang === 'pt' ? 'Tente buscar por "Supply Chain", "Retail Omnicanal", "GenAI" ou "E-mail"' : 'Intenta con "Supply Chain", "Retail Omnicanal", "GenAI", "GridBreak" o "Email"')}
+        </div>
+      `;
+      resultsList.appendChild(emptyDiv);
+      return;
+    }
+
+    if (selectedIndex >= filteredCommands.length) {
+      selectedIndex = 0;
+    }
+
+    const categoriesOrder = ['nav', 'projects', 'articles', 'actions'];
+    let globalItemIndex = 0;
+
+    categoriesOrder.forEach(cat => {
+      const itemsInCat = filteredCommands.filter(c => c.category === cat);
+      if (!itemsInCat.length) return;
+
+      const groupLabel = document.createElement('div');
+      groupLabel.className = 'cmd-group-label';
+      groupLabel.textContent = getCategoryLabel(cat);
+      resultsList.appendChild(groupLabel);
+
+      itemsInCat.forEach(cmd => {
+        const itemIndex = globalItemIndex++;
+        const itemEl = document.createElement('div');
+        itemEl.className = `cmd-item ${itemIndex === selectedIndex ? 'selected' : ''}`;
+        itemEl.setAttribute('role', 'option');
+        itemEl.setAttribute('aria-selected', itemIndex === selectedIndex ? 'true' : 'false');
+        itemEl.setAttribute('data-index', itemIndex);
+
+        itemEl.innerHTML = `
+          <div class="cmd-item-left">
+            <div class="cmd-item-icon">${cmd.icon}</div>
+            <div class="cmd-item-info">
+              <div class="cmd-item-title">${cmd.title}</div>
+              <div class="cmd-item-desc">${cmd.desc}</div>
+            </div>
+          </div>
+          <div class="cmd-item-badge">${cmd.badge}</div>
+        `;
+
+        itemEl.addEventListener('mouseenter', () => {
+          setSelectedIndex(itemIndex);
+        });
+
+        itemEl.addEventListener('click', () => {
+          executeCommand(itemIndex);
+        });
+
+        resultsList.appendChild(itemEl);
+      });
+    });
+
+    scrollSelectedIntoView();
+  }
+
+  function setSelectedIndex(idx) {
+    if (filteredCommands.length === 0) return;
+    selectedIndex = idx;
+    const items = resultsList.querySelectorAll('.cmd-item');
+    items.forEach((item, i) => {
+      const isSelected = i === selectedIndex;
+      item.classList.toggle('selected', isSelected);
+      item.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+    });
+  }
+
+  function scrollSelectedIntoView() {
+    const selectedEl = resultsList.querySelector('.cmd-item.selected');
+    if (selectedEl) {
+      selectedEl.scrollIntoView({ block: 'nearest' });
+    }
+  }
+
+  function executeCommand(idx) {
+    if (filteredCommands[idx]) {
+      closePalette();
+      setTimeout(() => {
+        filteredCommands[idx].action();
+      }, 80);
+    }
+  }
+
+  function openPalette() {
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    searchInput.value = '';
+    selectedIndex = 0;
+    renderResults();
+    setTimeout(() => {
+      searchInput.focus();
+    }, 50);
+  }
+
+  function closePalette() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    searchInput.blur();
+  }
+
+  // Event Listeners
+  if (triggerBtn) {
+    triggerBtn.addEventListener('click', openPalette);
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closePalette);
+  }
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      closePalette();
+    }
+  });
+
+  searchInput.addEventListener('input', () => {
+    selectedIndex = 0;
+    renderResults();
+  });
+
+  // Global keyboard shortcuts
+  document.addEventListener('keydown', (e) => {
+    const isPaletteOpen = overlay.classList.contains('active');
+
+    // Toggle shortcut: ⌘K or Ctrl+K
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      if (isPaletteOpen) {
+        closePalette();
+      } else {
+        openPalette();
+      }
+      return;
+    }
+
+    // Power-user slash shortcut: '/' opens palette if not focusing an input
+    if (e.key === '/' && !isPaletteOpen) {
+      const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+      if (activeTag !== 'input' && activeTag !== 'textarea') {
+        e.preventDefault();
+        openPalette();
+        return;
+      }
+    }
+
+    if (!isPaletteOpen) return;
+
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closePalette();
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (filteredCommands.length > 0) {
+        setSelectedIndex((selectedIndex + 1) % filteredCommands.length);
+        scrollSelectedIntoView();
+      }
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (filteredCommands.length > 0) {
+        setSelectedIndex((selectedIndex - 1 + filteredCommands.length) % filteredCommands.length);
+        scrollSelectedIntoView();
+      }
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      executeCommand(selectedIndex);
+    }
+  });
+
+  // Reactive re-render on language switch
+  window.addEventListener('languageChanged', () => {
+    if (overlay.classList.contains('active')) {
+      renderResults();
+    }
+  });
 }

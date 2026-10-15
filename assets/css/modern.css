@@ -730,6 +730,115 @@ code, .mono {
 }
 
 /* ==========================================================================
+   Bento Glow: Reactive Holographic Borders & Surface Spotlight
+   ========================================================================== */
+.bento-glow,
+.pillar-card,
+.project-card,
+.article-card,
+.skill-box {
+  position: relative;
+  overflow: hidden;
+  --mouse-x: -500px;
+  --mouse-y: -500px;
+}
+
+.bento-glow > *,
+.pillar-card > *,
+.project-card > *,
+.article-card > *,
+.skill-box > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Layer 1: Ambient Volumetric Surface Glow */
+.bento-glow::before,
+.pillar-card::before,
+.project-card::before,
+.article-card::before,
+.skill-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    550px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(6, 182, 212, 0.08),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+[data-theme="light"] .bento-glow::before,
+[data-theme="light"] .pillar-card::before,
+[data-theme="light"] .project-card::before,
+[data-theme="light"] .article-card::before,
+[data-theme="light"] .skill-box::before {
+  background: radial-gradient(
+    550px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(37, 99, 235, 0.06),
+    transparent 55%
+  );
+}
+
+/* Layer 2: Reactive Holographic Border Glow */
+.bento-glow::after,
+.pillar-card::after,
+.project-card::after,
+.article-card::after,
+.skill-box::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    320px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(56, 189, 248, 0.75),
+    rgba(99, 102, 241, 0.35) 45%,
+    transparent 70%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+[data-theme="light"] .bento-glow::after,
+[data-theme="light"] .pillar-card::after,
+[data-theme="light"] .project-card::after,
+[data-theme="light"] .article-card::after,
+[data-theme="light"] .skill-box::after {
+  background: radial-gradient(
+    320px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+    rgba(37, 99, 235, 0.65),
+    rgba(2, 132, 199, 0.3) 45%,
+    transparent 70%
+  );
+}
+
+.bento-glow:hover::before,
+.bento-glow:hover::after,
+.pillar-card:hover::before,
+.pillar-card:hover::after,
+.project-card:hover::before,
+.project-card:hover::after,
+.article-card:hover::before,
+.article-card:hover::after,
+.skill-box:hover::before,
+.skill-box:hover::after {
+  opacity: 1;
+}
+
+/* ==========================================================================
    Core Pillars (The 3 Strategic Superpowers)
    ========================================================================== */
 .pillars-grid {
@@ -2494,6 +2603,439 @@ mjx-container[display="true"]::-webkit-scrollbar-thumb {
 [data-theme="light"] .mobile-nav {
   background: rgba(248, 250, 252, 0.98);
   border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+/* ==========================================================================
+   Command Palette (⌘K Spotlight) — Techie Executive System
+   ========================================================================== */
+.cmd-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 5px 12px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  line-height: 1;
+  user-select: none;
+  backdrop-filter: blur(12px);
+}
+
+.cmd-trigger-btn:hover {
+  border-color: var(--accent-cyan);
+  color: var(--text-primary);
+  box-shadow: 0 0 14px var(--accent-cyan-glow);
+}
+
+.cmd-trigger-icon {
+  color: var(--accent-cyan);
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.cmd-trigger-text {
+  font-size: 0.8rem;
+}
+
+.cmd-shortcut-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+/* Command Palette Overlay */
+.cmd-palette-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  background: rgba(4, 7, 15, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s ease;
+}
+
+.cmd-palette-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Command Palette Card */
+.cmd-palette-card {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  margin-top: clamp(40px, 11vh, 110px);
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05),
+              0 24px 60px -12px rgba(0, 0, 0, 0.7),
+              0 0 35px rgba(0, 212, 255, 0.12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-10px) scale(0.98);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cmd-palette-overlay.active .cmd-palette-card {
+  transform: translateY(0) scale(1);
+}
+
+/* Header & Search Input */
+.cmd-palette-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cmd-search-icon {
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+}
+
+.cmd-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.cmd-search-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+.cmd-esc-badge {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+  line-height: 1;
+}
+
+.cmd-esc-badge:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-cyan);
+}
+
+/* Body & Items List */
+.cmd-palette-body {
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 10px 12px;
+  overscroll-behavior: contain;
+}
+
+.cmd-palette-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cmd-palette-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cmd-palette-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+
+.cmd-group-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 10px 12px 4px;
+}
+
+.cmd-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 12px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.14s ease, border-color 0.14s ease;
+  border-left: 3px solid transparent;
+  margin-bottom: 2px;
+}
+
+.cmd-item.selected,
+.cmd-item:hover {
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.12) 0%, rgba(59, 130, 246, 0.06) 100%);
+  border-left-color: var(--accent-cyan);
+}
+
+.cmd-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1;
+}
+
+.cmd-item-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent-cyan);
+  transition: var(--transition);
+  font-size: 0.95rem;
+}
+
+.cmd-item.selected .cmd-item-icon {
+  background: rgba(0, 212, 255, 0.22);
+  color: #ffffff;
+}
+
+.cmd-item-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 2px;
+}
+
+.cmd-item-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cmd-item-desc {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cmd-item-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 2px 7px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.cmd-item.selected .cmd-item-badge {
+  border-color: rgba(0, 212, 255, 0.3);
+  color: var(--accent-cyan);
+  background: rgba(0, 212, 255, 0.08);
+}
+
+/* Empty State */
+.cmd-empty-state {
+  padding: 36px 20px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.cmd-empty-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+
+.cmd-empty-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.cmd-empty-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Footer & Hints */
+.cmd-palette-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  border-top: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.cmd-footer-keys {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.cmd-footer-keys kbd {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-size: 0.68rem;
+  margin-right: 3px;
+  color: var(--text-primary);
+}
+
+/* Light Mode Overrides for Command Palette */
+[data-theme="light"] .cmd-palette-overlay {
+  background: rgba(15, 23, 42, 0.45);
+}
+
+[data-theme="light"] .cmd-palette-card {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15),
+              0 0 25px rgba(37, 99, 235, 0.1);
+}
+
+[data-theme="light"] .cmd-palette-header {
+  background: rgba(248, 250, 252, 0.9);
+  border-bottom-color: rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .cmd-search-input {
+  color: #0f172a;
+}
+
+[data-theme="light"] .cmd-search-input::placeholder {
+  color: #64748b;
+}
+
+[data-theme="light"] .cmd-palette-body::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.15);
+}
+
+[data-theme="light"] .cmd-item.selected,
+[data-theme="light"] .cmd-item:hover {
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.08) 0%, rgba(6, 182, 212, 0.04) 100%);
+  border-left-color: var(--accent-blue);
+}
+
+[data-theme="light"] .cmd-item-icon {
+  background: rgba(15, 23, 42, 0.05);
+  color: var(--accent-blue);
+}
+
+[data-theme="light"] .cmd-item.selected .cmd-item-icon {
+  background: rgba(37, 99, 235, 0.15);
+  color: var(--accent-blue);
+}
+
+[data-theme="light"] .cmd-item-title {
+  color: #0f172a;
+}
+
+[data-theme="light"] .cmd-item-desc {
+  color: #475569;
+}
+
+[data-theme="light"] .cmd-item-badge {
+  background: rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.1);
+  color: #475569;
+}
+
+[data-theme="light"] .cmd-item.selected .cmd-item-badge {
+  border-color: rgba(37, 99, 235, 0.3);
+  color: var(--accent-blue);
+  background: rgba(37, 99, 235, 0.08);
+}
+
+[data-theme="light"] .cmd-palette-footer {
+  background: rgba(248, 250, 252, 0.9);
+  border-top-color: rgba(15, 23, 42, 0.08);
+  color: #64748b;
+}
+
+[data-theme="light"] .cmd-footer-keys kbd {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+/* Responsive Mobile Rules */
+@media (max-width: 768px) {
+  .cmd-trigger-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .cmd-trigger-text,
+  .cmd-shortcut-badge {
+    display: none;
+  }
+
+  .cmd-palette-card {
+    margin-top: 16px;
+    max-height: 85vh;
+  }
+
+  .cmd-palette-body {
+    max-height: 52vh;
+  }
+
+  .cmd-footer-keys span:not(:last-child) {
+    display: none;
+  }
 }
 
 

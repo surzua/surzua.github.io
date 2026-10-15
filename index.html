@@ -56,6 +56,16 @@ layout: null
       </nav>
 
       <div class="header-actions">
+        <!-- Command Palette Trigger Button (⌘K Spotlight) -->
+        <button id="cmd-palette-trigger" class="cmd-trigger-btn" aria-label="Abrir Command Palette (⌘K)" title="Command Palette (⌘K / Ctrl+K)">
+          <svg class="cmd-trigger-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span class="cmd-trigger-text" data-i18n="cmd.trigger_btn">Buscar o ⌘K</span>
+          <kbd class="cmd-shortcut-badge">⌘K</kbd>
+        </button>
+
         <!-- Segmented Language Control -->
         <div class="lang-selector-pill" role="group" aria-label="Seleccionar idioma">
           <button class="lang-btn active" data-lang="es" aria-pressed="true" title="Español">ES</button>
@@ -1180,6 +1190,35 @@ layout: null
 
       <div class="modal-section-title" data-i18n="modal.stack">Stack & Tecnologías Utilizadas</div>
       <p id="modal-stack" class="modal-text" style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent-cyan);"></p>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Command Palette Modal (⌘K Spotlight)
+       ======================================================================== -->
+  <div id="cmd-palette" class="cmd-palette-overlay" role="dialog" aria-modal="true" aria-label="Command Palette">
+    <div class="cmd-palette-card">
+      <div class="cmd-palette-header">
+        <svg class="cmd-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="cmd-search-input" class="cmd-search-input" placeholder="Escribe un comando o busca..." autocomplete="off" spellcheck="false" data-i18n-placeholder="cmd.placeholder">
+        <button id="cmd-close-btn" class="cmd-esc-badge" aria-label="Cerrar Command Palette">ESC</button>
+      </div>
+
+      <div class="cmd-palette-body" id="cmd-results-list" role="listbox">
+        <!-- Dynamic items populated by modern.js -->
+      </div>
+
+      <div class="cmd-palette-footer">
+        <div class="cmd-footer-keys">
+          <span><kbd>↑</kbd><kbd>↓</kbd> <span data-i18n="cmd.key_nav">Navegar</span></span>
+          <span><kbd>↵</kbd> <span data-i18n="cmd.key_select">Seleccionar</span></span>
+          <span><kbd>ESC</kbd> <span data-i18n="cmd.key_close">Cerrar</span></span>
+        </div>
+        <div class="cmd-footer-count" id="cmd-results-count">0 resultados</div>
+      </div>
     </div>
   </div>
 

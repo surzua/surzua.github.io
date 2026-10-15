@@ -84,7 +84,18 @@ const i18nTranslations = {
     "modal.challenge": "El Desafío / Problema de Negocio",
     "modal.solution": "La Solución Matemática & Algorítmica",
     "modal.impact": "Impacto Cuantitativo Generado",
-    "modal.stack": "Stack & Tecnologías Utilizadas"
+    "modal.stack": "Stack & Tecnologías Utilizadas",
+
+    "cmd.trigger_btn": "Buscar o ⌘K",
+    "cmd.placeholder": "Escribe un comando o busca...",
+    "cmd.key_nav": "Navegar",
+    "cmd.key_select": "Seleccionar",
+    "cmd.key_close": "Cerrar",
+    "cmd.cat_nav": "Navegación",
+    "cmd.cat_projects": "Casos de Impacto & Proyectos",
+    "cmd.cat_articles": "Artículos & Ensayos",
+    "cmd.cat_actions": "Acciones Rápidas",
+    "cmd.no_results": "No se encontraron comandos coincidentes"
   },
 
   en: {
@@ -166,7 +177,18 @@ const i18nTranslations = {
     "modal.challenge": "The Challenge / Business Problem",
     "modal.solution": "Mathematical & Algorithmic Solution",
     "modal.impact": "Quantitative Impact Delivered",
-    "modal.stack": "Stack & Technologies Deployed"
+    "modal.stack": "Stack & Technologies Deployed",
+
+    "cmd.trigger_btn": "Search or ⌘K",
+    "cmd.placeholder": "Type a command or search...",
+    "cmd.key_nav": "Navigate",
+    "cmd.key_select": "Select",
+    "cmd.key_close": "Close",
+    "cmd.cat_nav": "Navigation",
+    "cmd.cat_projects": "Impact Cases & Projects",
+    "cmd.cat_articles": "Articles & Essays",
+    "cmd.cat_actions": "Quick Actions",
+    "cmd.no_results": "No matching commands found"
   },
 
   pt: {
@@ -248,7 +270,18 @@ const i18nTranslations = {
     "modal.challenge": "O Desafio / Problema de Negócio",
     "modal.solution": "A Solução Matemática & Algorítmica",
     "modal.impact": "Impacto Quantitativo Gerado",
-    "modal.stack": "Stack & Tecnologias Utilizadas"
+    "modal.stack": "Stack & Tecnologias Utilizadas",
+
+    "cmd.trigger_btn": "Buscar ou ⌘K",
+    "cmd.placeholder": "Digite um comando ou busque...",
+    "cmd.key_nav": "Navegar",
+    "cmd.key_select": "Selecionar",
+    "cmd.key_close": "Fechar",
+    "cmd.cat_nav": "Navegação",
+    "cmd.cat_projects": "Casos de Impacto & Projetos",
+    "cmd.cat_articles": "Artigos & Ensaios",
+    "cmd.cat_actions": "Ações Rápidas",
+    "cmd.no_results": "Nenhum comando correspondente encontrado"
   }
 };
 
@@ -271,7 +304,7 @@ function setLanguage(lang) {
     btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
   });
 
-  // Apply translations with subtle transition
+  // Apply translations to text nodes
   const translatableElements = document.querySelectorAll('[data-i18n]');
   translatableElements.forEach(el => {
     const key = el.getAttribute('data-i18n');
@@ -284,9 +317,22 @@ function setLanguage(lang) {
     }
   });
 
+  // Apply translations to placeholders
+  const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
+  placeholderElements.forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (i18nTranslations[lang] && i18nTranslations[lang][key] !== undefined) {
+      el.setAttribute('placeholder', i18nTranslations[lang][key]);
+    }
+  });
+
   // Dispatch custom event for extensible reactive components
   window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
 }
+
+// Global exposure
+window.setPortfolioLanguage = setLanguage;
+window.i18nTranslations = i18nTranslations;
 
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
