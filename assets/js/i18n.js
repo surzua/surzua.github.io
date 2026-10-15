@@ -86,6 +86,56 @@ const i18nTranslations = {
     "modal.impact": "Impacto Cuantitativo Generado",
     "modal.stack": "Stack & Tecnologías Utilizadas",
 
+"trajectory.exp1_role": "Data Scientist Senior (Consultor)",
+    "trajectory.exp1_company": "SmartJob · Consultoría para Grupo Retail Omnicanal (Retail Tech – Advanced Analytics)",
+    "trajectory.exp1_period": "Ene 2026 – Sep 2026 · Alcance Regional",
+    "trajectory.exp1_desc": "<ul><li><strong>Liderazgo Analítico & Alcance Regional:</strong> Consultor senior especializado en analítica avanzada para Retail Omnicanal Tecnológico Corporativo (Retail Tech), liderando el dominio de Supply Chain en el portafolio corporativo <em>Motor de Promesa Logística</em> con cobertura en Chile, Perú y Región Andina (picking 1P/3P, centros de distribución, cross-docking y despacho), colaborando con Product Owners de Red Logística y Catálogo.</li><li><strong>Corrección Automatizada de Catálogo (Pipeline GenAI & A/B Testing):</strong> Pipeline productivo de 5 fases en GCP / Vertex AI para resolver la falta de ground truth en dimensiones y peso: normalización textual, clustering semántico con LLMs, rangos sintéticos e imputación estadística. Validación causal con A/B Testing multivariable: <strong>impacto validado en > 7.7M USD anuales regional (> 3.8M USD en Chile)</strong>.</li><li><strong>Forecasting de Capacidades y Mitigación de Cuellos de Botella:</strong> Modelamiento predictivo de series de tiempo para proyectar capacidades y anticipar saturaciones, logrando una <strong>reducción de atrasos operativos en 2 puntos porcentuales</strong> sobre ~500.000 órdenes/mes en Región Andina.</li><li><strong>Simplificación Topológica de la Red Logística:</strong> Clustering espacial origen-destino para consolidar y dar de baja el <strong>40% de rutas redundantes</strong>. Prevención de caídas en CyberDay, <strong>protegiendo +100M CLP en ventas</strong> y reduciendo en 70% el tiempo de parametrización.</li><li><strong>Stack Tecnológico:</strong> GCP (BigQuery, Vertex AI), Python (Pandas, Polars, Scikit-Learn), LLMs / Prompt Engineering, Git, CI/CD.</li></ul>",
+
+    "trajectory.exp2_role": "Data Scientist Senior",
+    "trajectory.exp2_company": "Banco Itaú (Analytics Banca Minorista – Laboratorio ItaúX)",
+    "trajectory.exp2_period": "Ene 2022 – Sep 2025 · Santiago, Chile",
+    "trajectory.exp2_desc": "<ul><li><strong>Motor Look-a-Likes e Hiperpersonalización (Ganador Premio Transforma 2024):</strong> Algoritmo multiclase en árboles de decisión balanceados por el margen financiero histórico para definir canastas óptimas de productos bancarios. <strong>Incremento del +50% en tasa de contacto efectivo</strong> y galardonado con el <strong>Premio corporativo Transforma 2024 en Innovación Data-Driven</strong>.</li><li><strong>Generador de Argumentario Comercial 'Pitch Ganador' (LLMs en CRM):</strong> Sistema discursivo con LLMs que sintetiza variables sociodemográficas y transcripciones de llamadas para generar pitches comerciales hiperpersonalizados en Salesforce CRM.</li><li><strong>Modelos Core de Clientes y Automatización MLOps:</strong> Modelos de propensión transaccional productivizados sobre AWS MLOps y segmentaciones analíticas recurrentes en BigQuery y Salesforce.</li><li><strong>Competencia Regional (Batalla de Datos Itaú Brasil):</strong> <strong>2do lugar regional</strong> en Latinoamérica con modelo predictivo proxy de NPS para anticipar insatisfacciones.</li><li><strong>Scoring Alternativo (PoC Cuenta Digital):</strong> Modelos de riesgo crediticio con encuestas psicométricas para segmentos desbancarizados.</li><li><strong>Stack Tecnológico:</strong> AWS (MLOps framework), Google BigQuery, SQL avanzado, Python (Scikit-Learn, Pandas), LLMs / Prompt Engineering, Salesforce CRM.</li></ul>",
+
+    "trajectory.exp3_role": "Data Scientist Engineer",
+    "trajectory.exp3_company": "Moneda Asset Management (Procesos y Sistemas, TI)",
+    "trajectory.exp3_period": "May 2021 – Ene 2022 · Santiago, Chile",
+    "trajectory.exp3_desc": "<ul><li><strong>Monitoreo Automatizado de Divisas (FX):</strong> Pipeline diario en Python para la extracción, conciliación y seguimiento de tipos de cambio internacionales y locales, con detección automática de desfases operativos entre mesas de dinero y tableros en Power BI.</li><li><strong>Data Governance & Optimización de Consultas:</strong> Estandarización de flujos y gobierno de datos en SQL Server corporativo, mejorando significativamente tiempos de ejecución de reportes financieros críticos.</li><li><strong>Stack Tecnológico:</strong> Python, SQL Server, Power BI (DAX, Power Query), Git.</li></ul>",
+
+    "trajectory.exp4_role": "Data Scientist",
+    "trajectory.exp4_company": "KPMG (Data & Analytics – Insights Center)",
+    "trajectory.exp4_period": "Oct 2017 – May 2021 · Santiago, Chile",
+    "trajectory.exp4_desc": "<ul><li><strong>Detección de Fraude y Auditoría Cuantitativa en Retail / Mayoristas:</strong> Co-diseño de más de 20 reglas de negocio y motor de scoring multivariable para priorizar transacciones sospechosas en cientos de miles de registros de notas de crédito y pagos.</li><li><strong>Perfilamiento de Morosidad (Autopistas):</strong> Segmentación de usuarios con algoritmos K-Prototypes para conducta de pago de telepeaje (TAG) y riesgo de incobrabilidad.</li><li><strong>Modernización y Vectorización de Modelos Actuariales:</strong> Reingeniería del cálculo de pasivos laborales (PIAS / IAS 19), migrando hojas de cálculo a scripts vectorizados en R con drástica optimización de cómputo y trazabilidad matemática.</li><li><strong>Visión Computacional y OCR:</strong> Scripts de extracción automatizada con OpenCV y Tesseract OCR para formularios legales y tributarios.</li><li><strong>Data Governance:</strong> Asesoría e implementación de marcos de gobernanza bajo estándar DAMA para aseguradoras y AFPs.</li><li><strong>Stack Tecnológico:</strong> Python, R, OpenCV, Tesseract OCR, SQL, Power BI, Metodología DAMA.</li></ul>",
+
+    "trajectory.exp5_role": "Profesor Auxiliar",
+    "trajectory.exp5_company": "Universidad de Chile (Facultad de Ciencias Físicas y Matemáticas)",
+    "trajectory.exp5_period": "Mar 2011 – Jul 2017 · Santiago, Chile",
+    "trajectory.exp5_desc": "Docencia y cátedras de ejercicios para cursos formativos y avanzados de ingeniería: Cálculo Diferencial e Integral, Cálculo en Varias Variables, Álgebra Lineal y Cálculo Avanzado. Preparación de material pedagógico, diseño y corrección de evaluaciones para grupos de más de 80 alumnos por semestre.",
+
+    "trajectory.edu1_role": "Master of Business Administration (MBA)",
+    "trajectory.edu1_company": "Universidad de Chile – FCFM / DCS",
+    "trajectory.edu1_period": "Graduación: Jul 2025",
+    "trajectory.edu1_grade": "Nota de Graduación: 6.3 / 7.0",
+    "trajectory.edu1_desc": "Formación directiva en estrategia corporativa, finanzas, diseño de modelos de negocio y liderazgo de equipos de alto rendimiento. Integración de visión de negocio con capacidades técnicas avanzadas.",
+
+    "trajectory.edu2_role": "Magíster en Ciencias de la Ingeniería, mención Matemática Aplicada",
+    "trajectory.edu2_company": "Universidad de Chile – Centro de Modelamiento Matemático (CMM)",
+    "trajectory.edu2_period": "Graduación: Jun 2017",
+    "trajectory.edu2_grade": "Nota de Graduación: 6.6 / 7.0",
+    "trajectory.edu2_desc": "Tesis de postgrado: <em>'Escurrimiento de Fluidos Newtonianos y no Newtonianos en medios porosos'</em> (Profesor Guía: Dr. Raúl Gormaz). Modelamiento de ecuaciones diferenciales en derivadas parciales y simulación numérica avanzada.",
+
+    "trajectory.edu3_role": "Ingeniería Civil Matemática",
+    "trajectory.edu3_company": "Universidad de Chile (FCFM - Beauchef)",
+    "trajectory.edu3_period": "Graduación: Jun 2017",
+    "trajectory.edu3_grade": "Nota de Graduación: 7.0 / 7.0 (Distinción Máxima)",
+    "trajectory.edu3_desc": "<strong>Hub Surficación máxima histórica en examen de titulación y defensa de grado.</strong> Rigor analítico en análisis matemático, teoría de probabilidades, optimización continua y discreta, y análisis numérico.",
+
+    "article.back": "Volver a Artículos y Portafolio",
+    "article.author_role": "Senior Data Scientist & Ing. Civil Matemático (MBA)",
+    "article.read_time": "15 min de lectura",
+    "article.about_author": "Sobre el Autor: Sebastian Urzúa Bórquez",
+    "article.author_bio": "Ingeniero Civil Matemático (U. de Chile, Nota 7.0 / Distinción Máxima), MBA y Senior Data Scientist. Especialista en optimización matemática rigurosa, modelos predictivos avanzados, pipelines con LLMs y evaluación de impacto de negocio (ROI) en Supply Chain, Banca y Retail.",
+    "article.lang_notice": "🌐 <i>Este ensayo técnico fue redactado originalmente en español con notación matemática formal.</i>",
+
     "cmd.trigger_btn": "Buscar o ⌘K",
     "cmd.placeholder": "Escribe un comando o busca...",
     "cmd.key_nav": "Navegar",
@@ -178,6 +228,56 @@ const i18nTranslations = {
     "modal.solution": "Mathematical & Algorithmic Solution",
     "modal.impact": "Quantitative Impact Delivered",
     "modal.stack": "Stack & Technologies Deployed",
+
+"trajectory.exp1_role": "Senior Data Scientist (Consultant)",
+    "trajectory.exp1_company": "SmartJob · Consulting for Retail Omnicanal Group (Retail Tech – Advanced Analytics)",
+    "trajectory.exp1_period": "Jan 2026 – Sep 2026 · Regional Scope",
+    "trajectory.exp1_desc": "<ul><li><strong>Analytical Leadership & Regional Scope:</strong> Senior advanced analytics consultant for Retail Omnicanal Technological Corporate (Retail Tech), leading the Supply Chain domain within the corporate <em>Motor de Promesa Logística</em> across Chile, Peru, and Región Andina (1P/3P picking, distribution centers, cross-docking, dispatch, and click & collect), partnering with Product Owners of Logistics Network and Catalog.</li><li><strong>Automated Catalog Correction (GenAI & A/B Testing Pipeline):</strong> Designed a 5-phase production pipeline in GCP / Vertex AI to resolve missing ground truth in physical dimensions and weight: textual normalization, few-shot LLM semantic clustering, synthetic feasible ranges, and statistical median imputation. Experimentally validated with stratified multivariable A/B Testing: <strong>> $7.7M USD annual validated impact regionally (> $3.8M USD in Retail Omnicanal Chile)</strong>.</li><li><strong>Capacity Forecasting & Bottleneck Mitigation:</strong> Time series forecasting to project operational capacities and anticipate node bottlenecks, delivering a <strong>2 p.p. reduction in operational delays</strong> over ~500,000 monthly orders in Región Andina.</li><li><strong>Logistics Network Topological Simplification:</strong> Spatial origin-destination clustering to decommission <strong>40% of redundant routes</strong>. Prevented engine crashes during CyberDay, <strong>protecting +$100M CLP in sales</strong> and cutting network configuration operational time by 70%.</li><li><strong>Tech Stack:</strong> GCP (BigQuery, Vertex AI), Python (Pandas, Polars, Scikit-Learn), LLMs / Prompt Engineering, Git, CI/CD.</li></ul>",
+
+    "trajectory.exp2_role": "Senior Data Scientist",
+    "trajectory.exp2_company": "Banco Itaú (Retail Banking Analytics – ItaúX Lab)",
+    "trajectory.exp2_period": "Jan 2022 – Sep 2025 · Santiago, Chile",
+    "trajectory.exp2_desc": "<ul><li><strong>Look-a-Likes Engine & Commercial Hyperpersonalization (Transforma 2024 Winner):</strong> Built inside the ItaúX innovation lab to replace mass campaigns. Decision tree multi-class algorithm balanced by historic financial margin defining optimal product bundles (loans, mortgages, credit cards, mutual funds, insurance). Delivered a <strong>+50% increase in effective contact rate</strong> and awarded the <strong>Transforma 2024 Corporate Innovation Award</strong>.</li><li><strong>Commercial Pitch Generator with LLMs in Salesforce CRM:</strong> Discursive recommendation system combining client financial profiles with audio transcriptions of calls to generate hyperpersonalized sales pitches integrated directly into Salesforce.</li><li><strong>Core Customer Models & MLOps Automation:</strong> Production transactional propensity models on AWS MLOps framework. Recurrent analytical segmentations (RFM, merchant clustering) via scheduled BigQuery jobs syncing with Salesforce.</li><li><strong>Regional Competition (Itaú Brazil Data Battle):</strong> <strong>2nd place regionally</strong> across Latin America with a predictive proxy model for Net Promoter Score (NPS) to anticipate dissatisfaction and trigger retention workflows.</li><li><strong>Alternative Credit Scoring (Digital Account PoC):</strong> Risk models for unbanked demographics leveraging psychometric surveys as compliance proxies.</li><li><strong>Tech Stack:</strong> AWS (MLOps framework), Google BigQuery, Advanced SQL, Python (Scikit-Learn, Pandas), LLMs / Prompt Engineering, Salesforce CRM.</li></ul>",
+
+    "trajectory.exp3_role": "Data Scientist Engineer",
+    "trajectory.exp3_company": "Moneda Asset Management (Processes & Systems, IT)",
+    "trajectory.exp3_period": "May 2021 – Jan 2022 · Santiago, Chile",
+    "trajectory.exp3_desc": "<ul><li><strong>Automated FX Currency Monitoring:</strong> Daily Python reconciliation pipeline tracking local and international exchange rates, detecting execution lags between trading desks, spread controls, and volatility alerts with executive Power BI dashboards.</li><li><strong>Data Governance & Query Optimization:</strong> Pipeline standardization and data governance on corporate SQL Server, significantly accelerating critical financial reporting query performance.</li><li><strong>Tech Stack:</strong> Python, SQL Server, Power BI (DAX, Power Query), Git.</li></ul>",
+
+    "trajectory.exp4_role": "Data Scientist",
+    "trajectory.exp4_company": "KPMG (Data & Analytics – Insights Center)",
+    "trajectory.exp4_period": "Oct 2017 – May 2021 · Santiago, Chile",
+    "trajectory.exp4_desc": "<ul><li><strong>Retail Wholesale Fraud Detection & Quantitative Audit:</strong> Co-designed 20+ business heuristics and constructed a statistical multivariable scoring engine prioritizing suspicious supplier invoices and credit notes across hundreds of thousands of records.</li><li><strong>Highway Toll Delinquency Profiling:</strong> Unsupervised user segmentation with K-Prototypes clustering combining numeric and categorical variables for urban electronic toll collection (TAG) default risk.</li><li><strong>Actuarial Model Vectorization:</strong> Re-engineered severance indemnity liability valuation (IAS 19 / PIAS), migrating spreadsheet models into vectorized R scripts, drastically optimizing computing time and ensuring mathematical traceability for audit committees.</li><li><strong>Computer Vision & OCR:</strong> Automated document data extraction scripts with OpenCV and Tesseract OCR for legal and tax forms.</li><li><strong>Data Governance:</strong> Designed DAMA-aligned data governance frameworks for insurance companies and pension fund administrators (AFPs).</li><li><strong>Tech Stack:</strong> Python, R, OpenCV, Tesseract OCR, SQL, Power BI, DAMA Methodology.</li></ul>",
+
+    "trajectory.exp5_role": "Teaching Assistant / Adjunct Lecturer",
+    "trajectory.exp5_company": "Universidad de Chile (Faculty of Physical & Mathematical Sciences)",
+    "trajectory.exp5_period": "Mar 2011 – Jul 2017 · Santiago, Chile",
+    "trajectory.exp5_desc": "Lecturing and problem sessions for core and advanced undergraduate engineering courses: Differential & Integral Calculus, Multivariable Calculus, Linear Algebra, and Advanced Real Analysis. Course design and evaluation grading for classes of 80+ students per semester.",
+
+    "trajectory.edu1_role": "Master of Business Administration (MBA)",
+    "trajectory.edu1_company": "Universidad de Chile – FCFM / DCS",
+    "trajectory.edu1_period": "Graduation: Jul 2025",
+    "trajectory.edu1_grade": "Graduation GPA: 6.3 / 7.0",
+    "trajectory.edu1_desc": "Executive training in corporate strategy, finance, business model design, and high-performance team leadership. Blending strategic business acumen with deep technical expertise.",
+
+    "trajectory.edu2_role": "M.Sc. in Engineering Sciences, Applied Mathematics",
+    "trajectory.edu2_company": "Universidad de Chile – Center for Mathematical Modeling (CMM)",
+    "trajectory.edu2_period": "Graduation: Jun 2017",
+    "trajectory.edu2_grade": "Graduation GPA: 6.6 / 7.0",
+    "trajectory.edu2_desc": "Graduate Thesis: <em>'Flow of Newtonian and Non-Newtonian Fluids in Porous Media'</em> (Advisor: Dr. Raúl Gormaz). Partial differential equations modeling and advanced numerical simulation.",
+
+    "trajectory.edu3_role": "Mathematical Civil Engineering",
+    "trajectory.edu3_company": "Universidad de Chile (FCFM - Beauchef)",
+    "trajectory.edu3_period": "Graduation: Jun 2017",
+    "trajectory.edu3_grade": "Graduation GPA: 7.0 / 7.0 (Highest Honors / Distinción Máxima)",
+    "trajectory.edu3_desc": "<strong>Historic maximum grade in final degree defense and graduation examination.</strong> Rigorous foundation in real analysis, probability theory, continuous and discrete optimization, and numerical analysis.",
+
+    "article.back": "Back to Articles & Portfolio",
+    "article.author_role": "Senior Data Scientist & Mathematical Civil Engineer (MBA)",
+    "article.read_time": "15 min read",
+    "article.about_author": "About the Author: Sebastian Urzúa Bórquez",
+    "article.author_bio": "Mathematical Civil Engineer (U. of Chile, 7.0 GPA / Highest Honors), MBA, and Senior Data Scientist. Specialist in rigorous mathematical optimization, advanced predictive modeling, LLM pipelines, and business impact assessment (ROI) across Supply Chain, Banking, and Retail.",
+    "article.lang_notice": "🌐 <i>This technical paper was originally authored in Spanish with formal mathematical notation.</i>",
 
     "cmd.trigger_btn": "Search or ⌘K",
     "cmd.placeholder": "Type a command or search...",
@@ -272,6 +372,56 @@ const i18nTranslations = {
     "modal.impact": "Impacto Quantitativo Gerado",
     "modal.stack": "Stack & Tecnologias Utilizadas",
 
+"trajectory.exp1_role": "Data Scientist Sênior (Consultor)",
+    "trajectory.exp1_company": "SmartJob · Consultoria para Grupo Retail Omnicanal (Retail Tech – Advanced Analytics)",
+    "trajectory.exp1_period": "Jan 2026 – Set 2026 · Escopo Regional",
+    "trajectory.exp1_desc": "<ul><li><strong>Liderança Analítica & Escopo Regional:</strong> Consultor sênior em analítica avançada para Retail Omnicanal Tecnológico Corporativo (Retail Tech), atuando no domínio de Supply Chain no portfólio corporativo <em>Motor de Promesa Logística</em> com cobertura no Chile, Peru e América Latina (picking 1P/3P, centros de distribuição, cross-docking e despacho).</li><li><strong>Correção Automatizada de Catálogo (Pipeline GenAI & Testes A/B):</strong> Pipeline produtivo em 5 fases no GCP / Vertex AI para sanar inconsistências de dimensões e peso: normalização textual, agrupamento semântico com LLMs, faixas sintéticas e imputação estatística. Validação causal com Testes A/B multivariáveis: <strong>> 7,7M USD anuais de impacto regional validado (> 3,8M USD no Chile)</strong>.</li><li><strong>Forecasting de Capacidades & Gargalos:</strong> Modelagem preditiva de séries temporais para antecipar saturação em nós críticos, obtendo <strong>redução de 2 p.p. em atrasos operacionais</strong> sobre ~500.000 pedidos/mês na rede da América Latina.</li><li><strong>Simplificação Topológica da Rede Logística:</strong> Clustering espacial origem-destino para consolidar e desativar <strong>40% das rotas redundantes</strong>. Prevenção de quedas no motor de promessa no CyberDay, <strong>protegendo +100M CLP em vendas</strong>.</li><li><strong>Stack Tecnológico:</strong> GCP (BigQuery, Vertex AI), Python (Pandas, Polars, Scikit-Learn), LLMs / Prompt Engineering, Git, CI/CD.</li></ul>",
+
+    "trajectory.exp2_role": "Data Scientist Sênior",
+    "trajectory.exp2_company": "Banco Itaú (Analytics Varejo – Laboratório ItaúX)",
+    "trajectory.exp2_period": "Jan 2022 – Set 2025 · Santiago, Chile",
+    "trajectory.exp2_desc": "<ul><li><strong>Motor Look-a-Likes e Hiperpersonalização (Vencedor Prêmio Transforma 2024):</strong> Algoritmo multicluster balanceado pela margem financeira histórica de cada produto bancário para recomendar cestas ideais. <strong>Aumento de +50% na taxa de contato efetivo</strong> e vencedor do <strong>Prêmio corporativo Transforma 2024 de Inovação Data-Driven</strong>.</li><li><strong>Gerador de Argumentário Comercial 'Pitch Vencedor' (LLMs no CRM):</strong> Sistema discursivo com LLMs combinando perfil de clientes e transcrições de áudio para gerar pitches comerciais hiperpersonalizados integrados diretamente ao Salesforce CRM.</li><li><strong>Modelos Core de Clientes e MLOps:</strong> Modelos de propensão produtivizados em arquitetura AWS MLOps e segmentações recorrentes integradas ao Salesforce via BigQuery.</li><li><strong>Competição Regional (Batalha de Dados Itaú Brasil):</strong> <strong>2º lugar regional</strong> da América Latina com modelo preditivo proxy do NPS para antecipar insatisfações e retenção.</li><li><strong>Scoring Alternativo (PoC Conta Digital):</strong> Modelos de risco de crédito com pesquisas psicométricas para clientes sem histórico bancário tradicional.</li><li><strong>Stack Tecnológico:</strong> AWS (MLOps framework), Google BigQuery, SQL avançado, Python (Scikit-Learn, Pandas), LLMs / Prompt Engineering, Salesforce CRM.</li></ul>",
+
+    "trajectory.exp3_role": "Engenheiro Data Scientist",
+    "trajectory.exp3_company": "Moneda Asset Management (Processos e Sistemas, TI)",
+    "trajectory.exp3_period": "Mai 2021 – Jan 2022 · Santiago, Chile",
+    "trajectory.exp3_desc": "<ul><li><strong>Monitoramento Automatizado de Câmbio (FX):</strong> Pipeline diário em Python para conciliação de taxas de câmbio, detecção de defasagens operacionais entre mesas de operações e dashboards no Power BI.</li><li><strong>Governança de Dados & Otimização:</strong> Padronização de fluxos e governança no SQL Server corporativo, otimizando o processamento de relatórios financeiros críticos.</li><li><strong>Stack Tecnológico:</strong> Python, SQL Server, Power BI (DAX, Power Query), Git.</li></ul>",
+
+    "trajectory.exp4_role": "Data Scientist",
+    "trajectory.exp4_company": "KPMG (Data & Analytics – Insights Center)",
+    "trajectory.exp4_period": "Out 2017 – Mai 2021 · Santiago, Chile",
+    "trajectory.exp4_desc": "<ul><li><strong>Detecção de Fraude e Auditoria em Varejo / Atacado:</strong> Motor estatístico de scoring multivariável com mais de 20 regras de negócio para priorizar transações suspeitas em centenas de milhares de notas de crédito e pagamentos.</li><li><strong>Modelagem de Inadimplência em Rodovias:</strong> Clusterização K-Prototypes para comportamento de pagamento de pedágio eletrônico (TAG) e risco de crédito.</li><li><strong>Vetorização de Modelos Atuariais:</strong> Engenharia de cálculo de provisões trabalhistas (PIAS / IAS 19), migrando planilhas manuais para rotinas vetorizadas em R com alta eficiência computacional e rastreabilidade para auditoria.</li><li><strong>Visão Computacional e OCR:</strong> Extração automatizada de texto com OpenCV e Tesseract OCR para documentos tributários.</li><li><strong>Governança de Dados (DAMA):</strong> Implementação de frameworks DAMA para seguradoras e fundos de pensão.</li><li><strong>Stack Tecnológico:</strong> Python, R, OpenCV, Tesseract OCR, SQL, Power BI, Metodologia DAMA.</li></ul>",
+
+    "trajectory.exp5_role": "Professor Assistente",
+    "trajectory.exp5_company": "Universidad de Chile (Faculdade de Ciências Físicas e Matemáticas)",
+    "trajectory.exp5_period": "Mar 2011 – Jul 2017 · Santiago, Chile",
+    "trajectory.exp5_desc": "Aulas de exercícios e tutoria para cursos avançados de engenharia: Cálculo Diferencial e Integral, Cálculo em Várias Variáveis, Álgebra Linear e Análise Real para turmas de mais de 80 alunos por semestre.",
+
+    "trajectory.edu1_role": "Master of Business Administration (MBA)",
+    "trajectory.edu1_company": "Universidad de Chile – FCFM / DCS",
+    "trajectory.edu1_period": "Formatura: Jul 2025",
+    "trajectory.edu1_grade": "Nota de Conclusão: 6.3 / 7.0",
+    "trajectory.edu1_desc": "Formação executiva em estratégia corporativa, finanças, modelos de negócios e liderança de equipes de alta performance.",
+
+    "trajectory.edu2_role": "Mestrado em Ciências da Engenharia, Matemática Aplicada",
+    "trajectory.edu2_company": "Universidad de Chile – Centro de Modelagem Matemática (CMM)",
+    "trajectory.edu2_period": "Formatura: Jun 2017",
+    "trajectory.edu2_grade": "Nota de Conclusão: 6.6 / 7.0",
+    "trajectory.edu2_desc": "Dissertação de mestrado: <em>'Escoamento de Fluidos Newtonianos e Não-Newtonianos em Meios Porosos'</em> (Orientador: Dr. Raúl Gormaz). Modelagem com equações diferenciais parciais e simulação numérica.",
+
+    "trajectory.edu3_role": "Engenharia Civil Matemática",
+    "trajectory.edu3_company": "Universidad de Chile (FCFM - Beauchef)",
+    "trajectory.edu3_period": "Formatura: Jun 2017",
+    "trajectory.edu3_grade": "Nota de Conclusão: 7.0 / 7.0 (Distinção Máxima)",
+    "trajectory.edu3_desc": "<strong>Nota máxima histórica na defesa de graduação e exame de título.</strong> Formação rigorosa em análise matemática, probabilidades, otimização contínua e discreta, e cálculo numérico.",
+
+    "article.back": "Voltar para Artigos e Portfólio",
+    "article.author_role": "Senior Data Scientist & Eng. Civil Matemático (MBA)",
+    "article.read_time": "15 min de leitura",
+    "article.about_author": "Sobre o Autor: Sebastian Urzúa Bórquez",
+    "article.author_bio": "Engenheiro Civil Matemático (U. do Chile, Nota 7.0 / Distinção Máxima), MBA e Senior Data Scientist. Especialista em otimização matemática rigorosa, modelos preditivos avançados, pipelines de LLMs e avaliação de impacto financeiro (ROI) em Supply Chain, Bancos e Varejo.",
+    "article.lang_notice": "🌐 <i>Este ensaio técnico foi redigido originalmente em espanhol com notação matemática formal.</i>",
+
     "cmd.trigger_btn": "Buscar ou ⌘K",
     "cmd.placeholder": "Digite um comando ou busque...",
     "cmd.key_nav": "Navegar",
@@ -325,6 +475,12 @@ function setLanguage(lang) {
       el.setAttribute('placeholder', i18nTranslations[lang][key]);
     }
   });
+
+  // Handle article language notice visibility
+  const langNotice = document.getElementById('article-lang-notice');
+  if (langNotice) {
+    langNotice.style.display = lang === 'es' ? 'none' : 'flex';
+  }
 
   // Dispatch custom event for extensible reactive components
   window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));

@@ -46,23 +46,18 @@ layout: null
 
       <nav class="nav-desktop">
         <a href="#inicio" class="nav-link active" data-i18n="nav.inicio">Inicio</a>
-        <a href="#impacto" class="nav-link" data-i18n="nav.impacto">Métricas</a>
-        <a href="#pilares" class="nav-link" data-i18n="nav.pilares">Pilares</a>
         <a href="#proyectos" class="nav-link" data-i18n="nav.proyectos">Casos de Impacto</a>
         <a href="#articulos" class="nav-link" data-i18n="nav.articulos">Artículos</a>
-        <a href="#skills" class="nav-link" data-i18n="nav.skills">Expertise</a>
         <a href="#trayectoria" class="nav-link" data-i18n="nav.trayectoria">Trayectoria</a>
-        <a href="#contacto" class="nav-link" data-i18n="nav.contacto">Contacto</a>
       </nav>
 
       <div class="header-actions">
         <!-- Command Palette Trigger Button (⌘K Spotlight) -->
-        <button id="cmd-palette-trigger" class="cmd-trigger-btn" aria-label="Abrir Command Palette (⌘K)" title="Command Palette (⌘K / Ctrl+K)">
+        <button id="cmd-palette-trigger" class="cmd-trigger-btn" aria-label="Abrir Command Palette (⌘K)" title="Buscar o pulsar ⌘K">
           <svg class="cmd-trigger-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <span class="cmd-trigger-text" data-i18n="cmd.trigger_btn">Buscar o ⌘K</span>
           <kbd class="cmd-shortcut-badge">⌘K</kbd>
         </button>
 
@@ -76,18 +71,6 @@ layout: null
         <button id="theme-toggle-btn" class="icon-btn" aria-label="Cambiar tema">
           <!-- Icon injected by JS -->
         </button>
-
-        <a href="https://github.com/surzua" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="GitHub @surzua">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-          </svg>
-        </a>
-
-        <a href="https://www.linkedin.com/in/surzuab/" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="LinkedIn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-          </svg>
-        </a>
 
         <a href="#contacto" class="btn btn-primary btn-sm" data-i18n="nav.contact_btn">Contactar</a>
 
@@ -193,14 +176,6 @@ layout: null
           <div class="avatar-glow"></div>
           <div class="avatar-border">
             <img src="/assets/images/surzua.jpg" alt="Sebastian Urzúa Bórquez" class="avatar-img" loading="eager">
-          </div>
-          <div class="floating-badge fb-1">
-            <span>⚡</span>
-            <span>Pyomo & MIP Optimization</span>
-          </div>
-          <div class="floating-badge fb-2">
-            <span>🤖</span>
-            <span>GenAI, LLMs & RecSys</span>
           </div>
         </div>
       </div>
@@ -991,12 +966,12 @@ layout: null
           <div class="timeline-dot"></div>
           <div class="timeline-header">
             <div>
-              <div class="timeline-role">Data Scientist Senior (Consultor)</div>
-              <div class="timeline-company">SmartJob · Consultoría para Grupo Retail Omnicanal (Retail Tech – Advanced Analytics)</div>
+              <div class="timeline-role" data-i18n="trajectory.exp1_role">Data Scientist Senior (Consultor)</div>
+              <div class="timeline-company" data-i18n="trajectory.exp1_company">SmartJob · Consultoría para Grupo Retail Omnicanal (Retail Tech – Advanced Analytics)</div>
             </div>
-            <span class="timeline-period">Ene 2026 – Sep 2026 · Alcance Regional</span>
+            <span class="timeline-period" data-i18n="trajectory.exp1_period">Ene 2026 – Sep 2026 · Alcance Regional</span>
           </div>
-          <div class="timeline-desc">
+          <div class="timeline-desc" data-i18n="trajectory.exp1_desc">
             <ul>
               <li><strong>Liderazgo Analítico & Alcance Regional:</strong> Consultor senior especializado en analítica avanzada para Retail Omnicanal Tecnológico Corporativo (Retail Tech), atendiendo el dominio de Supply Chain en el portafolio corporativo <em>Motor de Promesa Logística</em> con cobertura transversal en Chile, Perú y Región Andina (picking 1P/3P, centros de distribución, cross-docking, despacho y click & collect), colaborando con Product Owners de Red Logística y Catálogo.</li>
               <li><strong>Corrección Automatizada de Catálogo (Pipeline GenAI & A/B Testing):</strong> Ante la inexistencia de un ground truth confiable en dimensiones físicas y peso que causaba distorsiones en cobros de flete y cubicaje, diseñé un pipeline productivo de 5 fases en GCP / Vertex AI: (1) normalización textual F2, (2) etiquetado semántico LLM con few-shot por categoría, (3) normalización a categorías canónicas, (4) determinación de rangos factibles con ground truth sintético, e (5) imputación robusta por mediana estadística. Validación causal con A/B Testing estratificado multivariable y Test A/A previo. <strong>Impacto económico validado experimentalmente en > 7.7M USD anuales regional (> 3.8M USD anuales en Retail Omnicanal Chile)</strong>.</li>
@@ -1012,12 +987,12 @@ layout: null
           <div class="timeline-dot"></div>
           <div class="timeline-header">
             <div>
-              <div class="timeline-role">Data Scientist Senior</div>
-              <div class="timeline-company">Banco Itaú (Analytics Banca Minorista – Laboratorio ItaúX)</div>
+              <div class="timeline-role" data-i18n="trajectory.exp2_role">Data Scientist Senior</div>
+              <div class="timeline-company" data-i18n="trajectory.exp2_company">Banco Itaú (Analytics Banca Minorista – Laboratorio ItaúX)</div>
             </div>
-            <span class="timeline-period">Ene 2022 – Sep 2025 · Santiago, Chile</span>
+            <span class="timeline-period" data-i18n="trajectory.exp2_period">Ene 2022 – Sep 2025 · Santiago, Chile</span>
           </div>
-          <div class="timeline-desc">
+          <div class="timeline-desc" data-i18n="trajectory.exp2_desc">
             <ul>
               <li><strong>Motor Look-a-Likes e Hiperpersonalización (Ganador Premio Transforma 2024):</strong> Diseñado en el laboratorio de innovación ItaúX (sucursales piloto IS3 y PB4) para reemplazar campañas masivas BAU. Algoritmo multiclase en árboles de decisión balanceados por el margen financiero histórico de cada producto contratado para definir canastas óptimas (consumo, hipotecarios, TC, depósitos, fondos mutuos, remuneraciones y seguros). <strong>Incremento del +50% en tasa de contacto efectivo</strong> y galardonado con el <strong>Premio corporativo Transforma 2024 en Innovación Data-Driven</strong>.</li>
               <li><strong>Generador de Argumentario Comercial "Pitch Ganador" (LLMs en CRM):</strong> Sistema de recomendación discursiva con LLMs que sintetiza variables sociodemográficas y de tenencia de activos con transcripciones de llamadas telefónicas históricas, generando discursos comerciales hiperpersonalizados integrados directamente en Salesforce CRM.</li>
@@ -1034,12 +1009,12 @@ layout: null
           <div class="timeline-dot"></div>
           <div class="timeline-header">
             <div>
-              <div class="timeline-role">Data Scientist Engineer</div>
-              <div class="timeline-company">Moneda Asset Management (Procesos y Sistemas, TI)</div>
+              <div class="timeline-role" data-i18n="trajectory.exp3_role">Data Scientist Engineer</div>
+              <div class="timeline-company" data-i18n="trajectory.exp3_company">Moneda Asset Management (Procesos y Sistemas, TI)</div>
             </div>
-            <span class="timeline-period">May 2021 – Ene 2022 · Santiago, Chile</span>
+            <span class="timeline-period" data-i18n="trajectory.exp3_period">May 2021 – Ene 2022 · Santiago, Chile</span>
           </div>
-          <div class="timeline-desc">
+          <div class="timeline-desc" data-i18n="trajectory.exp3_desc">
             <ul>
               <li><strong>Monitoreo Automatizado de Divisas (FX):</strong> Pipeline diario en Python para la extracción, conciliación y seguimiento de tipos de cambio internacionales y locales, con detección automática de desfases operativos entre mesas de dinero, control de spreads y alertas de volatilidad. Tableros ejecutivos en Power BI.</li>
               <li><strong>Data Governance & Optimización de Consultas:</strong> Estandarización de flujos y gobierno de datos en SQL Server corporativo, mejorando significativamente tiempos de ejecución de reportes financieros críticos.</li>
@@ -1053,12 +1028,12 @@ layout: null
           <div class="timeline-dot"></div>
           <div class="timeline-header">
             <div>
-              <div class="timeline-role">Data Scientist</div>
-              <div class="timeline-company">KPMG (Data & Analytics – Insights Center)</div>
+              <div class="timeline-role" data-i18n="trajectory.exp4_role">Data Scientist</div>
+              <div class="timeline-company" data-i18n="trajectory.exp4_company">KPMG (Data & Analytics – Insights Center)</div>
             </div>
-            <span class="timeline-period">Oct 2017 – May 2021 · Santiago, Chile</span>
+            <span class="timeline-period" data-i18n="trajectory.exp4_period">Oct 2017 – May 2021 · Santiago, Chile</span>
           </div>
-          <div class="timeline-desc">
+          <div class="timeline-desc" data-i18n="trajectory.exp4_desc">
             <ul>
               <li><strong>Detección de Fraude y Auditoría Cuantitativa en Retail / Mayoristas:</strong> Co-diseño de más de 20 reglas de negocio y construcción de motor estadístico de scoring multivariable que ponderó reglas para priorizar transacciones sospechosas en cientos de miles de registros (notas de crédito y pagos a proveedores).</li>
               <li><strong>Perfilamiento de Morosidad (Concesionarias de Autopistas):</strong> Segmentación de usuarios con algoritmos K-Prototypes tratando simultáneamente variables numéricas y categóricas para conducta de pago de telepeaje (TAG) y riesgo de incobrabilidad.</li>
@@ -1075,12 +1050,12 @@ layout: null
           <div class="timeline-dot"></div>
           <div class="timeline-header">
             <div>
-              <div class="timeline-role">Profesor Auxiliar</div>
-              <div class="timeline-company">Universidad de Chile (Facultad de Ciencias Físicas y Matemáticas)</div>
+              <div class="timeline-role" data-i18n="trajectory.exp5_role">Profesor Auxiliar</div>
+              <div class="timeline-company" data-i18n="trajectory.exp5_company">Universidad de Chile (Facultad de Ciencias Físicas y Matemáticas)</div>
             </div>
-            <span class="timeline-period">Mar 2011 – Jul 2017 · Santiago, Chile</span>
+            <span class="timeline-period" data-i18n="trajectory.exp5_period">Mar 2011 – Jul 2017 · Santiago, Chile</span>
           </div>
-          <div class="timeline-desc">
+          <div class="timeline-desc" data-i18n="trajectory.exp5_desc">
             Docencia y cátedras de ejercicios para cursos formativos y avanzados de ingeniería: Cálculo Diferencial e Integral, Cálculo en Varias Variables, Álgebra Lineal y Cálculo Avanzado. Preparación de material pedagógico, diseño y corrección de evaluaciones para grupos de más de 80 alumnos por semestre.
           </div>
         </div>
@@ -1092,13 +1067,13 @@ layout: null
           <div class="timeline-dot"></div>
           <div class="timeline-header">
             <div>
-              <div class="timeline-role">Master of Business Administration (MBA)</div>
-              <div class="timeline-company">Universidad de Chile – FCFM / DCS</div>
+              <div class="timeline-role" data-i18n="trajectory.edu1_role">Master of Business Administration (MBA)</div>
+              <div class="timeline-company" data-i18n="trajectory.edu1_company">Universidad de Chile – FCFM / DCS</div>
             </div>
-            <span class="timeline-period">Graduación: Jul 2025</span>
+            <span class="timeline-period" data-i18n="trajectory.edu1_period">Graduación: Jul 2025</span>
           </div>
-          <span class="timeline-grade">Nota de Graduación: 6.3 / 7.0</span>
-          <div class="timeline-desc">
+          <span class="timeline-grade" data-i18n="trajectory.edu1_grade">Nota de Graduación: 6.3 / 7.0</span>
+          <div class="timeline-desc" data-i18n="trajectory.edu1_desc">
             Formación directiva en estrategia corporativa, finanzas, diseño de modelos de negocio y liderazgo de equipos de alto rendimiento. Integración de visión de negocio con capacidades técnicas avanzadas.
           </div>
         </div>
@@ -1107,13 +1082,13 @@ layout: null
           <div class="timeline-dot"></div>
           <div class="timeline-header">
             <div>
-              <div class="timeline-role">Magíster en Ciencias de la Ingeniería, mención Matemática Aplicada</div>
-              <div class="timeline-company">Universidad de Chile – Centro de Modelamiento Matemático (CMM)</div>
+              <div class="timeline-role" data-i18n="trajectory.edu2_role">Magíster en Ciencias de la Ingeniería, mención Matemática Aplicada</div>
+              <div class="timeline-company" data-i18n="trajectory.edu2_company">Universidad de Chile – Centro de Modelamiento Matemático (CMM)</div>
             </div>
-            <span class="timeline-period">Graduación: Jun 2017</span>
+            <span class="timeline-period" data-i18n="trajectory.edu2_period">Graduación: Jun 2017</span>
           </div>
-          <span class="timeline-grade">Nota de Graduación: 6.6 / 7.0</span>
-          <div class="timeline-desc">
+          <span class="timeline-grade" data-i18n="trajectory.edu2_grade">Nota de Graduación: 6.6 / 7.0</span>
+          <div class="timeline-desc" data-i18n="trajectory.edu2_desc">
             Tesis de postgrado: <em>"Escurrimiento de Fluidos Newtonianos y no Newtonianos en medios porosos"</em> (Profesor Guía: Dr. Raúl Gormaz). Modelamiento de ecuaciones diferenciales en derivadas parciales y simulación numérica avanzada.
           </div>
         </div>
@@ -1122,15 +1097,15 @@ layout: null
           <div class="timeline-dot"></div>
           <div class="timeline-header">
             <div>
-              <div class="timeline-role">Ingeniería Civil Matemática</div>
-              <div class="timeline-company">Universidad de Chile (FCFM - Beauchef)</div>
+              <div class="timeline-role" data-i18n="trajectory.edu3_role">Ingeniería Civil Matemática</div>
+              <div class="timeline-company" data-i18n="trajectory.edu3_company">Universidad de Chile (FCFM - Beauchef)</div>
             </div>
-            <span class="timeline-period">Graduación: Jun 2017</span>
+            <span class="timeline-period" data-i18n="trajectory.edu3_period">Graduación: Jun 2017</span>
           </div>
-          <span class="timeline-grade" style="color: #10b981; border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1);">
+          <span class="timeline-grade" data-i18n="trajectory.edu3_grade" style="color: #10b981; border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.1);">
             Nota de Graduación: 7.0 / 7.0 (Distinción Máxima)
           </span>
-          <div class="timeline-desc">
+          <div class="timeline-desc" data-i18n="trajectory.edu3_desc">
             <strong>Hub Surficación máxima histórica en examen de titulación y defensa de grado.</strong> Rigor analítico en análisis matemático, teoría de probabilidades, optimización continua y discreta, y análisis numérico.
           </div>
         </div>

@@ -770,10 +770,7 @@ function initCommandPalette() {
       el.textContent = 'Ctrl K';
     });
     if (triggerBtn) {
-      const triggerText = triggerBtn.querySelector('.cmd-trigger-text');
-      if (triggerText && triggerText.textContent.includes('⌘K')) {
-        triggerText.textContent = triggerText.textContent.replace('⌘K', 'Ctrl K');
-      }
+      triggerBtn.setAttribute('title', 'Buscar o pulsar Ctrl K');
     }
   }
 
