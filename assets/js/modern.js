@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initReadingProgressBar();
   initArticleTables();
   initKpiCounters();
+  initHeroGraph();
 });
 
 /* ==========================================================================
@@ -481,4 +482,229 @@ function initKpiCounters() {
       }
     });
   });
+}
+
+/* ==========================================================================
+   Interactive Mathematical Graph / Network Constellation Canvas
+   ========================================================================== */
+function initHeroGraph() {
+  const canvas = document.getElementById('hero-graph-canvas');
+  const heroSection = document.getElementById('inicio');
+  if (!canvas || !heroSection) return;
+
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let width = 0;
+  let height = 0;
+  let animId = null;
+  let isVisible = true;
+
+  const mouse = { x: null, y: null };
+
+  class Node {
+    constructor() {
+      this.reset();
+    }
+
+    reset() {
+      this.x = Math.random() * width;
+      this.y = Math.random() * height;
+      const speed = 0.2 + Math.random() * 0.3;
+      const angle = Math.random() * Math.PI * 2;
+      this.vx = Math.cos(angle) * speed;
+      this.vy = Math.sin(angle) * speed;
+      this.isHub = Math.random() < 0.22;
+      this.baseRadius = this.isHub ? (2.8 + Math.random() * 1.0) : (1.4 + Math.random() * 0.8);
+      this.pulse = Math.random() * Math.PI * 2;
+    }
+
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      this.pulse += 0.025;
+
+      // Wrap smoothly around canvas
+      if (this.x < -15) this.x = width + 15;
+      if (this.x > width + 15) this.x = -15;
+      if (this.y < -15) this.y = height + 15;
+      if (this.y > height + 15) this.y = -15;
+
+      // Cursor magnetic interaction
+      if (mouse.x !== null && mouse.y !== null) {
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const dist = Math.hypot(dx, dy);
+        if (dist < 140 && dist > 15) {
+          const force = (1 - dist / 140) * 0.035;
+          this.vx += (dx / dist) * force;
+          this.vy += (dy / dist) * force;
+        }
+      }
+
+      // Keep velocity restrained and graceful
+      const speed = Math.hypot(this.vx, this.vy);
+      const maxSpeed = 0.6;
+      if (speed > maxSpeed) {
+        this.vx = (this.vx / speed) * maxSpeed;
+        this.vy = (this.vy / speed) * maxSpeed;
+      }
+    }
+
+    draw(isLight) {
+      const radius = this.baseRadius + (this.isHub ? Math.sin(this.pulse) * 0.5 : 0);
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, radius, 0, Math.PI * 2);
+
+      if (this.isHub) {
+        ctx.fillStyle = isLight ? 'rgba(37, 99, 235, 0.85)' : 'rgba(6, 182, 212, 0.95)';
+        ctx.shadowBlur = isLight ? 6 : 10;
+        ctx.shadowColor = isLight ? 'rgba(37, 99, 235, 0.4)' : 'rgba(6, 182, 212, 0.6)';
+      } else {
+        ctx.fillStyle = isLight ? 'rgba(100, 116, 139, 0.4)' : 'rgba(148, 163, 184, 0.45)';
+        ctx.shadowBlur = 0;
+      }
+      ctx.fill();
+    }
+  }
+
+  let nodes = [];
+
+  function setCanvasDimensions() {
+    const rect = heroSection.getBoundingClientRect();
+    width = rect.width;
+    height = rect.height;
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
+
+    // Target node count based on display width
+    const targetCount = width < 768 ? 20 : 42;
+    if (nodes.length !== targetCount) {
+      nodes = Array.from({ length: targetCount }, () => new Node());
+    } else {
+      nodes.forEach(n => {
+        if (n.x > width) n.x = Math.random() * width;
+        if (n.y > height) n.y = Math.random() * height;
+      });
+    }
+  }
+
+  setCanvasDimensions();
+
+  function renderFrame() {
+    ctx.clearRect(0, 0, width, height);
+
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const maxDist = width < 768 ? 95 : 130;
+
+    // Connect node pairs
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const dist = Math.hypot(dx, dy);
+
+        if (dist < maxDist) {
+          const alpha = (1 - dist / maxDist) * (isLight ? 0.18 : 0.28);
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.strokeStyle = isLight
+            ? `rgba(37, 99, 235, ${alpha})`
+            : `rgba(6, 182, 212, ${alpha})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+
+      // Connect to mouse cursor
+      if (mouse.x !== null && mouse.y !== null) {
+        const mdx = nodes[i].x - mouse.x;
+        const mdy = nodes[i].y - mouse.y;
+        const mdist = Math.hypot(mdx, mdy);
+        if (mdist < 150) {
+          const malpha = (1 - mdist / 150) * (isLight ? 0.3 : 0.45);
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = isLight
+            ? `rgba(37, 99, 235, ${malpha})`
+            : `rgba(56, 189, 248, ${malpha})`;
+          ctx.lineWidth = 1.2;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw all nodes
+    nodes.forEach(node => {
+      if (!prefersReducedMotion) node.update();
+      node.draw(isLight);
+    });
+  }
+
+  function loop() {
+    if (!isVisible) return;
+    renderFrame();
+    if (!prefersReducedMotion) {
+      animId = requestAnimationFrame(loop);
+    }
+  }
+
+  // Handle Resize with debounce
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      setCanvasDimensions();
+      if (prefersReducedMotion) renderFrame();
+    }, 150);
+  });
+
+  // Track cursor position inside Hero
+  heroSection.addEventListener('mousemove', (e) => {
+    const rect = heroSection.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+
+  heroSection.addEventListener('mouseleave', () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
+  // Auto-pause when Hero is not on screen (zero CPU waste)
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      isVisible = entry.isIntersecting;
+      if (isVisible) {
+        if (!animId && !prefersReducedMotion) {
+          animId = requestAnimationFrame(loop);
+        } else if (prefersReducedMotion) {
+          renderFrame();
+        }
+      } else {
+        if (animId) {
+          cancelAnimationFrame(animId);
+          animId = null;
+        }
+      }
+    });
+  }, { threshold: 0.05 });
+
+  heroObserver.observe(heroSection);
+
+  // If theme changes, re-render frame immediately
+  const themeBtn = document.getElementById('theme-toggle-btn');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      setTimeout(renderFrame, 50);
+    });
+  }
 }

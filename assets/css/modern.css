@@ -375,6 +375,28 @@ code, .mono {
 .hero {
   padding: 70px 0 60px;
   position: relative;
+  overflow: hidden;
+}
+
+.hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.75;
+  transition: opacity 0.5s ease;
+}
+
+[data-theme="light"] .hero-canvas {
+  opacity: 0.55;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-grid {
