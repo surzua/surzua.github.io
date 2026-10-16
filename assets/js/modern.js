@@ -171,24 +171,24 @@ function initTimelineTabs() {
    Project Details Modal
    ========================================================================== */
 const projectData = {
-  'retail-omnichannel-genai': {
+  'retail-genai': {
     title: 'Corrección Automatizada de Variables de Catálogo (Pipeline GenAI & A/B Testing)',
-    org: 'SmartJob · Consultoría para Grupo Retail Omnicanal (Retail Tech – Motor de Promesa Logística)',
+    org: 'Investigación & Benchmark Experimental con LLMs (Catálogos a Escala)',
     domain: 'GenAI & Supply Chain',
-    metric: '> 7.7M USD anuales regional (> 3.8M USD en Chile) · A/B Testing Causal',
+    metric: 'Benchmark Experimental · A/B Testing Causal · LLMs Few-Shot',
     problem: 'Inconsistencias severas y errores tipográficos/unidades en dimensiones físicas empaquetadas (alto, largo, ancho y peso), causando subcobro o sobrecobro de fletes a clientes, pérdidas en almacenamiento y fricciones contractuales con sellers. La inexistencia de un ground truth confiable impedía modelos supervisados estándar.',
-    solution: 'Diseño e implementación de un pipeline productivo de 5 fases en GCP / Vertex AI: (1) Preprocesamiento: normalización y limpieza textual de títulos, marcas, modelos, descripciones y taxonomía F2; (2) Etiquetado semántico con LLMs mediante few-shot learning especializado por categoría F2 para agrupar SKUs con packaging equiparable; (3) Normalización y colapso de respuestas a categorías canónicas; (4) Rangos factibles con ground truth sintético combinando distribuciones empíricas del cluster y conocimiento experto inferido; (5) Imputación robusta mediante la mediana estadística de SKUs válidos. Validación experimental causal con A/B Testing estratificado multivariable (seller, precio, categoría, rotación) con Test A/A previo.',
-    impact: 'Impacto económico validado experimentalmente en > 7.7M USD anuales a nivel corporativo regional (> 3.8M USD anuales únicamente en Retail Omnicanal Chile) por regularización de cobros de flete, ventas y cubicaje óptimo.',
+    solution: 'Diseño e implementación de un pipeline productivo de 5 fases en GCP / Vertex AI: (1) Preprocesamiento: normalización y limpieza textual de títulos, marcas, modelos, descripciones y taxonomía de categorías de producto; (2) Etiquetado semántico con LLMs mediante few-shot learning especializado por categoría para agrupar SKUs con packaging equiparable; (3) Normalización y colapso de respuestas a categorías canónicas; (4) Rangos factibles con ground truth sintético combinando distribuciones empíricas del cluster y conocimiento experto inferido; (5) Imputación robusta mediante la mediana estadística de SKUs válidos. Validación experimental causal con A/B Testing estratificado multivariable (seller, precio, categoría, rotación) con Test A/A previo.',
+    impact: 'Impacto económico validado experimentalmente en > 7.7M USD anuales a nivel corporativo regional por regularización de cobros de flete, ventas y cubicaje óptimo.',
     stack: 'GCP (Vertex AI, BigQuery), Python (Polars, Pandas, Scikit-Learn), LLMs / Few-Shot Prompting, A/B Testing, CI/CD'
   },
-  'retail-omnichannel-logistics': {
+  'retail-logistics': {
     title: 'Forecasting de Capacidades & Simplificación Topológica de Red',
-    org: 'SmartJob · Consultoría para Grupo Retail Omnicanal (Retail Tech – Red Logística)',
+    org: 'Caso de Estudio & Simulación de Red Logística Multieslabón',
     domain: 'Supply Chain & Optimización',
-    metric: '-2 p.p. en atrasos (SLA) · +100M CLP ventas protegidas (CyberDay)',
+    metric: 'Simulación de Red: -2.03 pp en atrasos · LightGBM Quantile (p90)',
     problem: 'Sobrecargas operativas en nodos críticos de la red e-commerce regional (cross-docking, picking y última milla) y topología de red sobredimensionada con rutas redundantes que ponían en riesgo la promesa de entrega y la estabilidad del motor en eventos de alta demanda.',
     solution: 'Modelamiento predictivo de series de tiempo para proyectar capacidades operativas y anticipar saturaciones en nodos críticos de la red. Implementación de modelamiento espacial mediante clustering origen-destino para consolidar y dar de baja el 40% de rutas redundantes en la red logística.',
-    impact: 'Reducción de atrasos operativos en 2 puntos porcentuales sobre un flujo mensual de aproximadamente 500.000 órdenes en la red regional. Prevención de saturación y caídas del motor de promesa en CyberDay (+100M CLP en ventas protegidas) y un 70% de reducción de tiempo operacional en la parametrización de la red.',
+    impact: 'Reducción de atrasos operativos en 2 puntos porcentuales sobre un flujo mensual de aproximadamente 500.000 órdenes en la red regional. Prevención de saturación y caídas del motor logístico en CyberDay (+100M CLP en ventas protegidas) y un 70% de reducción de tiempo operacional en la parametrización de la red.',
     stack: 'GCP (BigQuery), Python (Polars, Scikit-Learn), Pyomo (MIP), Series de Tiempo, Clustering Espacial, Git'
   },
   'itau-recommender': {
@@ -841,7 +841,7 @@ function initCommandPalette() {
         desc: lang === 'es' ? 'Experiencia profesional y formación en U. de Chile (Nota 7.0)' : (lang === 'en' ? 'Professional experience & education at U. of Chile (7.0 GPA)' : 'Experiência profissional e formação na U. do Chile'),
         icon: '🎓',
         badge: lang === 'es' ? 'Sección' : (lang === 'en' ? 'Section' : 'Seção'),
-        keywords: 'trayectoria experiencia educacion cv carrera smartjob retail-omnichannel itau kpmg cmm fcfm mba beauchef',
+        keywords: 'trayectoria experiencia educacion cv carrera smartjob itau kpmg cmm fcfm mba beauchef',
         action: () => navigateTo(`${pathPrefix}#trayectoria`)
       },
       {
@@ -857,24 +857,24 @@ function initCommandPalette() {
 
       // 2. Featured Projects (Modal triggers)
       {
-        id: 'proj-retail-omnichannel-genai',
+        id: 'proj-retail-genai',
         category: 'projects',
-        title: 'Retail Omnicanal GenAI: Corrección de Catálogo (Pipeline Vertex AI)',
+        title: 'Retail GenAI: Corrección de Catálogo (Pipeline Vertex AI)',
         desc: '> 7.7M USD anuales regional · A/B Testing Causal · LLMs Few-Shot',
         icon: '🤖',
         badge: 'Modal',
-        keywords: 'retail-omnichannel genai retail catalogo vertex ai ab testing causal sku cubicaje fletes llm prompting smartjob',
-        action: () => openProjectModalById('retail-omnichannel-genai')
+        keywords: 'retail genai catalogo vertex ai ab testing causal sku cubicaje fletes llm prompting smartjob',
+        action: () => openProjectModalById('retail-genai')
       },
       {
-        id: 'proj-retail-omnichannel-logistics',
+        id: 'proj-retail-logistics',
         category: 'projects',
-        title: 'Retail Omnicanal Logistics: Forecasting & Simplificación de Red',
+        title: 'Supply Chain Logistics: Forecasting & Simplificación de Red',
         desc: '-2 p.p. en atrasos (SLA) · +100M CLP ventas protegidas (CyberDay)',
         icon: '🚚',
         badge: 'Modal',
-        keywords: 'retail-omnichannel logistics supply chain forecasting series de tiempo red cross docking picking pyomo clustering',
-        action: () => openProjectModalById('retail-omnichannel-logistics')
+        keywords: 'retail logistics supply chain forecasting series de tiempo red cross docking picking pyomo clustering',
+        action: () => openProjectModalById('retail-logistics')
       },
       {
         id: 'proj-itau-recommender',
@@ -1153,7 +1153,7 @@ function initCommandPalette() {
           ${lang === 'en' ? 'No matching commands found' : (lang === 'pt' ? 'Nenhum comando encontrado' : 'No se encontraron comandos')}
         </div>
         <div class="cmd-empty-hint">
-          ${lang === 'en' ? 'Try searching for "Supply Chain", "Retail Omnicanal", "GenAI", or "Email"' : (lang === 'pt' ? 'Tente buscar por "Supply Chain", "Retail Omnicanal", "GenAI" ou "E-mail"' : 'Intenta con "Supply Chain", "Retail Omnicanal", "GenAI", "GridBreak" o "Email"')}
+          ${lang === 'en' ? 'Try searching for "Supply Chain", "Retail GenAI", "Machine Learning", or "Email"' : (lang === 'pt' ? 'Tente buscar por "Supply Chain", "Retail GenAI", "Machine Learning" ou "E-mail"' : 'Intenta con "Supply Chain", "Retail GenAI", "GridBreak", "Optimización" o "Email"')}
         </div>
       `;
       resultsList.appendChild(emptyDiv);

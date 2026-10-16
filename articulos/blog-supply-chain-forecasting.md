@@ -30,12 +30,21 @@ permalink: /articulos/blog-supply-chain-forecasting/
   </div>
 </div>
 
+<div class="article-callout info">
+  <div class="article-callout-title">
+    <span>🔬</span> Nota de Simulación y Alcance Metodológico
+  </div>
+  <p style="margin-bottom: 0;">
+    Este artículo técnico corresponde a un <strong>estudio de caso experimental, benchmark metodológico y arquitectura de referencia técnica</strong>. La topología de red multieslabón, las restricciones operativas y las series temporales son el resultado de un entorno de simulación estilizado con fines pedagógicos y de portafolio profesional; <strong>no constituyen, utilizan ni reflejan datos reales, métricas privadas ni operaciones propietarias de ninguna entidad comercial específica</strong>.
+  </p>
+</div>
+
 <div class="article-callout tip">
   <div class="article-callout-title">
     <span>💡</span> Síntesis Ejecutiva & Veredicto Operativo (TL;DR)
   </div>
   <p style="margin-bottom: 0;">
-    En este artículo desgloso de principio a fin el diseño, validación matemática e implementación de un pipeline integral de <strong>Time Series Forecasting Tabular Global</strong> para una red logística nacional de e-commerce (~500.000 órdenes/mes). Mediante una estrategia directa a $H = 14$ días con <strong>LightGBM</strong>:
+    En este artículo desgloso de principio a fin el diseño, validación matemática e implementación de un pipeline integral de <strong>Time Series Forecasting Tabular Global</strong> para un benchmark simulado de red logística de e-commerce (~500.000 órdenes/mes). Mediante una estrategia directa a $H = 14$ días con <strong>LightGBM</strong>:
   </p>
   <ul style="margin-top: 10px; margin-bottom: 0;">
     <li><strong>Eliminamos 100% el Data Leakage:</strong> Todas las variables rodantes y rezagos respetan un desfase temporal formal $\ge 14$ días (<code>shift(14)</code>).</li>
@@ -99,13 +108,13 @@ Cuando el flujo entrante supera la capacidad nominal de procesamiento de un nodo
 
 Para balancear la carga de la red de forma eficiente, operaciones requiere **14 días de anticipación ($H=14$)**. Con menos tiempo, es imposible modular turnos laborales o negociar capacidad con transportistas terceros.
 
-Este artículo detalla la solución técnica y metodológica que diseñamos para transformar pronósticos estadísticos en **decisiones operativas automatizadas de balanceo de red**.
+Este artículo detalla el benchmark técnico y metodológico desarrollado para transformar pronósticos estadísticos en **decisiones operativas automatizadas de balanceo de red**.
 
 ---
 
 ## 2. El Ecosistema Físico y Operacional: Red Multieslabón
 
-Para contextualizar el modelado, estructuramos una topología representativa de la operación logística regional, coordinando un volumen superior a las **500.000 órdenes mensuales** distribuidas en tres tipologías de nodos:
+Para estructurar el caso de estudio experimental, modelamos una topología simulada representativa de redes logísticas multieslabón, coordinando un volumen superior a las **500.000 órdenes mensuales** distribuidas en tres tipologías de nodos:
 
 ```text
                             [ Bodegas Sellers 1P / 3P ]

@@ -58,7 +58,7 @@ HipoRefi-CL está concebido como una plataforma analítica de extremo a extremo 
 
 Para lograrlo, la plataforma integra:
 - **Datos macroeconómicos en vivo:** Conexión automatizada a la API del Banco Central de Chile (UF diaria, TPM) y a las series estadísticas de la CMF.
-- **Web scraping headless:** Monitoreo con Playwright de simuladores públicos de **7 entidades financieras** en Chile (BancoEstado vía Casaverso, Santander, BCI, Banco de Chile/Toctoc, Itaú, Consorcio, Retail Omnicanal y Banco Internacional).
+- **Web scraping headless:** Monitoreo con Playwright de simuladores públicos de **7 entidades financieras** en Chile (BancoEstado vía Casaverso, Santander, BCI, Banco de Chile/Toctoc, Itaú, Consorcio, instituciones de crédito retail y Banco Internacional).
 - **Extracción de cartolas PDF:** Pipeline híbrido (regex hub-surbrado a la banca chilena + fallback estructurado con LLMs y esquemas Pydantic v2).
 - **Motor financiero de alta precisión:** Amortización francesa y alemana en UF, recargos actuariales de desgravamen por tramos de edad, prepagos parciales y análisis de estrés para créditos con tasa mixta.
 - **Doble interfaz de usuario:** Una **API REST moderna con FastAPI** y un **Dashboard interactivo en Streamlit** de 8 pestañas con gráficos Plotly y generación de informes ejecutivos en PDF mediante ReportLab.
@@ -273,7 +273,7 @@ async def scrape_santander_live(principal_uf: float, term_years: int) -> Optiona
 4. **Banco de Chile:** Integración con portal abierto de Toctoc.
 5. **Banco Itaú:** Cotización de dividendo en UF y desglose de pólizas.
 6. **Consorcio:** Simulación de crédito para mutuarias y banco.
-7. **Banco Retail Omnicanal y Banco Internacional:** Endpoints REST internos con fallback regex nativo.
+7. **Banca de Retail e Instituciones Financieras Privadas:** Endpoints REST internos con fallback regex nativo.
 
 ### Persistencia Embebida y Concurrencia en DuckDB
 Para el almacenamiento de tasas y simulaciones utilicé **DuckDB** (`data/market_rates.duckdb`). DuckDB ofrece almacenamiento columnar OLAP de alto rendimiento sin requerir un servidor de base de datos externo.
