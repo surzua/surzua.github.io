@@ -843,7 +843,7 @@ Para ingenieros y científicos de datos que enfrentan rondas técnicas de diseñ
     <tbody>
       <tr>
         <td><strong>¿Por qué LightGBM y no ARIMA / SARIMAX?</strong></td>
-        <td>ARIMA es un modelo <em>local univariado</em>: exige hub-surbrar, monitorear y reentrenar un modelo independiente por cada serie ($N$ modelos para $N$ nodos). No escala en redes complejas, es incapaz de transferir aprendizaje cruzado entre nodos y falla al incorporar relaciones no lineales complejas entre covariables exógenas (como calendario o quincenas). LightGBM entrena un <strong>único modelo tabular global</strong> que asimila simultáneamente la topología completa de la red y permite realizar inferencias robustas incluso en nodos con historial corto (<em>cold-start</em>).</td>
+        <td>ARIMA es un modelo <em>local univariado</em>: exige calibrar, monitorear y reentrenar un modelo independiente por cada serie ($N$ modelos para $N$ nodos). No escala en redes complejas, es incapaz de transferir aprendizaje cruzado entre nodos y falla al incorporar relaciones no lineales complejas entre covariables exógenas (como calendario o quincenas). LightGBM entrena un <strong>único modelo tabular global</strong> que asimila simultáneamente la topología completa de la red y permite realizar inferencias robustas incluso en nodos con historial corto (<em>cold-start</em>).</td>
       </tr>
       <tr>
         <td><strong>¿Por qué no Deep Learning (LSTM o Temporal Fusion Transformer)?</strong></td>

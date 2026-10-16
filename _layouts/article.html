@@ -60,13 +60,37 @@ layout: null
   <header class="header scrolled">
     <div class="container header-container">
       <a href="/#inicio" class="logo" aria-label="Volver al inicio">
-        <div class="logo-badge">SU</div>
+        <div class="logo-badge">
+          <svg class="logo-mark" width="25" height="25" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="suLogoGradArt" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38bdf8"/>
+                <stop offset="50%" stop-color="#3b82f6"/>
+                <stop offset="100%" stop-color="#818cf8"/>
+              </linearGradient>
+              <linearGradient id="suGridGradArt" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#a855f7" stop-opacity="0.15"/>
+              </linearGradient>
+            </defs>
+            <path d="M 6 18 H 30 M 18 6 V 30" stroke="url(#suGridGradArt)" stroke-width="0.75" stroke-dasharray="2 3"/>
+            <polygon points="18,6 29,12.5 29,23.5 18,30 7,23.5 7,12.5" stroke="rgba(56, 189, 248, 0.2)" stroke-width="0.8" fill="none"/>
+            <path d="M 25.5 10.5 H 10.5 L 18.5 17.5 L 11 24.5 C 11 24.5 12.5 29.5 18 29.5 C 23.5 29.5 25 24.5 25 24.5 V 14" stroke="url(#suLogoGradArt)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="25.5" cy="10.5" r="2.2" fill="#38bdf8"/>
+            <circle cx="10.5" cy="10.5" r="2" fill="#38bdf8"/>
+            <circle cx="18.5" cy="17.5" r="2.4" fill="#67e8f9"/>
+            <circle cx="11" cy="24.5" r="2" fill="#818cf8"/>
+            <circle cx="18" cy="29.5" r="1.8" fill="#a855f7"/>
+            <circle cx="25" cy="14" r="2.2" fill="#a855f7"/>
+          </svg>
+        </div>
         <div class="logo-text">Sebastian <span>Urzúa</span></div>
       </a>
 
       <nav class="nav-desktop">
         <a href="/#inicio" class="nav-link" data-i18n="nav.inicio">Inicio</a>
         <a href="/#proyectos" class="nav-link" data-i18n="nav.proyectos">Casos de Impacto</a>
+        <a href="/#laboratorio" class="nav-link" data-i18n="nav.laboratorio">Laboratorio</a>
         <a href="/#articulos" class="nav-link active" data-i18n="nav.articulos">Artículos</a>
         <a href="/#trayectoria" class="nav-link" data-i18n="nav.trayectoria">Trayectoria</a>
       </nav>
@@ -88,8 +112,18 @@ layout: null
           <button class="lang-btn" data-lang="pt" aria-pressed="false" title="Português">PT</button>
         </div>
 
-        <button id="theme-toggle-btn" class="icon-btn" aria-label="Cambiar tema">
-          <!-- Icon injected by JS -->
+        <button id="theme-toggle-btn" class="icon-btn" aria-label="Cambiar tema" title="Alternar tema (Modo Claro / Oscuro)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
         </button>
 
         <a href="/#contacto" class="btn btn-primary btn-sm" data-i18n="nav.contact_btn">Contactar</a>

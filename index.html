@@ -49,13 +49,37 @@ layout: null
   <header class="header">
     <div class="container header-container">
       <a href="#inicio" class="logo" aria-label="Ir al inicio">
-        <div class="logo-badge">SU</div>
+        <div class="logo-badge">
+          <svg class="logo-mark" width="25" height="25" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="suLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38bdf8"/>
+                <stop offset="50%" stop-color="#3b82f6"/>
+                <stop offset="100%" stop-color="#818cf8"/>
+              </linearGradient>
+              <linearGradient id="suGridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#a855f7" stop-opacity="0.15"/>
+              </linearGradient>
+            </defs>
+            <path d="M 6 18 H 30 M 18 6 V 30" stroke="url(#suGridGrad)" stroke-width="0.75" stroke-dasharray="2 3"/>
+            <polygon points="18,6 29,12.5 29,23.5 18,30 7,23.5 7,12.5" stroke="rgba(56, 189, 248, 0.2)" stroke-width="0.8" fill="none"/>
+            <path d="M 25.5 10.5 H 10.5 L 18.5 17.5 L 11 24.5 C 11 24.5 12.5 29.5 18 29.5 C 23.5 29.5 25 24.5 25 24.5 V 14" stroke="url(#suLogoGrad)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="25.5" cy="10.5" r="2.2" fill="#38bdf8"/>
+            <circle cx="10.5" cy="10.5" r="2" fill="#38bdf8"/>
+            <circle cx="18.5" cy="17.5" r="2.4" fill="#67e8f9"/>
+            <circle cx="11" cy="24.5" r="2" fill="#818cf8"/>
+            <circle cx="18" cy="29.5" r="1.8" fill="#a855f7"/>
+            <circle cx="25" cy="14" r="2.2" fill="#a855f7"/>
+          </svg>
+        </div>
         <div class="logo-text">Sebastian <span>Urzúa</span></div>
       </a>
 
       <nav class="nav-desktop">
         <a href="#inicio" class="nav-link active" data-i18n="nav.inicio">Inicio</a>
         <a href="#proyectos" class="nav-link" data-i18n="nav.proyectos">Casos de Impacto</a>
+        <a href="#laboratorio" class="nav-link" data-i18n="nav.laboratorio">Laboratorio</a>
         <a href="#articulos" class="nav-link" data-i18n="nav.articulos">Artículos</a>
         <a href="#trayectoria" class="nav-link" data-i18n="nav.trayectoria">Trayectoria</a>
       </nav>
@@ -77,8 +101,18 @@ layout: null
           <button class="lang-btn" data-lang="pt" aria-pressed="false" title="Português">PT</button>
         </div>
 
-        <button id="theme-toggle-btn" class="icon-btn" aria-label="Cambiar tema">
-          <!-- Icon injected by JS -->
+        <button id="theme-toggle-btn" class="icon-btn" aria-label="Cambiar tema" title="Alternar tema (Modo Claro / Oscuro)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
         </button>
 
         <a href="#contacto" class="btn btn-primary btn-sm" data-i18n="nav.contact_btn">Contactar</a>
@@ -106,6 +140,7 @@ layout: null
       <a href="#impacto" class="nav-link" data-i18n="nav.impacto">Métricas</a>
       <a href="#pilares" class="nav-link" data-i18n="nav.pilares">Pilares</a>
       <a href="#proyectos" class="nav-link" data-i18n="nav.proyectos">Casos de Impacto</a>
+      <a href="#laboratorio" class="nav-link" data-i18n="nav.laboratorio">Laboratorio</a>
       <a href="#articulos" class="nav-link" data-i18n="nav.articulos">Artículos</a>
       <a href="#skills" class="nav-link" data-i18n="nav.skills">Expertise</a>
       <a href="#trayectoria" class="nav-link" data-i18n="nav.trayectoria">Trayectoria</a>
@@ -224,7 +259,7 @@ layout: null
         <div class="metric-card gold">
           <div class="metric-number" data-target="7.0" data-prefix="" data-suffix=" / 7.0" data-decimals="1">7.0 / 7.0</div>
           <div class="metric-title" data-i18n="metrics.m5_title">Distinción Máxima (Beauchef)</div>
-          <div class="metric-desc" data-i18n="metrics.m5_desc">Ingeniería Civil Matemática, Universidad de Chile (Hub Surficación máxima histórica).</div>
+          <div class="metric-desc" data-i18n="metrics.m5_desc">Ingeniería Civil Matemática, Universidad de Chile (Calificación máxima histórica).</div>
         </div>
 
         <div class="metric-card">
@@ -284,7 +319,7 @@ layout: null
           </div>
           <h3 class="pillar-title" data-i18n="pillars.p2_title">Machine Learning & Analytics en Producción</h3>
           <p class="pillar-text" data-i18n="pillars.p2_desc">
-            Diseño, hub-surbración y puesta en marcha de sistemas analíticos: motores de recomendación hiperpersonalizados, scoring de riesgo crediticio alternativo, propensión de compra y detección de anomalías en tiempo real.
+            Diseño, calibración y puesta en marcha de sistemas analíticos: motores de recomendación hiperpersonalizados, scoring de riesgo crediticio alternativo, propensión de compra y detección de anomalías en tiempo real.
           </p>
           <div class="pillar-tags">
             <span class="pill-badge">Python (Polars/Pandas)</span>
@@ -318,35 +353,34 @@ layout: null
   </section>
 
   <!-- ========================================================================
-       Featured Projects & Impact Cases (NO DATES!)
+       Business Impact Cases (Corporate Experience & Consulting)
        ======================================================================== -->
   <section id="proyectos" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="projects.tag">Portafolio Seleccionado</span>
-        <h2 class="section-title" data-i18n="projects.title">Casos de Impacto & Proyectos</h2>
+        <span class="section-tag" data-i18n="projects.tag">Portafolio Corporativo & Consultoría</span>
+        <h2 class="section-title" data-i18n="projects.title">Casos de Impacto de Negocio</h2>
         <p class="section-subtitle" data-i18n="projects.subtitle">
-          Iniciativas donde la formulación matemática y el modelamiento predictivo generaron ventajas competitivas comprobables.
+          Iniciativas estratégicas donde el modelamiento predictivo, la optimización matemática y GenAI generaron retornos medibles en P&amp;L y eficiencias de escala.
         </p>
       </div>
 
       <div class="projects-filter">
         <button class="filter-btn active" data-filter="all" data-i18n="filter.all">Todos los Casos</button>
-        <button class="filter-btn" data-filter="supply-chain" data-i18n="filter.supply_chain">Supply Chain & Redes</button>
-        <button class="filter-btn" data-filter="genai" data-i18n="filter.genai">GenAI & LLMs</button>
-        <button class="filter-btn" data-filter="finance" data-i18n="filter.finance">Banca & Finanzas</button>
-        <button class="filter-btn" data-filter="opensource" data-i18n="filter.opensource">Open Source</button>
+        <button class="filter-btn" data-filter="supply-chain" data-i18n="filter.supply_chain">Supply Chain &amp; Operaciones</button>
+        <button class="filter-btn" data-filter="genai" data-i18n="filter.genai">GenAI &amp; LLMs</button>
+        <button class="filter-btn" data-filter="finance" data-i18n="filter.finance">Banca &amp; Finanzas</button>
       </div>
 
       <div class="projects-grid">
         <!-- Project 1: Retail GenAI Catalog -->
         <div class="project-card" data-category="supply-chain genai">
           <div class="project-top">
-            <span class="project-domain genai">GenAI & Supply Chain</span>
+            <span class="project-domain genai">GenAI &amp; Supply Chain</span>
             <span class="cred-badge gold" style="padding: 2px 8px; font-size: 0.72rem;">Impacto >7.7M USD</span>
           </div>
-          <h3 class="project-title">Corrección de Catálogo con GenAI & A/B Testing</h3>
-          <div class="project-org">Investigación & Benchmark Experimental con LLMs (Catálogos a Escala)</div>
+          <h3 class="project-title">Corrección de Catálogo con GenAI &amp; A/B Testing</h3>
+          <div class="project-org">SmartJob · Consultoría para Retail Omnicanal Líder (Advanced Analytics)</div>
           <div class="project-body">
             <div class="project-metric-highlight">
               <span>Impacto:</span> <strong>> 7.7M USD anuales a nivel regional</strong>
@@ -369,19 +403,17 @@ layout: null
           </div>
         </div>
 
-        <!-- Project 2: Supply Chain Forecasting & Topology -->
+        <!-- Project 2: Supply Chain Forecasting & Topology (NO GITHUB LINK - CORPORATE CASE) -->
         <div class="project-card" data-category="supply-chain">
           <div class="project-top">
-            <span class="project-domain supply-chain">Supply Chain</span>
-            <a href="https://github.com/surzua/LogisticNetwork" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver repositorio LogisticNetwork">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
+            <span class="project-domain supply-chain">Supply Chain &amp; Optimización</span>
+            <span class="cred-badge gold" style="padding: 2px 8px; font-size: 0.72rem;">-2 p.p. en Atrasos (SLA)</span>
           </div>
-          <h3 class="project-title">Forecasting de Capacidad & Red Logística</h3>
-          <div class="project-org">Caso de Estudio & Simulación de Red Logística Multieslabón</div>
+          <h3 class="project-title">Forecasting de Capacidad &amp; Red Logística</h3>
+          <div class="project-org">SmartJob · Consultoría para Retail Omnicanal Líder (Supply Chain Analytics)</div>
           <div class="project-body">
             <div class="project-metric-highlight">
-              <span>Impacto:</span> <strong>-2 p.p. en atrasos (SLA) · +100M CLP ventas</strong>
+              <span>Impacto:</span> <strong>-2 p.p. en atrasos (SLA) · +100M CLP ventas protegidas</strong>
             </div>
             <ul class="project-points">
               <li><strong>Desafío:</strong> Saturación operativa en nodos críticos (cross-docking, picking y última milla) y 40% de rutas redundantes que arriesgaban SLA de entrega.</li>
@@ -404,7 +436,7 @@ layout: null
         <!-- Project 3: ItaúX Recommender -->
         <div class="project-card" data-category="finance">
           <div class="project-top">
-            <span class="project-domain finance">Banca & Finanzas</span>
+            <span class="project-domain finance">Banca &amp; Finanzas</span>
             <span class="cred-badge gold" style="padding: 2px 8px; font-size: 0.72rem;">Ganador Transforma 2024</span>
           </div>
           <h3 class="project-title">ItaúX: Motor Look-a-Likes e Hiperpersonalización</h3>
@@ -434,7 +466,8 @@ layout: null
         <!-- Project 4: Itaú GenAI Pitch Ganador -->
         <div class="project-card" data-category="finance genai">
           <div class="project-top">
-            <span class="project-domain genai">GenAI & Finanzas</span>
+            <span class="project-domain genai">GenAI &amp; Finanzas</span>
+            <span class="cred-badge" style="padding: 2px 8px; font-size: 0.72rem;">Salesforce CRM Integration</span>
           </div>
           <h3 class="project-title">Pitch Ganador: Generador de Argumentarios (LLMs)</h3>
           <div class="project-org">Banco Itaú · Laboratorio de Innovación ItaúX</div>
@@ -449,7 +482,7 @@ layout: null
           </div>
           <div class="project-footer">
             <div class="project-tech">
-              <span class="tech-tag">LLMs & Prompting</span>
+              <span class="tech-tag">LLMs &amp; Prompting</span>
               <span class="tech-tag">Speech Analytics</span>
               <span class="tech-tag">Salesforce CRM</span>
               <span class="tech-tag">BigQuery</span>
@@ -460,83 +493,14 @@ layout: null
           </div>
         </div>
 
-        <!-- Project 5: HipoRefi-CL -->
-        <div class="project-card" data-category="opensource finance">
-          <div class="project-top">
-            <span class="project-domain opensource">Open Source & Finanzas</span>
-            <a href="https://github.com/surzua/HipoRefi-CL" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver repositorio HipoRefi-CL">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
-          </div>
-          <h3 class="project-title">HipoRefi-CL: Optimizador Hipotecario en Chile</h3>
-          <div class="project-org">GitHub: surzua/HipoRefi-CL · Finanzas Cuantitativas</div>
-          <div class="project-body">
-            <div class="project-metric-highlight">
-              <span>Impacto:</span> <strong>Optimización de VPN, TIR y Break-Even en UF</strong>
-            </div>
-            <ul class="project-points">
-              <li><strong>Desafío:</strong> Complejidad para determinar si refinanciar un crédito genera ahorro neto considerando costos operacionales chilenos (tasación, títulos, CBR).</li>
-              <li><strong>Solución:</strong> Algoritmo en Python que proyecta tablas de amortización, descuenta flujos a valor presente y evalúa la sensibilidad de tasas de mercado.</li>
-            </ul>
-          </div>
-          <div class="project-footer">
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Finanzas Cuantitativas</span>
-              <span class="tech-tag">NumPy</span>
-              <span class="tech-tag">Hipotecarios UF</span>
-            </div>
-            <button class="btn-card-link view-project-btn" data-project="hiporefi-cl">
-              Ver detalles ➔
-            </button>
-          </div>
-        </div>
-
-        <!-- Project: GridBreak-CL -->
-        <div class="project-card" data-category="opensource">
-          <div class="project-top">
-            <span class="project-domain infrastructure">Infraestructura & Data Science</span>
-            <div style="display: flex; gap: 8px; align-items: center;">
-              <a href="https://gridbreak-cl.streamlit.app" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver Simulador GridBreak-CL">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </a>
-              <a href="https://github.com/surzua/gridbreak-cl" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver repositorio GridBreak-CL">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-              </a>
-            </div>
-          </div>
-          <h3 class="project-title">GridBreak-CL: Fragilidad Eléctrica & Estrés Climático RM</h3>
-          <div class="project-org">GitHub: surzua/gridbreak-cl · Infraestructura & Causalidad</div>
-          <div class="project-body">
-            <div class="project-metric-highlight">
-              <span>Impacto:</span> <strong>Hazard Ratio 483x en Red Aérea · Modelo Causal RM</strong>
-            </div>
-            <ul class="project-points">
-              <li><strong>Desafío:</strong> Auditar cuantitativamente los apagones de 2024 en Santiago y contrastar la tesis de "fuerza mayor y arbolado" frente a la asimetría territorial de la red.</li>
-              <li><strong>Solución:</strong> Pipeline integral con telemetría SEC (&gt;100k registros), meteorología espacial IDW y modelamiento con GLM Logit, Kaplan-Meier y Modelo de Cox.</li>
-            </ul>
-          </div>
-          <div class="project-footer">
-            <div class="project-tech">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">GLM Logit</span>
-              <span class="tech-tag">Survival Cox</span>
-              <span class="tech-tag">Streamlit</span>
-            </div>
-            <button class="btn-card-link view-project-btn" data-project="gridbreak-cl">
-              Ver detalles ➔
-            </button>
-          </div>
-        </div>
-
-        <!-- Project 6: Digital Account Risk & Batalla de Datos -->
+        <!-- Project 5: Digital Account Risk & Batalla de Datos -->
         <div class="project-card" data-category="finance">
           <div class="project-top">
-            <span class="project-domain finance">Banca & Finanzas</span>
+            <span class="project-domain finance">Banca &amp; Finanzas</span>
             <span class="cred-badge" style="padding: 2px 8px; font-size: 0.72rem;">2° Lugar Itaú Brasil</span>
           </div>
-          <h3 class="project-title">Scoring Alternativo & Batalla de Datos Regional</h3>
-          <div class="project-org">Banco Itaú · Inclusión Financiera & Analytics</div>
+          <h3 class="project-title">Scoring Alternativo &amp; Batalla de Datos Regional</h3>
+          <div class="project-org">Banco Itaú · Inclusión Financiera &amp; Analytics</div>
           <div class="project-body">
             <div class="project-metric-highlight">
               <span>Impacto:</span> <strong>2° Lugar Regional LatAm · Bancarización no tradicional</strong>
@@ -559,11 +523,164 @@ layout: null
           </div>
         </div>
 
-        <!-- Project 7: Credit Policy Optimizer -->
+        <!-- Project 6: Fraud & Anomalies Retail + Actuarial -->
+        <div class="project-card" data-category="supply-chain finance">
+          <div class="project-top">
+            <span class="project-domain supply-chain">Auditoría &amp; Finanzas</span>
+            <span class="cred-badge" style="padding: 2px 8px; font-size: 0.72rem;">IAS 19 · Scoring Multivariable</span>
+          </div>
+          <h3 class="project-title">Detección de Fraude &amp; Modelos Actuariales</h3>
+          <div class="project-org">KPMG · Data &amp; Analytics Insights Center</div>
+          <div class="project-body">
+            <div class="project-metric-highlight">
+              <span>Impacto:</span> <strong>Scoring multivariable · Vectorización en R (IAS 19)</strong>
+            </div>
+            <ul class="project-points">
+              <li><strong>Desafío:</strong> Fugas de capital en retail mayorista y lentitud en hojas de cálculo para cálculo de pasivos laborales (indemnizaciones PIAS).</li>
+              <li><strong>Solución:</strong> Motor estadístico ponderando >20 reglas de negocio para cientos de miles de transacciones y migración de modelos a scripts vectorizados en R.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">Scoring Multivariable</span>
+              <span class="tech-tag">R Vectorizado</span>
+              <span class="tech-tag">K-Prototypes</span>
+              <span class="tech-tag">DAMA</span>
+            </div>
+            <button class="btn-card-link view-project-btn" data-project="kpmg-fraud-audit">
+              Ver detalles ➔
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Open Source & Experimental Laboratory
+       ======================================================================== -->
+  <section id="laboratorio" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="lab.tag">Código Abierto &amp; Experimentación</span>
+        <h2 class="section-title" data-i18n="lab.title">Laboratorio &amp; Proyectos Open Source</h2>
+        <p class="section-subtitle" data-i18n="lab.subtitle">
+          Desarrollos técnicos independientes, herramientas interactivas y benchmarks de código abierto diseñados con rigor matemático y arquitectura de software auditable.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Lab 1: GridBreak-CL -->
+        <div class="project-card" data-category="opensource infrastructure">
+          <div class="project-top">
+            <span class="project-domain infrastructure">Infraestructura &amp; Data Science</span>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <a href="https://gridbreak-cl.streamlit.app" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver Simulador GridBreak-CL en Streamlit">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="https://github.com/surzua/gridbreak-cl" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver repositorio GridBreak-CL en GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">GridBreak-CL: Fragilidad Eléctrica &amp; Estrés Climático RM</h3>
+          <div class="project-org">Investigación Causal Independiente · Streamlit Cloud + GitHub</div>
+          <div class="project-body">
+            <div class="project-metric-highlight">
+              <span>Evidencia:</span> <strong>Hazard Ratio 483x en Red Aérea · Modelo Causal RM</strong>
+            </div>
+            <ul class="project-points">
+              <li><strong>Desafío:</strong> Auditar cuantitativamente los apagones masivos de 2024 en Santiago y contrastar la tesis de "fuerza mayor y arbolado" frente a la asimetría territorial de la red.</li>
+              <li><strong>Solución:</strong> Pipeline con telemetría SEC (&gt;100k registros), meteorología espacial IDW y modelamiento con GLM Logit, Kaplan-Meier y Modelo de Cox.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">GLM Logit</span>
+              <span class="tech-tag">Survival Cox</span>
+              <span class="tech-tag">Streamlit</span>
+            </div>
+            <button class="btn-card-link view-project-btn" data-project="gridbreak-cl">
+              Ver detalles ➔
+            </button>
+          </div>
+        </div>
+
+        <!-- Lab 2: TimeSeries Benchmark -->
+        <div class="project-card" data-category="opensource supply-chain">
+          <div class="project-top">
+            <span class="project-domain supply-chain">Supply Chain &amp; Machine Learning</span>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <a href="https://github.com/surzua/TimeSeries/blob/main/notebooks/02_lightgbm_probabilistic_capacity_mitigation.ipynb" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver Notebooks en GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="https://github.com/surzua/TimeSeries" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver repositorio TimeSeries en GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Supply Chain TimeSeries Benchmark</h3>
+          <div class="project-org">GitHub: surzua/TimeSeries · Pipeline Global &amp; Decisión Prescriptiva</div>
+          <div class="project-body">
+            <div class="project-metric-highlight">
+              <span>Benchmark:</span> <strong>WAPE 6.62% (-47% vs Baseline) · Regresión Cuantílica p90</strong>
+            </div>
+            <ul class="project-points">
+              <li><strong>Desafío:</strong> Diseñar un benchmark reproducible de Time Series Forecasting tabular multieslabón sin data leakage para horizontes $H = 14$.</li>
+              <li><strong>Solución:</strong> Pipeline global con LightGBM, Rolling-Origin CV purificado y regresión cuantílica asimétrica con Pinball Loss para mitigación de capacidad.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">LightGBM</span>
+              <span class="tech-tag">Rolling-Origin CV</span>
+              <span class="tech-tag">Quantile Loss</span>
+              <span class="tech-tag">Python 3.12 (uv)</span>
+            </div>
+            <button class="btn-card-link view-project-btn" data-project="timeseries-benchmark">
+              Ver detalles ➔
+            </button>
+          </div>
+        </div>
+
+        <!-- Lab 3: HipoRefi-CL -->
         <div class="project-card" data-category="opensource finance">
           <div class="project-top">
-            <span class="project-domain opensource">Open Source & Riesgo</span>
-            <a href="https://github.com/surzua/credit-policy-optimizer" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver repositorio credit-policy-optimizer">
+            <span class="project-domain opensource">Finanzas Cuantitativas &amp; Open Source</span>
+            <a href="https://github.com/surzua/HipoRefi-CL" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver repositorio HipoRefi-CL en GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+          </div>
+          <h3 class="project-title">HipoRefi-CL: Optimizador Hipotecario en Chile</h3>
+          <div class="project-org">GitHub: surzua/HipoRefi-CL · Finanzas Cuantitativas en UF</div>
+          <div class="project-body">
+            <div class="project-metric-highlight">
+              <span>Impacto:</span> <strong>Optimización de VPN, TIR y Break-Even en UF</strong>
+            </div>
+            <ul class="project-points">
+              <li><strong>Desafío:</strong> Complejidad para determinar si refinanciar un crédito genera ahorro neto considerando costos operacionales chilenos (tasación, títulos, CBR).</li>
+              <li><strong>Solución:</strong> Algoritmo en Python que proyecta tablas de amortización, descuenta flujos a valor presente y evalúa la sensibilidad de tasas de mercado.</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Finanzas Cuantitativas</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">Hipotecarios UF</span>
+            </div>
+            <button class="btn-card-link view-project-btn" data-project="hiporefi-cl">
+              Ver detalles ➔
+            </button>
+          </div>
+        </div>
+
+        <!-- Lab 4: Credit Policy Optimizer -->
+        <div class="project-card" data-category="opensource finance">
+          <div class="project-top">
+            <span class="project-domain opensource">Open Source &amp; Riesgo</span>
+            <a href="https://github.com/surzua/credit-policy-optimizer" target="_blank" rel="noopener noreferrer" class="project-github-link" title="Ver repositorio credit-policy-optimizer en GitHub">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             </a>
           </div>
@@ -586,35 +703,6 @@ layout: null
               <span class="tech-tag">ROC Curve</span>
             </div>
             <button class="btn-card-link view-project-btn" data-project="credit-policy">
-              Ver detalles ➔
-            </button>
-          </div>
-        </div>
-
-        <!-- Project 8: Fraud & Anomalies Retail + Actuarial -->
-        <div class="project-card" data-category="supply-chain">
-          <div class="project-top">
-            <span class="project-domain supply-chain">Supply Chain & Auditoría</span>
-          </div>
-          <h3 class="project-title">Detección de Fraude & Modelos Actuariales</h3>
-          <div class="project-org">KPMG · Data & Analytics Insights Center</div>
-          <div class="project-body">
-            <div class="project-metric-highlight">
-              <span>Impacto:</span> <strong>Scoring multivariable · Vectorización en R (IAS 19)</strong>
-            </div>
-            <ul class="project-points">
-              <li><strong>Desafío:</strong> Fugas de capital en retail mayorista y lentitud en hojas de cálculo para cálculo de pasivos laborales (indemnizaciones PIAS).</li>
-              <li><strong>Solución:</strong> Motor estadístico ponderando >20 reglas de negocio para cientos de miles de transacciones y migración de modelos a scripts vectorizados en R.</li>
-            </ul>
-          </div>
-          <div class="project-footer">
-            <div class="project-tech">
-              <span class="tech-tag">Scoring Multivariable</span>
-              <span class="tech-tag">R Vectorizado</span>
-              <span class="tech-tag">K-Prototypes</span>
-              <span class="tech-tag">DAMA</span>
-            </div>
-            <button class="btn-card-link view-project-btn" data-project="kpmg-fraud-audit">
               Ver detalles ➔
             </button>
           </div>
@@ -1115,7 +1203,7 @@ layout: null
             Nota de Graduación: 7.0 / 7.0 (Distinción Máxima)
           </span>
           <div class="timeline-desc" data-i18n="trajectory.edu3_desc">
-            <strong>Hub Surficación máxima histórica en examen de titulación y defensa de grado.</strong> Rigor analítico en análisis matemático, teoría de probabilidades, optimización continua y discreta, y análisis numérico.
+            <strong>Calificación máxima histórica en examen de titulación y defensa de grado.</strong> Rigor analítico en análisis matemático, teoría de probabilidades, optimización continua y discreta, y análisis numérico.
           </div>
         </div>
       </div>

@@ -44,7 +44,9 @@ function updateThemeIcon(theme) {
   btn.innerHTML = theme === 'light' 
     ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>'
     : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
-  btn.setAttribute('aria-label', `Cambiar a modo ${theme === 'light' ? 'oscuro' : 'claro'}`);
+  const label = `Cambiar a modo ${theme === 'light' ? 'oscuro' : 'claro'}`;
+  btn.setAttribute('aria-label', label);
+  btn.setAttribute('title', label);
 }
 
 /* ==========================================================================
@@ -109,8 +111,10 @@ function initMobileMenu() {
    Project Category Filtering
    ========================================================================== */
 function initProjectFiltering() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  const projectsSection = document.getElementById('proyectos');
+  if (!projectsSection) return;
+  const filterBtns = projectsSection.querySelectorAll('.filter-btn');
+  const projectCards = projectsSection.querySelectorAll('.project-card');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -173,9 +177,9 @@ function initTimelineTabs() {
 const projectData = {
   'retail-genai': {
     title: 'Corrección Automatizada de Variables de Catálogo (Pipeline GenAI & A/B Testing)',
-    org: 'Investigación & Benchmark Experimental con LLMs (Catálogos a Escala)',
+    org: 'SmartJob · Consultoría para Retail Omnicanal Líder (Advanced Analytics Corporativo)',
     domain: 'GenAI & Supply Chain',
-    metric: 'Benchmark Experimental · A/B Testing Causal · LLMs Few-Shot',
+    metric: '> 7.7M USD anuales regional · A/B Testing Causal · LLMs Few-Shot',
     problem: 'Inconsistencias severas y errores tipográficos/unidades en dimensiones físicas empaquetadas (alto, largo, ancho y peso), causando subcobro o sobrecobro de fletes a clientes, pérdidas en almacenamiento y fricciones contractuales con sellers. La inexistencia de un ground truth confiable impedía modelos supervisados estándar.',
     solution: 'Diseño e implementación de un pipeline productivo de 5 fases en GCP / Vertex AI: (1) Preprocesamiento: normalización y limpieza textual de títulos, marcas, modelos, descripciones y taxonomía de categorías de producto; (2) Etiquetado semántico con LLMs mediante few-shot learning especializado por categoría para agrupar SKUs con packaging equiparable; (3) Normalización y colapso de respuestas a categorías canónicas; (4) Rangos factibles con ground truth sintético combinando distribuciones empíricas del cluster y conocimiento experto inferido; (5) Imputación robusta mediante la mediana estadística de SKUs válidos. Validación experimental causal con A/B Testing estratificado multivariable (seller, precio, categoría, rotación) con Test A/A previo.',
     impact: 'Impacto económico validado experimentalmente en > 7.7M USD anuales a nivel corporativo regional por regularización de cobros de flete, ventas y cubicaje óptimo.',
@@ -183,13 +187,23 @@ const projectData = {
   },
   'retail-logistics': {
     title: 'Forecasting de Capacidades & Simplificación Topológica de Red',
-    org: 'Caso de Estudio & Simulación de Red Logística Multieslabón',
+    org: 'SmartJob · Consultoría para Retail Omnicanal Líder (Supply Chain Analytics)',
     domain: 'Supply Chain & Optimización',
-    metric: 'Simulación de Red: -2.03 pp en atrasos · LightGBM Quantile (p90)',
+    metric: '-2.03 pp en atrasos SLA · +100M CLP ventas protegidas (CyberDay)',
     problem: 'Sobrecargas operativas en nodos críticos de la red e-commerce regional (cross-docking, picking y última milla) y topología de red sobredimensionada con rutas redundantes que ponían en riesgo la promesa de entrega y la estabilidad del motor en eventos de alta demanda.',
     solution: 'Modelamiento predictivo de series de tiempo para proyectar capacidades operativas y anticipar saturaciones en nodos críticos de la red. Implementación de modelamiento espacial mediante clustering origen-destino para consolidar y dar de baja el 40% de rutas redundantes en la red logística.',
     impact: 'Reducción de atrasos operativos en 2 puntos porcentuales sobre un flujo mensual de aproximadamente 500.000 órdenes en la red regional. Prevención de saturación y caídas del motor logístico en CyberDay (+100M CLP en ventas protegidas) y un 70% de reducción de tiempo operacional en la parametrización de la red.',
     stack: 'GCP (BigQuery), Python (Polars, Scikit-Learn), Pyomo (MIP), Series de Tiempo, Clustering Espacial, Git'
+  },
+  'timeseries-benchmark': {
+    title: 'Supply Chain TimeSeries Benchmark: Pipeline Global LightGBM & Decisión Prescriptiva',
+    org: 'Open Source & Benchmark Metodológico · github.com/surzua/TimeSeries',
+    domain: 'Supply Chain & Machine Learning',
+    metric: 'WAPE 6.62% (-47% error vs baseline) · Regresión Cuantílica p90 · H = 14',
+    problem: 'En redes logísticas multieslabón, los pronósticos univariados tradicionales sufren de desfase temporal y no alertan con suficiente anticipación sobre riesgos asimétricos de sobrecarga de capacidad operativa en nodos de picking y despacho.',
+    solution: 'Arquitectura tabular global en Python 3.12 (uv) con LightGBM a horizonte directo H=14. Feature engineering purificado (rezagos y ventanas rodantes estrictamente >= 14 días sin data leakage), validación temporal Rolling-Origin CV purificada y regresión cuantílica con Pinball Loss (p90) para penalizar fuertemente la subestimación de demanda.',
+    impact: 'Reducción de WAPE al 6.62% frente a 14.29% del benchmark operativo Seasonal Naive (-47% de error relativo) y simulación prescriptiva que rescata más de 10.000 órdenes al mes dentro de la promesa de entrega.',
+    stack: 'Python 3.12 (uv), LightGBM, Polars, Scikit-Learn, Quantile Loss, Rolling-Origin CV'
   },
   'itau-recommender': {
     title: 'ItaúX: Motor Look-a-Likes e Hiperpersonalización Comercial',
@@ -258,7 +272,7 @@ const projectData = {
     metric: 'Scoring Multivariable de Fraude · Vectorización de Pasivos en R (IAS 19)',
     problem: 'Vulnerabilidades en notas de crédito y pagos a proveedores en retail mayorista; morosidad en telepeaje de autopistas; y tiempos excesivos en el cálculo manual de pasivos laborales de indemnización (PIAS / IAS 19).',
     solution: 'Co-diseño de más de 20 reglas de negocio y construcción de motor estadístico de scoring multivariable para priorizar transacciones sospechosas en cientos de miles de registros. Modelamiento de morosidad con K-Prototypes en TAG de autopistas urbanas. Reingeniería y vectorización de modelos actuariales en scripts de R.',
-    impact: 'Fishub-surzación fohub-surzada de fraudes y fugas de capital en retail; optimización drástica de tiempos de cómputo actuarial garantizando trazabilidad y reproducibilidad matemática ante comités de auditoría; y marcos de Data Governance DAMA para aseguradoras y AFPs.',
+    impact: 'Fiscalización focalizada de fraudes y fugas de capital en retail; optimización drástica de tiempos de cómputo actuarial garantizando trazabilidad y reproducibilidad matemática ante comités de auditoría; y marcos de Data Governance DAMA para aseguradoras y AFPs.',
     stack: 'Python, R Vectorizado, OpenCV, Tesseract OCR, K-Prototypes, Metodología DAMA, SQL'
   }
 };
@@ -415,7 +429,7 @@ function initKpiCounters() {
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function getLohub-surzedSuffix(element) {
+  function getLocalizedSuffix(element) {
     const currentLang = localStorage.getItem('portfolio_lang') || 'es';
     if (currentLang === 'en' && element.hasAttribute('data-suffix-en')) {
       return element.getAttribute('data-suffix-en');
@@ -428,7 +442,7 @@ function initKpiCounters() {
 
   function formatValue(element, value) {
     const prefix = element.getAttribute('data-prefix') || '';
-    const suffix = getLohub-surzedSuffix(element);
+    const suffix = getLocalizedSuffix(element);
     const decimals = parseInt(element.getAttribute('data-decimals') || '0', 10);
     return `${prefix}${value.toFixed(decimals)}${suffix}`;
   }
@@ -807,12 +821,22 @@ function initCommandPalette() {
       {
         id: 'nav-proyectos',
         category: 'nav',
-        title: lang === 'es' ? 'Casos de Impacto & Proyectos' : (lang === 'en' ? 'Impact Cases & Projects' : 'Casos de Impacto & Projetos'),
-        desc: lang === 'es' ? 'Soluciones cuantitativas en Supply Chain, Banca y Retail' : (lang === 'en' ? 'Quantitative solutions in Supply Chain, Banking, and Retail' : 'Soluções quantitativas em Supply Chain, Bancos e Varejo'),
+        title: lang === 'es' ? 'Casos de Impacto de Negocio' : (lang === 'en' ? 'Business Impact Cases' : 'Casos de Impacto de Negócios'),
+        desc: lang === 'es' ? 'Soluciones cuantitativas en Retail Omnicanal, Banca y Consultoría' : (lang === 'en' ? 'Quantitative solutions in Omnichannel Retail, Banking, and Consulting' : 'Soluções quantitativas em Varejo, Bancos e Consultoria'),
         icon: '💼',
         badge: lang === 'es' ? 'Sección' : (lang === 'en' ? 'Section' : 'Seção'),
-        keywords: 'proyectos casos impacto supply chain retail banca open source portafolio',
+        keywords: 'proyectos casos impacto negocio supply chain retail banca consultoria roi p&l',
         action: () => navigateTo(`${pathPrefix}#proyectos`)
+      },
+      {
+        id: 'nav-laboratorio',
+        category: 'nav',
+        title: lang === 'es' ? 'Laboratorio & Open Source' : (lang === 'en' ? 'Laboratory & Open Source' : 'Laboratório & Open Source'),
+        desc: lang === 'es' ? 'Proyectos reproducibles, benchmarks y demos en vivo' : (lang === 'en' ? 'Reproducible projects, benchmarks, and live demos' : 'Projetos reproduzíveis, benchmarks e demos'),
+        icon: '🔬',
+        badge: lang === 'es' ? 'Sección' : (lang === 'en' ? 'Section' : 'Seção'),
+        keywords: 'laboratorio open source github streamlit benchmarks gridbreak hiporefi timeseries credit policy',
+        action: () => navigateTo(`${pathPrefix}#laboratorio`)
       },
       {
         id: 'nav-articulos',
@@ -905,6 +929,16 @@ function initCommandPalette() {
         badge: 'Modal',
         keywords: 'gridbreak cl fragilidad electrica supervivencia santiago temporal sec cox kaplan meier arbolado postes open meteo',
         action: () => openProjectModalById('gridbreak-cl')
+      },
+      {
+        id: 'proj-timeseries-benchmark',
+        category: 'projects',
+        title: 'Supply Chain TimeSeries: Pipeline Global LightGBM',
+        desc: 'Benchmark H=14 · WAPE 6.62% (-47% vs baseline) · Regresión Cuantílica p90',
+        icon: '📦',
+        badge: 'Modal',
+        keywords: 'timeseries supply chain forecasting lightgbm benchmark rolling origin pinball loss python uv',
+        action: () => openProjectModalById('timeseries-benchmark')
       },
       {
         id: 'proj-hiporefi-cl',

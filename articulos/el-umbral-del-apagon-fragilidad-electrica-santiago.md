@@ -594,13 +594,13 @@ Este evento en vivo ratifica la formulación del modelo: **el agua acumulada por
 Los hallazgos del proyecto **GridBreak-CL** demandan reformas estructurales en la regulación energética chilena:
 
 1. **Revisión del estándar de "Fuerza Mayor" en la SEC:**  
-   La Ley General de Servicios Eléctricos y las normas técnicas de la SEC no deberían admitir la invocación de fuerza mayor climática si el colapso ocurrió bajo umbrales de viento y lluvia que se repiten sistemáticamente todos los inviernos (vientos de 50-60 km/h y 30 mm de lluvia). Hub Surficar como "imprevisible" un umbral que quiebra la red todos los años desincentiva la inversión en resiliencia.
+   La Ley General de Servicios Eléctricos y las normas técnicas de la SEC no deberían admitir la invocación de fuerza mayor climática si el colapso ocurrió bajo umbrales de viento y lluvia que se repiten sistemáticamente todos los inviernos (vientos de 50-60 km/h y 30 mm de lluvia). Clasificar como "imprevisible" un umbral que quiebra la red todos los años desincentiva la inversión en resiliencia.
 
 2. **Plan Obligatorio de Soterramiento Equitativo:**  
    La brecha de soterramiento (hasta 93% aéreo en periferia vs. 24% en sector oriente) es la causa raíz de la fragilidad territorial. La fijación tarifaria del Valor Agregado de Distribución (VAD) debe indexar metas obligatorias de soterramiento priorizando alimentadores troncales y subestaciones en comunas vulnerables, no únicamente en ejes comerciales de altos ingresos.
 
-3. **Retiro Urgente de "Basura Aérea" y Fishub-surzación de Postación Compartida:**  
-   El sobrepeso generado por cables de telecomunicaciones y fibra óptica en desuso reduce dramáticamente el momento flector admisible de los postes de concreto y madera. La ley de ductos debe fishub-surzarse con sanciones efectivas a las empresas telco y distribuidoras eléctricas que mantengan toneladas de cable muerto sobre la calzada.
+3. **Retiro Urgente de "Basura Aérea" y Fiscalización de Postación Compartida:**  
+   El sobrepeso generado por cables de telecomunicaciones y fibra óptica en desuso reduce dramáticamente el momento flector admisible de los postes de concreto y madera. La ley de ductos debe fiscalizarse con sanciones efectivas a las empresas telco y distribuidoras eléctricas que mantengan toneladas de cable muerto sobre la calzada.
 
 ---
 

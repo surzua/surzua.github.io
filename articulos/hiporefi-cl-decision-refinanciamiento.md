@@ -59,7 +59,7 @@ HipoRefi-CL está concebido como una plataforma analítica de extremo a extremo 
 Para lograrlo, la plataforma integra:
 - **Datos macroeconómicos en vivo:** Conexión automatizada a la API del Banco Central de Chile (UF diaria, TPM) y a las series estadísticas de la CMF.
 - **Web scraping headless:** Monitoreo con Playwright de simuladores públicos de **7 entidades financieras** en Chile (BancoEstado vía Casaverso, Santander, BCI, Banco de Chile/Toctoc, Itaú, Consorcio, instituciones de crédito retail y Banco Internacional).
-- **Extracción de cartolas PDF:** Pipeline híbrido (regex hub-surbrado a la banca chilena + fallback estructurado con LLMs y esquemas Pydantic v2).
+- **Extracción de cartolas PDF:** Pipeline híbrido (regex calibrado a la banca chilena + fallback estructurado con LLMs y esquemas Pydantic v2).
 - **Motor financiero de alta precisión:** Amortización francesa y alemana en UF, recargos actuariales de desgravamen por tramos de edad, prepagos parciales y análisis de estrés para créditos con tasa mixta.
 - **Doble interfaz de usuario:** Una **API REST moderna con FastAPI** y un **Dashboard interactivo en Streamlit** de 8 pestañas con gráficos Plotly y generación de informes ejecutivos en PDF mediante ReportLab.
 
@@ -157,7 +157,7 @@ En Chile, todo crédito para la vivienda exige legalmente dos seguros:
 2. **Seguro de Desgravamen con Curva Actuarial por Edad:**  
    Cubre el saldo deudor insoluto ante fallecimiento o invalidez total del deudor. Su tasa mensual por mil $\tau_{\text{desg}}$ depende directamente de la **edad alcanzada** por el titular en cada período.
 
-En `src/core/advanced_financial.py`, implementé una curva actuarial hub-surbrada según las tablas de mortalidad chilenas MI-2006 y las licitaciones colectivas vigentes del mercado:
+En `src/core/advanced_financial.py`, implementé una curva actuarial calibrada según las tablas de mortalidad chilenas MI-2006 y las licitaciones colectivas vigentes del mercado:
 
 | Tramo Etario | Tasa Mensual por Mil ($\tau_{\text{desg}}$) | Prima para Saldo de 3.000 UF |
 | :---: | :---: | :---: |
@@ -289,7 +289,7 @@ Uno de los mayores dolores de cabeza para un deudor es tener que transcribir los
 En `src/parsers/` diseñé un pipeline en dos etapas:
 
 1. **Fase Heurística (Determinista y Local con `pypdf`):**  
-   Extrae el texto del PDF y aplica expresiones regulares hub-surbradas para las convenciones tipográficas de los bancos chilenos. Incluye la función `parse_chilean_number`, que resuelve la alternancia entre puntos y comas para miles y decimales.  
+   Extrae el texto del PDF y aplica expresiones regulares calibradas para las convenciones tipográficas de los bancos chilenos. Incluye la función `parse_chilean_number`, que resuelve la alternancia entre puntos y comas para miles y decimales.  
    *Tiempo de respuesta:* Menos de 50 ms, costo computacional nulo y privacidad garantizada.
 
 2. **Fase LLM (Fallback Estructurado con Pydantic):**  
@@ -305,7 +305,7 @@ En `src/parsers/` diseñé un pipeline en dos etapas:
 Para que el análisis sea útil en una negociación bancaria formal, HipoRefi-CL genera un **Informe Ejecutivo y Dictamen de Portabilidad Financiera** de 2 páginas con diseño corporativo (`src/reports/pdf_generator.py`).
 
 Construido íntegramente con **ReportLab**, el generador incluye:
-- **Diseño Editorial Corporativo:** Paleta de colores institucional (Navy `#1B4F72`, Slate `#2C3E50`), tipografía jerárquica y márgenes hub-surbrados para impresión.
+- **Diseño Editorial Corporativo:** Paleta de colores institucional (Navy `#1B4F72`, Slate `#2C3E50`), tipografía jerárquica y márgenes calibrados para impresión.
 - **Gráficos Vectoriales Nativos:** Renderizados directamente con `reportlab.graphics.shapes` (gráficos de barras comparativas y curvas de amortización) como elementos `Flowable` puros, sin necesidad de renderizadores web o dependencias externas pesadas.
 - **Dictamen Formal de Portabilidad:** Con sello de recomendación patrimonial (badge verde/amarillo/rojo), desglose normativo de costos de la Ley 21.236 y tabla resumen de flujos de caja.
 
@@ -350,7 +350,7 @@ curl -X POST "http://localhost:8000/api/v1/evaluate-refinance" \
 
 ---
 
-## 9. DevOps, Infraestructura y Hub Surdad de Código
+## 9. DevOps, Infraestructura y Calidad de Código
 
 - **Gestión de dependencias con `uv`:** Tiempos de instalación de dependencias en milisegundos, garantizando reproducibilidad total.
 - **Docker & Docker Compose:** Configuración multi-contenedor que orquesta la API REST y el Dashboard sobre una base DuckDB compartida.
