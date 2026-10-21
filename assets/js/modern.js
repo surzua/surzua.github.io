@@ -983,6 +983,26 @@ function initCommandPalette() {
 
       // 3. Articles & Quantitative Essays
       {
+        id: 'art-fondo-e',
+        category: 'articles',
+        title: 'La Falacia del Fondo Seguro: Anatomía Forense del Fondo E',
+        desc: 'Auditoría cuantitativa a microdatos · Swaps de Tasas IRS (79,7% de la pérdida) · Duración a 17 años',
+        icon: '📊',
+        badge: lang === 'es' ? 'Leer' : (lang === 'en' ? 'Read' : 'Ler'),
+        keywords: 'articulo ensayo fondo e afp pensiones swaps derivados duracion superintendencia forense finanzas don juan',
+        action: () => { window.location.href = '/articulos/la-falacia-del-fondo-seguro-desplome-fondo-e/'; }
+      },
+      {
+        id: 'art-guia-fondo-e',
+        category: 'articles',
+        title: 'Guía Esencial de Finanzas: Crisis del Fondo E sin ser Economista',
+        desc: 'Módulos didácticos con analogías cotidianas · Balancín de tasas, duración, swaps y rentas vitalicias',
+        icon: '📖',
+        badge: lang === 'es' ? 'Guía' : (lang === 'en' ? 'Guide' : 'Guia'),
+        keywords: 'guia didactica finanzas fondo e afp duracion swaps balancin cuotas uf educacion previsional conceptos',
+        action: () => { window.location.href = '/articulos/guia-finanzas-fondo-e/'; }
+      },
+      {
         id: 'art-gridbreak',
         category: 'articles',
         title: 'El Umbral del Apagón: Fragilidad Eléctrica en Santiago',
