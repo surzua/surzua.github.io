@@ -78,18 +78,42 @@ flowchart LR
 
 La variable más importante en finanzas personales no es la tasa de interés ni el dólar: es **cuánto tiempo te queda antes de necesitar tu dinero**.
 
-```
-Etapa de la Vida:     Juventud (20 - 45 años)             Pre-Jubilación (60 - 65 años)
-Objetivo Previsional: ACUMULACIÓN                         DESACUMULACIÓN
-Vehículo Recomendado: Fondos A / B                        Fondos D / E
-Margen de Espera:     20 a 40 años para recuperarse       0 a 24 meses (¡Tiempo Agotado!)
-```
+<div class="article-table-wrapper" style="overflow-x:auto; margin: 1.5rem 0;">
+<table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+  <thead>
+    <tr style="background: rgba(56,189,248,0.15);">
+      <th style="padding:10px 14px; text-align:left; border-bottom:2px solid var(--accent-cyan);">Factor</th>
+      <th style="padding:10px 14px; text-align:center; border-bottom:2px solid var(--accent-cyan);">🟢 Juventud (20–45 años)</th>
+      <th style="padding:10px 14px; text-align:center; border-bottom:2px solid var(--accent-red);">🔴 Pre-Jubilación (60–65 años)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding:9px 14px; border-bottom:1px solid var(--border-subtle);"><strong>Objetivo Previsional</strong></td>
+      <td style="padding:9px 14px; border-bottom:1px solid var(--border-subtle); text-align:center;">Acumulación</td>
+      <td style="padding:9px 14px; border-bottom:1px solid var(--border-subtle); text-align:center;">Desacumulación</td>
+    </tr>
+    <tr style="background: rgba(255,255,255,0.03);">
+      <td style="padding:9px 14px; border-bottom:1px solid var(--border-subtle);"><strong>Vehículo Recomendado</strong></td>
+      <td style="padding:9px 14px; border-bottom:1px solid var(--border-subtle); text-align:center;">Fondos A / B</td>
+      <td style="padding:9px 14px; border-bottom:1px solid var(--border-subtle); text-align:center;">Fondos D / E</td>
+    </tr>
+    <tr>
+      <td style="padding:9px 14px;"><strong>Margen de Espera</strong></td>
+      <td style="padding:9px 14px; text-align:center; color: var(--accent-cyan);">20–40 años para recuperarse</td>
+      <td style="padding:9px 14px; text-align:center; color: var(--accent-red); font-weight:700;">0–24 meses ⚠️ ¡Tiempo Agotado!</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 * **Etapa de Acumulación (25 a 45 años):** Si una crisis internacional hace caer tu fondo un -15%, no es agradable, pero tienes dos o tres décadas por delante para que la economía se recupere, crezca y supere los récords anteriores. Puedes asumir riesgo porque tienes tiempo.
 * **Etapa de Desacumulación (60 a 65 años):** Estás a meses de jubilarte. Tu fondo ya no está creciendo con sueldos futuros; es el pozo definitivo con el que vas a financiar tus últimos 20 o 25 años de vida. **Aquí el riesgo debe ser mínimo**, porque si tu fondo se desploma justo antes de firmar la pensión, no tienes 10 años para esperar un rebote: la pérdida se hace definitiva en el acto.
 
-> [!IMPORTANT]
-> **La Promesa de la Ley:** Por mandato del Decreto Ley 3.500, los hombres mayores de 55 años y las mujeres mayores de 50 no pueden estar por defecto en el Fondo A. La ley los empuja deliberadamente hacia los fondos conservadores (D y E) bajo la promesa de que allí sus fondos estarán a salvo.
+<div class="article-callout warning">
+  <div class="article-callout-title"><span>⚖️</span> La Promesa de la Ley</div>
+  <p style="margin-bottom:0;">Por mandato del <strong>Decreto Ley 3.500</strong>, los hombres mayores de 55 años y las mujeres mayores de 50 no pueden estar por defecto en el Fondo A. La ley los empuja deliberadamente hacia los fondos conservadores (D y E) bajo la promesa de que allí sus fondos estarán a salvo.</p>
+</div>
 
 ---
 
@@ -149,18 +173,19 @@ El riesgo surge porque los fondos de pensiones no guardan los bonos en un cajón
 
 Y en ese mercado ocurre un fenómeno matemático inexorable: **el balancín financiero**.
 
-```
-      ▲ ALZA DE TASAS DE INTERÉS
-     / 
-    / 
-   /  (Las tasas suben en el mercado)
-  /
- ───▲───  [PUNTO DE APOYO]
-     \
-      \  (El precio de tu bono antiguo se derrumba)
-       \
-        ▼ CAÍDA EN EL PRECIO DEL BONO
-```
+<div style="display:flex; gap:16px; align-items:stretch; margin: 1.5rem 0; flex-wrap:wrap;">
+  <div style="flex:1; min-width:200px; background: rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); border-radius:10px; padding:16px; text-align:center;">
+    <div style="font-size:1.8rem; margin-bottom:6px;">📈</div>
+    <div style="font-weight:700; color:#10b981; margin-bottom:6px;">ALZA DE TASAS</div>
+    <div style="font-size:0.85rem; color:var(--text-secondary);">Banco Central / Reserva Federal sube las tasas de interés en el mercado</div>
+  </div>
+  <div style="flex:0 0 auto; display:flex; align-items:center; font-size:1.5rem; color:var(--text-muted);">⚖️</div>
+  <div style="flex:1; min-width:200px; background: rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); border-radius:10px; padding:16px; text-align:center;">
+    <div style="font-size:1.8rem; margin-bottom:6px;">📉</div>
+    <div style="font-weight:700; color:#ef4444; margin-bottom:6px;">CAÍDA DEL BONO</div>
+    <div style="font-size:0.85rem; color:var(--text-secondary);">El precio de mercado de los bonos antiguos (que pagan tasas bajas) se derrumba</div>
+  </div>
+</div>
 
 * 🚗 **La analogía del auto usado y la concesionaria:**
   * Imagina que compraste un auto nuevo que rinde **10 kilómetros por litro** de bencina.
@@ -213,11 +238,12 @@ Históricamente (2002–2020), el Fondo E chileno operaba con una duración prud
 * **El pecado de 2024–2026:** Buscando capturar rentabilidades más altas para lucirse en los rankings, las administradoras alargaron deliberadamente los plazos de sus inversiones. Compraron bonos de Tesorería a 20 o 30 años (duración física de 10,2 años) y luego, mediante contratos derivados, sumaron 6,8 años más de duración sintética.
 * **El resultado:** Llevaron la duración agregada del Fondo E a **17,0 años**.
 
-> [!WARNING]
-> **El Cálculo Fatal:**  
-> Cuando las tasas del Bono del Tesoro de EE.UU. a 10 años subieron **+1,11%** (de 4,18% a 5,29%), el impacto matemático sobre una caña de pescar de 17 años no fue de un manejable -5%:  
-> $$\text{Caída Teórica} \approx -17,0 \times (+1,11\%) = \mathbf{-18,87\%}$$  
-> Las AFP convirtieron el búnker de los jubilados en una montaña rusa de alta velocidad.
+<div class="article-callout warning">
+  <div class="article-callout-title"><span>⚠️</span> El Cálculo Fatal</div>
+  <p>Cuando las tasas del Bono del Tesoro de EE.UU. a 10 años subieron <strong>+1,11%</strong> (de 4,18% a 5,29%), el impacto matemático sobre una caña de pescar de 17 años no fue de un manejable -5%:</p>
+  <p>$$\text{Caída Teórica} \approx -17{,}0 \times (+1{,}11\%) = \mathbf{-18{,}87\%}$$</p>
+  <p style="margin-bottom:0;">Las AFP convirtieron el búnker de los jubilados en una montaña rusa de alta velocidad.</p>
+</div>
 
 ---
 
@@ -286,8 +312,10 @@ Aquí reside el vacío regulatorio que aprovecharon las AFP:
 * Pero un Swap de Tasas **no requiere pagar el capital al inicio**. Solo se intercambian las diferencias de intereses. El monto sobre el cual se calculan esos intereses se llama **Monto Nocional** (es un valor teórico de referencia).
 * Como al firmar el contrato el desembolso de caja es prácticamente cero, las AFP pudieron acumular posiciones monstruosas **fuera de balance**. El nocional en derivados de tasas del sistema de pensiones saltó de **US$ 5.300 millones en 2023** a la increíble cifra de **US$ 206.900 millones a fines de 2025**.
 
-> [!CAUTION]
-> **El desenlace:** Las AFP apostaron masivamente a que la Reserva Federal de EE.UU. recortaría agresivamente las tasas de interés. Pero la inflación estadounidense no cedió, las tasas no bajaron y los contratos de Swaps generaron pérdidas multimillonarias que las administradoras tuvieron que pagar liquidando el valor de las cuotas del Fondo E.
+<div class="article-callout warning">
+  <div class="article-callout-title"><span>🚨</span> El Desenlace</div>
+  <p style="margin-bottom:0;">Las AFP apostaron masivamente a que la Reserva Federal de EE.UU. recortaría agresivamente las tasas de interés. Pero la inflación estadounidense no cedió, las tasas no bajaron y los contratos de Swaps generaron pérdidas multimillonarias que las administradoras tuvieron que pagar <strong>liquidando el valor de las cuotas del Fondo E</strong>.</p>
+</div>
 
 ---
 
@@ -307,7 +335,7 @@ En Chile, el tipo de cambio cumple una función protectora clave en las crisis:
 ### 6.2. ¿Qué es un Contrato Forward de Moneda?
 
 Un *Forward* es un contrato derivado donde dos partes fijan hoy el precio al que se comprarán o venderán dólares en una fecha futura (por ejemplo, en 6 meses más), sin importar lo que marque la cotización en la calle ese día.
-* Si tienes US$ 100 en el exterior y vendes un forward a \$900 CLP, te aseguras de recibir \$90.000 pesos chilenos pase lo que pase con el dólar. Eso se llama **cobertura cambiaria (Hedging)**.
+* Si tienes US\$ 100 en el exterior y vendes un forward a \$900 CLP, te aseguras de recibir \$90.000 pesos chilenos pase lo que pase con el dólar. Eso se llama **cobertura cambiaria (Hedging)**.
 
 ---
 
@@ -325,7 +353,7 @@ Una cobertura prudente y conservadora consiste en cubrir el **100%** de los acti
   * Pero además firmas un contrato con un vecino donde le apuestas \$5 millones a que tu auto jamás va a chocar.
   * Si chocas, el seguro te paga los \$10 millones del auto, pero pierdes la apuesta con tu vecino y tienes que pagarle \$5 millones de tu bolsillo. Terminaste perdiendo plata en el choque a pesar de tener seguro.
 
-* **El resultado en 2026:** El dólar en Chile no cayó: subió con fuerza de **\$911 a \$970 CLP**. En lugar de operar como amortiguador, la sobrecobertura corta provocó pérdidas directas por **-0,80 puntos porcentuales (-US$ 750 millones)** que se sumaron a la sangría de los swaps.
+* **El resultado en 2026:** El dólar en Chile no cayó: subió con fuerza de **\$911 a \$970 CLP**. En lugar de operar como amortiguador, la sobrecobertura corta provocó pérdidas directas por **-0,80 puntos porcentuales (-US\$ 750 millones)** que se sumaron a la sangría de los swaps.
 
 ---
 
@@ -388,15 +416,19 @@ El *Valor en Riesgo* es el estándar dorado de la gestión de riesgos en la banc
 
 La estadística tradicional asume que los retornos financieros siguen una **Campana de Gauss (distribución normal)**, donde los eventos extremos (como que caiga un meteorito financiero) son prácticamente imposibles.
 
-```
-Distribución Normal (Teórica):          Distribución Real con Derivados (Colas Pesadas):
-            ▲                                            ▲
-           / \                                          / \
-          /   \                                        /   \
-         /     \                                      /     \
-    ____/       \____                            ====/       \====
-   Eventos raros: 0,01%                         Eventos extremos frecuentes (FAT TAILS)
-```
+<div style="display:flex; gap:16px; align-items:stretch; margin: 1.5rem 0; flex-wrap:wrap;">
+  <div style="flex:1; min-width:200px; background: rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.2); border-radius:10px; padding:16px; text-align:center;">
+    <div style="font-size:1.5rem; margin-bottom:8px;">📊</div>
+    <div style="font-weight:700; color:var(--accent-cyan); margin-bottom:8px;">Distribución Normal<br><small style="font-weight:400; color:var(--text-muted);">(Modelo Teórico)</small></div>
+    <div style="font-size:0.85rem; color:var(--text-secondary);">Eventos extremos con probabilidad &lt; 0,01% — considerados prácticamente imposibles</div>
+  </div>
+  <div style="flex:0 0 auto; display:flex; align-items:center; font-size:1.2rem; color:var(--text-muted);">≠</div>
+  <div style="flex:1; min-width:200px; background: rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); border-radius:10px; padding:16px; text-align:center;">
+    <div style="font-size:1.5rem; margin-bottom:8px;">🦢</div>
+    <div style="font-weight:700; color:#ef4444; margin-bottom:8px;">Colas Pesadas (Fat Tails)<br><small style="font-weight:400; color:var(--text-muted);">(Realidad con Derivados)</small></div>
+    <div style="font-size:0.85rem; color:var(--text-secondary);">Eventos extremos ocurren con alta frecuencia — el modelo subestima catástrofes</div>
+  </div>
+</div>
 
 * **El hallazgo forense:** Cuando una cartera se llena de derivados sintéticos apalancados y sobrecoberturas cambiarias, la distribución estadística se deforma. La campana se rompe y aparecen las llamadas **colas pesadas (*fat tails*)**.
 * Los eventos que supuestamente solo debían ocurrir una vez cada siglo comenzaron a ocurrir mes por medio durante 2026. La Asociación de AFP argumentó que se trató de un shock externo imprevisible; la auditoría matemática demuestra que **las administradoras fabricaron las colas pesadas al alterar artificialmente la física del fondo**.
@@ -444,17 +476,29 @@ Analicemos el caso real de **Don Juan**, 64 años y 9 meses, quien tenía planif
 * **Saldo tras el desplome del Fondo E (septiembre 2026):** \$89.610.000 CLP (-10,39% real).
   * Con ese nuevo saldo, la aseguradora le ofrece una pensión de **\$595.000 CLP mensuales de por vida**.
 
-```
-Pensión Original Esperada:   $664.000 / mes de por vida
-Pensión Real Post-Shock:     $595.000 / mes de por vida
-========================================================
-RECORTADA PARA SIEMPRE:      -$69.000 / mes de por vida  (Pérdida neta de -$16,5 millones a 20 años)
-```
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin: 1.5rem 0;">
+  <div style="background: rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.25); border-radius:10px; padding:14px; text-align:center;">
+    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); margin-bottom:4px;">Pensión Original Esperada</div>
+    <div style="font-size:1.5rem; font-weight:800; color:#10b981;">&#36;664.000</div>
+    <div style="font-size:0.8rem; color:var(--text-secondary);">/ mes de por vida</div>
+  </div>
+  <div style="background: rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.25); border-radius:10px; padding:14px; text-align:center;">
+    <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); margin-bottom:4px;">Pensión Real Post-Shock</div>
+    <div style="font-size:1.5rem; font-weight:800; color:#ef4444;">&#36;595.000</div>
+    <div style="font-size:0.8rem; color:var(--text-secondary);">/ mes de por vida</div>
+  </div>
+</div>
+<div style="background: rgba(239,68,68,0.15); border:2px solid rgba(239,68,68,0.5); border-radius:10px; padding:14px; text-align:center; margin-bottom:1.5rem;">
+  <div style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); margin-bottom:4px;">Recortada Para Siempre</div>
+  <div style="font-size:1.8rem; font-weight:900; color:#ef4444;">&#8722;&#36;69.000 / mes</div>
+  <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Pérdida neta acumulada: <strong style="color:#ef4444;">&#8722;&#36;16,5 millones a 20 años</strong></div>
+</div>
 
-> [!IMPORTANT]
-> **La Trampa de la "Espera":**  
-> Cuando Don Juan firma el contrato de Renta Vitalicia, la administradora debe **vender las cuotas en el mercado para transferir los \$89,6 millones a la aseguradora**.  
-> En ese milisegundo exacto, la "baja transitoria de valorización" **se congela en una pérdida irreversible para siempre**. Si en 2028 el Fondo E sube un +20%, Don Juan no verá un solo peso de ese rebote: sus cuotas ya fueron vendidas a precio de remate en 2026.
+<div class="article-callout warning">
+  <div class="article-callout-title"><span>⚖️</span> La Trampa de la "Espera"</div>
+  <p>Cuando Don Juan firma el contrato de Renta Vitalicia, la administradora debe <strong>vender las cuotas en el mercado para transferir los \$89,6 millones a la aseguradora</strong>.</p>
+  <p style="margin-bottom:0;">En ese milisegundo exacto, la "baja transitoria de valorización" <strong>se congela en una pérdida irreversible para siempre</strong>. Si en 2028 el Fondo E sube un +20%, Don Juan no verá un solo peso de ese rebote: sus cuotas ya fueron vendidas a precio de remate en 2026.</p>
+</div>
 
 ---
 

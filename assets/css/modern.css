@@ -2054,8 +2054,26 @@ code, .mono {
 }
 
 /* ==========================================================================
-   Article Enhanced Visuals: Tables, Figures, Action Banner, KPI Highlights
+   Article Enhanced Visuals: Tables, Figures, Action Banner, KPI Highlights, Diagrams
    ========================================================================== */
+
+.mermaid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 32px 0;
+  padding: 24px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.mermaid svg {
+  max-width: 100% !important;
+  height: auto !important;
+}
 
 .article-action-banner {
   display: flex;

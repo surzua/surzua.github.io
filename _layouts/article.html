@@ -41,18 +41,141 @@ layout: null
 
   <!-- MathJax for LaTeX / Math formulas -->
   <script>
+    function protectCurrencyFromMathJax() {
+      var body = document.querySelector('.article-body');
+      if (!body) return;
+      var walker = document.createTreeWalker(body, NodeFilter.SHOW_TEXT, null, false);
+      var nodes = [];
+      while (walker.nextNode()) {
+        var p = walker.currentNode.parentNode;
+        if (p && !['PRE', 'CODE', 'SCRIPT', 'STYLE'].includes(p.tagName)) {
+          nodes.push(walker.currentNode);
+        }
+      }
+      nodes.forEach(function(node) {
+        var val = node.nodeValue;
+        if (/(?:US)?\$[0-9]/.test(val)) {
+          var span = document.createElement('span');
+          span.innerHTML = val.replace(/((?:US)?\$)(?=\s*[0-9])/g, '<span class="tex2jax_ignore">$1</span>');
+          node.parentNode.replaceChild(span, node);
+        }
+      });
+    }
+
+    function transformGitHubAlerts() {
+      document.querySelectorAll('.article-body blockquote').forEach(function(bq) {
+        var text = bq.innerHTML;
+        var alertTypes = [
+          { pattern: /<p>\s*\[!IMPORTANT\]\s*(?:<br\s*\/?>)?/i, cls: 'warning', icon: '⚖️', title: 'Importante' },
+          { pattern: /<p>\s*\[!WARNING\]\s*(?:<br\s*\/?>)?/i, cls: 'warning', icon: '⚠️', title: 'Advertencia' },
+          { pattern: /<p>\s*\[!CAUTION\]\s*(?:<br\s*\/?>)?/i, cls: 'warning', icon: '🚨', title: 'Precaución' },
+          { pattern: /<p>\s*\[!TIP\]\s*(?:<br\s*\/?>)?/i, cls: 'tip', icon: '💡', title: 'Consejo' },
+          { pattern: /<p>\s*\[!NOTE\]\s*(?:<br\s*\/?>)?/i, cls: 'tip', icon: '📌', title: 'Nota' }
+        ];
+        for (var i = 0; i < alertTypes.length; i++) {
+          var item = alertTypes[i];
+          if (item.pattern.test(text)) {
+            var cleaned = text.replace(item.pattern, '<p>');
+            var callout = document.createElement('div');
+            callout.className = 'article-callout ' + item.cls;
+            callout.innerHTML = '<div class="article-callout-title"><span>' + item.icon + '</span> ' + item.title + '</div>' + cleaned;
+            bq.parentNode.replaceChild(callout, bq);
+            break;
+          }
+        }
+      });
+    }
+
     window.MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
         displayMath: [['$$', '$$'], ['\\[', '\\]']],
         processEscapes: true
       },
+      options: {
+        ignoreHtmlClass: 'tex2jax_ignore',
+        processHtmlClass: 'tex2jax_process'
+      },
       svg: {
         fontCache: 'global'
+      },
+      startup: {
+        ready: function() {
+          protectCurrencyFromMathJax();
+          transformGitHubAlerts();
+          MathJax.startup.defaultReady();
+        }
       }
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Mermaid.js for Diagrams & Flowcharts -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Jekyll/Rouge wraps ```mermaid as:
+      //   <div class="language-mermaid highlighter-rouge">
+      //     <div class="highlight"><pre class="highlight"><code>...</code></pre></div>
+      //   </div>
+      // Plain kramdown produces: <pre><code class="language-mermaid">...</code></pre>
+      // We normalise both into <div class="mermaid">...</div>
+
+      var processed = new Set();
+
+      function convertToMermaidDiv(root, text) {
+        if (!text || !text.trim()) return;
+        var div = document.createElement('div');
+        div.className = 'mermaid';
+        div.textContent = text.trim();
+        root.parentNode.replaceChild(div, root);
+      }
+
+      // Case 1: Rouge — outer div carries class "language-mermaid"
+      document.querySelectorAll('div.language-mermaid').forEach(function(wrapper) {
+        if (processed.has(wrapper)) return;
+        processed.add(wrapper);
+        var code = wrapper.querySelector('code');
+        if (code) convertToMermaidDiv(wrapper, code.textContent);
+      });
+
+      // Case 2: Plain kramdown — <pre><code class="language-mermaid">
+      document.querySelectorAll('pre code.language-mermaid').forEach(function(codeEl) {
+        var root = codeEl.closest('pre') || codeEl;
+        if (processed.has(root)) return;
+        processed.add(root);
+        convertToMermaidDiv(root, codeEl.textContent);
+      });
+
+      var currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: currentTheme === 'light' ? 'default' : 'dark',
+        securityLevel: 'loose',
+        fontFamily: 'Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif'
+      });
+
+      // Trigger rendering now that the divs exist
+      mermaid.run({ querySelector: '.mermaid' });
+
+      // Re-run on theme toggle
+      var themeBtn = document.getElementById('theme-toggle-btn');
+      if (themeBtn) {
+        themeBtn.addEventListener('click', function() {
+          setTimeout(function() {
+            var newTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            mermaid.initialize({
+              startOnLoad: false,
+              theme: newTheme === 'light' ? 'default' : 'dark',
+              securityLevel: 'loose',
+              fontFamily: 'Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif'
+            });
+            mermaid.run({ querySelector: '.mermaid' });
+          }, 100);
+        });
+      }
+    });
+  </script>
 </head>
 <body class="article-page">
 

@@ -35,7 +35,7 @@ permalink: /articulos/la-falacia-del-fondo-seguro-desplome-fondo-e/
     <span>📌</span> Tesis Ejecutiva en 30 Segundos
   </div>
   <p>
-    Esta semana, el sistema de pensiones chileno vivió un terremoto institucional sin precedentes: la <strong>Superintendencia de Pensiones formuló cargos e inició un proceso sancionatorio histórico contra las siete administradoras del sistema (Capital, Cuprum, Habitat, Modelo, Planvital, Provida y UNO)</strong> por presunta vulneración del deber fiduciario, lealtad y diligencia (<strong>Artículo 147 del D.L. 3.500</strong> y <strong>NCG N° 340</strong>), tras confirmarse un agujero de valorización estimado en <strong>US$ 7.700 millones</strong> en los fondos conservadores.
+    Esta semana, el sistema de pensiones chileno vivió un terremoto institucional sin precedentes: la <strong>Superintendencia de Pensiones formuló cargos e inició un proceso sancionatorio histórico contra las siete administradoras del sistema (Capital, Cuprum, Habitat, Modelo, Planvital, Provida y UNO)</strong> por presunta vulneración del deber fiduciario, lealtad y diligencia (<strong>Artículo 147 del D.L. 3.500</strong> y <strong>NCG N° 340</strong>), tras confirmarse un agujero de valorización estimado en <strong>US&#36; 7.700 millones</strong> en los fondos conservadores.
   </p>
   <p>
     Durante los primeros nueve meses de 2026, el <strong>Fondo E</strong> —el instrumento concebido por ley como el refugio inexpugnable para los trabajadores a punto de jubilarse— se desplomó un <strong>-10,39% real</strong> (-7,40% nominal).
@@ -57,13 +57,13 @@ permalink: /articulos/la-falacia-del-fondo-seguro-desplome-fondo-e/
 
 En recientes declaraciones de prensa a *La Tercera* y *Diario Financiero* (octubre de 2026), los principales voceros de la Asociación de AFP —su presidente ejecutivo, **León Fernández de Castro**, y su gerente de estudios, **Roberto Fuentes**— salieron al paso del proceso sancionatorio afirmando que en el sistema de pensiones *"no hay pérdidas o ganancias definitivas, sino alzas y bajas en su valorización"* y que históricamente estas fluctuaciones contables se revierten en el mediano y largo plazo.
 
-Para evaluar la validez de este axioma, aterricémoslo en la realidad de un afiliado de carne y hueso: llamémoslo **Don Juan**, 64 años, quien tras 40 años de cotizaciones ininterrumpidas acumuló **$100.000.000 CLP** (aproximadamente 2.530 UF) con el plan de jubilarse a los 65 años en diciembre de 2026.
+Para evaluar la validez de este axioma, aterricémoslo en la realidad de un afiliado de carne y hueso: llamémoslo **Don Juan**, 64 años, quien tras 40 años de cotizaciones ininterrumpidas acumuló **\$100.000.000 CLP** (aproximadamente 2.530 UF) con el plan de jubilarse a los 65 años en diciembre de 2026.
 
 Siguiendo disciplinadamente el mandato del Decreto Ley 3.500 y todas las recomendaciones institucionales, Don Juan mantuvo su saldo en el **Fondo E (Más Conservador)**. La promesa republicana era clara: *si estás a meses del retiro, no debes arriesgarte en acciones (Fondo A); debes proteger tu esfuerzo de toda una vida en renta fija segura.*
 
 Al cierre de septiembre de 2026, la realidad demolió la promesa:
-* Su saldo real deflactado por UF cayó a **$89.610.000 CLP**. Don Juan perdió **$10.390.000 CLP** de poder adquisitivo en solo 9 meses.
-* Si Don Juan acude hoy a jubilarse y cotiza una Renta Vitalicia o un Retiro Programado, su pensión mensual autofinanciada cae de **$664.000 CLP/mes a $595.000 CLP/mes**. Es un recorte permanente de **$69.000 CLP mensuales de por vida**.
+* Su saldo real deflactado por UF cayó a **\$89.610.000 CLP**. Don Juan perdió **\$10.390.000 CLP** de poder adquisitivo en solo 9 meses.
+* Si Don Juan acude hoy a jubilarse y cotiza una Renta Vitalicia o un Retiro Programado, su pensión mensual autofinanciada cae de **\$664.000 CLP/mes a \$595.000 CLP/mes**. Es un recorte permanente de **\$69.000 CLP mensuales de por vida**.
 
 <div class="article-callout warning">
   <div class="article-callout-title">
@@ -89,7 +89,7 @@ La magnitud de la anomalía ocurrida en 2026 queda en evidencia al comparar el c
   </div>
   <div class="article-figcaption">
     <strong>Figura 1: Curva de Drawdown Histórico y Bandas de Value at Risk (VaR) del Fondo E.</strong><br>
-    <em>Panel Superior:</em> Evolución de un saldo base real de $100 MM (Fondo E vs. Fondo A vs. Benchmark libre de riesgo UF+3,2%). <em>Panel Inferior:</em> Curva de Drawdown histórico del Fondo E superpuesta con las bandas de Value at Risk (VaR 95% y 99% Cornish-Fisher).
+    <em>Panel Superior:</em> Evolución de un saldo base real de &#36;100 MM (Fondo E vs. Fondo A vs. Benchmark libre de riesgo UF+3,2%). <em>Panel Inferior:</em> Curva de Drawdown histórico del Fondo E superpuesta con las bandas de Value at Risk (VaR 95% y 99% Cornish-Fisher).
   </div>
 </div>
 
@@ -145,7 +145,7 @@ Para someter esta coartada a escrutinio científico, desarrollamos una **descomp
         <td><strong>Forwards de Tipo de Cambio (Short USD)</strong></td>
         <td style="text-align: center; color: var(--accent-red); font-weight: 700;">-0,80 pp</td>
         <td style="text-align: center;">10,8%</td>
-        <td>Venta de futuros de dólares al 150% de activos foráneos; golpe al subir el dólar de $911 a $970.</td>
+        <td>Venta de futuros de dólares al 150% de activos foráneos; golpe al subir el dólar de &#36;911 a &#36;970.</td>
       </tr>
       <tr>
         <td><strong>Bonos Físicos de Renta Fija (Local y Ext.)</strong></td>
@@ -208,7 +208,7 @@ Históricamente (2002–2020), el Fondo E operó con una duración en torno a **
   </div>
   <div class="article-figcaption">
     <strong>Figura 3: Evolución del Nocional en Derivados de Tasas (IRS) vs. US Treasury 10Y y Duración Efectiva.</strong><br>
-    Nótese cómo el nocional en swaps se multiplicó casi por 40 (alcanzando US$ 206.900 millones), estirando la duración agregada a 17,0 años justo antes del salto de tasas de la Fed.
+    Nótese cómo el nocional en swaps se multiplicó casi por 40 (alcanzando US&#36; 206.900 millones), estirando la duración agregada a 17,0 años justo antes del salto de tasas de la Fed.
   </div>
 </div>
 
@@ -229,7 +229,7 @@ Históricamente (2002–2020), el Fondo E operó con una duración en torno a **
 ### La Jugada Especulativa Fuera de Balance:
 1. **Bonos Físicos al Límite:** Las administradoras extendieron la duración de su deuda soberana comprando bonos de Tesorería a 2035–2050 (BTP y BTU), llevando la duración física a **10,2 años**.
 2. **Apalancamiento Sintético vía Swaps OTC:** En lugar de detenerse allí, las 7 AFP entraron masivamente en contratos **Interest Rate Swaps (IRS)** en Wall Street: recibieron tasa fija de largo plazo y pagaron tasa flotante (SOFR).
-3. **Explosión del Nocional sin Desembolso de Caja:** Al ser instrumentos extrabursátiles (OTC), no requerían desembolso de capital al inicio, eludiendo los límites directos de inversión en balance. El nocional en derivados de tasas saltó de **US$ 5.300 millones en 2023** a la astronómica cifra de **US$ 206.900 millones a fines de 2025**.
+3. **Explosión del Nocional sin Desembolso de Caja:** Al ser instrumentos extrabursátiles (OTC), no requerían desembolso de capital al inicio, eludiendo los límites directos de inversión en balance. El nocional en derivados de tasas saltó de **US\$ 5.300 millones en 2023** a la astronómica cifra de **US\$ 206.900 millones a fines de 2025**.
 4. **Duración Agregada de 17,0 Años:** Al sumar la duración física (10,2 años) y la sintética aportada por los swaps (6,8 años), **el Fondo E alcanzó una sensibilidad de 17,0 años**.
 
 ### El Desenlace: La Trampa de Tasas
@@ -250,7 +250,7 @@ En la gestión profesional de carteras internacionales, los activos foráneos cu
 * Lejos de realizar una cobertura prudente (100%), quedaron **netamente cortas en dólares en un 50%**. Efectuaron una apuesta direccional a que el peso chileno se apreciaría con fuerza.
 
 **El Fiasco:**
-En 2026, el dólar en Chile escaló de **$911 a $970 CLP** (+6,5%). En vez de amortiguar el golpe, la posición corta generó llamadas de margen y pérdidas netas directas por **-0,80 puntos porcentuales (-$750 millones de dólares)**, despojando a los afiliados del seguro natural del tipo de cambio.
+En 2026, el dólar en Chile escaló de **\$911 a \$970 CLP** (+6,5%). En vez de amortiguar el golpe, la posición corta generó llamadas de margen y pérdidas netas directas por **-0,80 puntos porcentuales (-\$750 millones de dólares)**, despojando a los afiliados del seguro natural del tipo de cambio.
 
 ---
 
@@ -372,34 +372,34 @@ Donde el CNU representa el valor presente actuarial de un flujo unitario vitalic
     <tbody>
       <tr>
         <td><strong>Hombre 65 años (Jubilación)</strong></td>
-        <td style="text-align: center;">$100.000.000</td>
-        <td style="text-align: center;">$89.610.000</td>
-        <td style="text-align: center;">$664.000</td>
-        <td style="text-align: center;">$595.000</td>
-        <td style="text-align: center; color: var(--accent-red); font-weight: 700;">-$69.000 / mes de por vida</td>
+        <td style="text-align: center;">&#36;100.000.000</td>
+        <td style="text-align: center;">&#36;89.610.000</td>
+        <td style="text-align: center;">&#36;664.000</td>
+        <td style="text-align: center;">&#36;595.000</td>
+        <td style="text-align: center; color: var(--accent-red); font-weight: 700;">&#8722;&#36;69.000 / mes de por vida</td>
       </tr>
       <tr>
         <td><strong>Mujer 60 años (Jubilación)</strong></td>
-        <td style="text-align: center;">$80.000.000</td>
-        <td style="text-align: center;">$71.688.000</td>
-        <td style="text-align: center;">$399.000</td>
-        <td style="text-align: center;">$358.000</td>
-        <td style="text-align: center; color: var(--accent-red); font-weight: 700;">-$41.000 / mes de por vida</td>
+        <td style="text-align: center;">&#36;80.000.000</td>
+        <td style="text-align: center;">&#36;71.688.000</td>
+        <td style="text-align: center;">&#36;399.000</td>
+        <td style="text-align: center;">&#36;358.000</td>
+        <td style="text-align: center; color: var(--accent-red); font-weight: 700;">&#8722;&#36;41.000 / mes de por vida</td>
       </tr>
       <tr>
         <td><strong>Hombre 63 años (A 2 años)</strong></td>
-        <td style="text-align: center;">$150.000.000</td>
-        <td style="text-align: center;">$134.415.000</td>
-        <td style="text-align: center;">$958.000</td>
-        <td style="text-align: center;">$858.000</td>
-        <td style="text-align: center; color: var(--accent-red); font-weight: 700;">-$100.000 / mes de por vida</td>
+        <td style="text-align: center;">&#36;150.000.000</td>
+        <td style="text-align: center;">&#36;134.415.000</td>
+        <td style="text-align: center;">&#36;958.000</td>
+        <td style="text-align: center;">&#36;858.000</td>
+        <td style="text-align: center; color: var(--accent-red); font-weight: 700;">&#8722;&#36;100.000 / mes de por vida</td>
       </tr>
     </tbody>
   </table>
 </div>
 
 ### Simulación de Monte Carlo: ¿Cuánto Cuesta "Esperar"?
-Frente a la recomendación de la Asociación de AFP de *"esperar que el ciclo se recupere"*, ejecutamos una simulación de Monte Carlo de **10.000 trayectorias estocásticas mensuales**. Consideramos un retorno real futuro esperado del 3,5% anual, volatilidad histórica del 4,0% y la continuidad del aporte previsional del **10% del sueldo imponible** ($1,5 millones mensuales).
+Frente a la recomendación de la Asociación de AFP de *"esperar que el ciclo se recupere"*, ejecutamos una simulación de Monte Carlo de **10.000 trayectorias estocásticas mensuales**. Consideramos un retorno real futuro esperado del 3,5% anual, volatilidad histórica del 4,0% y la continuidad del aporte previsional del **10% del sueldo imponible** (\$1,5 millones mensuales).
 
 <div class="article-figure">
   <div class="article-figure-container" style="background: var(--bg-card); border-radius: var(--radius-md); overflow: hidden; padding: 4px;">
@@ -407,7 +407,7 @@ Frente a la recomendación de la Asociación de AFP de *"esperar que el ciclo se
   </div>
   <div class="article-figcaption">
     <strong>Figura 5: Simulación Estocástica de Monte Carlo (10.000 trayectorias mensuales).</strong><br>
-    Distribución del tiempo requerido para recuperar el patrimonio de Don Juan ($100 MM) cotizando activamente. Interactúa pasando el cursor sobre las curvas percentilares.
+    Distribución del tiempo requerido para recuperar el patrimonio de Don Juan (&#36;100 MM) cotizando activamente. Interactúa pasando el cursor sobre las curvas percentilares.
   </div>
 </div>
 
